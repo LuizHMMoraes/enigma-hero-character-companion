@@ -96,7 +96,7 @@ public class Race implements CommonMethods {
 	public void DwarfModifiers(String subrace) {
 		AbilityScores.setConstitution(AbilityScores.getConstitution() + 2);
 		this.setProficiency(new Proficiency("race"));
-		this.getProficiency().getLanguage().add("Dwarvish");
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Dwarvish"));
 		//por enquanto hardcode em "equipamentos"
 		this.getProficiency().setWeapon(new ArrayList<>());
 		this.getProficiency().getWeapon().add("Battleaxe");
@@ -121,7 +121,7 @@ public class Race implements CommonMethods {
 	public void ElfModifiers(String subrace) {
 		AbilityScores.setDexterity(AbilityScores.getDexterity() + 2);
 		this.setProficiency(new Proficiency("race"));
-		this.getProficiency().getLanguage().add("Elvish");
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Elvish"));
 		if (subrace == "High Elf") {
 			AbilityScores.setIntelligence(AbilityScores.getIntelligence() + 1);
 			this.getRacialTraits().add("Cantrip");
@@ -130,7 +130,7 @@ public class Race implements CommonMethods {
 			this.getProficiency().getWeapon().add("Shortsword");
 			this.getProficiency().getWeapon().add("Shortbow");
 			this.getProficiency().getWeapon().add("Longbow");
-			this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
+			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage(this.getProficiency().RandomLanguage()));
 		} else if (subrace == "Wood Elf") {
 			AbilityScores.setWisdom(AbilityScores.getWisdom() + 1);
 			this.getRacialTraits().add("Mask of the Wild");
@@ -155,7 +155,7 @@ public class Race implements CommonMethods {
 	public void HalflingModifiers(String subrace) {
 		AbilityScores.setDexterity(AbilityScores.getDexterity() + 2);
 		this.setProficiency(new Proficiency("race"));
-		this.getProficiency().getLanguage().add("Halfling");
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Halfling"));
 		if (subrace == "Light Foot") {
 			AbilityScores.setCharisma(AbilityScores.getCharisma() + 1);
 			this.getRacialTraits().add("Naturally Stealthy");
@@ -173,20 +173,20 @@ public class Race implements CommonMethods {
 		AbilityScores.setWisdom(AbilityScores.getWisdom() + 1);
 		AbilityScores.setCharisma(AbilityScores.getCharisma() + 1);
 		this.setProficiency(new Proficiency("race"));
-		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage(this.getProficiency().RandomLanguage()));
 	}
 
 	public void DragonborneModifiers(String subrace) {
 		AbilityScores.setStrength(AbilityScores.getStrength() + 2);
 		AbilityScores.setCharisma(AbilityScores.getCharisma() + 1);
 		this.setProficiency(new Proficiency("race"));
-		this.getProficiency().getLanguage().add("Draconic");
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Draconic"));
 	}
 
 	public void GnomeModifiers(String subrace) {
 		AbilityScores.setIntelligence(AbilityScores.getIntelligence() + 2);
 		this.setProficiency(new Proficiency("race"));
-		this.getProficiency().getLanguage().add("Gnomish");
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Gnomish"));
 		if (subrace == "Forest Gnome") {
 			AbilityScores.setDexterity(AbilityScores.getDexterity() + 1);
 			this.getRacialTraits().add("Natural Illusionist");
@@ -203,8 +203,8 @@ public class Race implements CommonMethods {
 			AbilityScores.RandomIncrease1HalfElf();
 			AbilityScores.RandomIncrease1HalfElf();
 			this.setProficiency(new Proficiency("race"));
-			this.getProficiency().getLanguage().add("Elvish");
-			this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
+			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Elvish"));
+			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage(this.getProficiency().RandomLanguage()));
 			Skill skill = new Skill();
 			skill.RandomSkill();
 			this.getProficiency().setSkill(new ArrayList<>());
@@ -215,7 +215,7 @@ public class Race implements CommonMethods {
 			AbilityScores.setStrength(AbilityScores.getStrength() + 2);
 			AbilityScores.setConstitution(AbilityScores.getConstitution() + 1);
 			this.setProficiency(new Proficiency("race"));
-			this.getProficiency().getLanguage().add("Orc");
+			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Orc"));
 		}
 
 	public void TieflingModifiers() {
@@ -223,7 +223,7 @@ public class Race implements CommonMethods {
 			AbilityScores.setIntelligence(AbilityScores.getIntelligence() + 1);
 			AbilityScores.setCharisma(AbilityScores.getCharisma() + 2);
 			this.setProficiency(new Proficiency("race"));
-			this.getProficiency().getLanguage().add("Infernal");
+			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Infernal"));
 		}
 
 	public String getName() {

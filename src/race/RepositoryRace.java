@@ -15,7 +15,7 @@ public class RepositoryRace {
 
 	}
 
-	private static RepositoryRace Dwarf() {
+	public static RepositoryRace Dwarf() {
 		RepositoryRace dwarf = new RepositoryRace();
 
 		dwarf.setName("Dwarf");
@@ -35,7 +35,7 @@ public class RepositoryRace {
 		return dwarf;
 	}
 
-	private static RepositoryRace Elf() {
+	public static RepositoryRace Elf() {
 		RepositoryRace elf = new RepositoryRace();
 
 		elf.setName("Elf");
@@ -57,7 +57,7 @@ public class RepositoryRace {
 		return elf;
 	}
 
-	private static RepositoryRace Halfling() {
+	public static RepositoryRace Halfling() {
 		RepositoryRace halfling = new RepositoryRace();
 
 		halfling.setName("Halfling");
@@ -77,7 +77,7 @@ public class RepositoryRace {
 		return halfling;
 	}
 
-	private static RepositoryRace Human() {
+	public static RepositoryRace Human() {
 		RepositoryRace human = new RepositoryRace();
 
 		human.setName("Human");
@@ -94,7 +94,7 @@ public class RepositoryRace {
 		return human;
 	}
 
-	private static RepositoryRace Dragonborne() {
+	public static RepositoryRace Dragonborne() {
 		RepositoryRace dragonborne = new RepositoryRace();
 
 		dragonborne.setName("Dragonborne");
@@ -121,7 +121,7 @@ public class RepositoryRace {
 		return dragonborne;
 	}
 	
-	private static RepositoryRace Gnome() {
+	public static RepositoryRace Gnome() {
 		RepositoryRace gnome = new RepositoryRace();
 
 		gnome.setName("Gnome");
@@ -140,7 +140,7 @@ public class RepositoryRace {
 		return gnome;
 	}
 	
-	private static RepositoryRace HalfElf() {
+	public static RepositoryRace HalfElf() {
 		RepositoryRace halfElf = new RepositoryRace();
 
 		halfElf.setName("Half-Elf");
@@ -159,7 +159,7 @@ public class RepositoryRace {
 		return halfElf;
 	}
 	
-	private static RepositoryRace HalfOrc() {
+	public static RepositoryRace HalfOrc() {
 		RepositoryRace halfOrc = new RepositoryRace();
 
 		halfOrc.setName("Half-Orc");
@@ -179,7 +179,7 @@ public class RepositoryRace {
 		return halfOrc;
 	}
 	
-	private static RepositoryRace Tiefling() {
+	public static RepositoryRace Tiefling() {
 		RepositoryRace tiefling = new RepositoryRace();
 
 		tiefling.setName("Tiefling");

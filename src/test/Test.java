@@ -1,16 +1,9 @@
 package test;
 
-import java.util.ArrayList;
-
 import character.AbilityScores;
 import character.PlayerCharacter;
-import proficiency.Language;
-import proficiency.Skill;
-import race.Race;
-import race.RepositoryRace;
 
 public class Test {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -38,9 +31,7 @@ public class Test {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
-		
+		}		
 	}
+	
 }

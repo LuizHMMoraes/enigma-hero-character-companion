@@ -16,6 +16,9 @@ public class Proficiency implements CommonMethods {
 	private ArrayList<Skill> skill;
 	
 	//
+	public Proficiency() {
+		
+	}
 	
 	public Proficiency(String name) {
 		
@@ -25,8 +28,7 @@ public class Proficiency implements CommonMethods {
 			for (int i = 1; i <= AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getIntelligence()); i++) {
 				this.language.add((RandomLanguage()));
 			} 
-		}
-		
+		}	
 	}
 	
 	@Override
@@ -36,8 +38,19 @@ public class Proficiency implements CommonMethods {
 	
 	public String RandomLanguage() {
 		Language lang = new Language();
-		//Lógica de verificação para idiomas já conhecidos
-		return lang.getName().get(Random(lang.getName().size()));		
+		String name;
+		do {
+			name = lang.getName().get(Random(lang.getName().size()));
+		} while (this.getLanguage().contains(name));
+		return name;
+	}
+	
+	public String CheckLanguage(String language) {	
+		Language randomLanguage = new Language();
+		while (this.getLanguage().contains(language)) {		
+			language = randomLanguage.getName().get(Random(randomLanguage.getName().size()));
+		}
+		return language;
 	}
 
 	public boolean AddSkill(Skill skill) {
