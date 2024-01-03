@@ -15,32 +15,19 @@ public class AbilityScores implements CommonMethods {
 
 	@Override
 	public int Random(double number) {
-
-		 int res = (int) (Math.random() * number +1);
-		if (number < 1) {
-			return 1;
-		} else if (number > 6) {
-			return 6;
-		} else return res;
+		return (int) Math.ceil(Math.random() * number);
 	}
 
-	private int RandomAbilityScore() {
-		int abilityScore = 0;
-		int lesserValue = 6;
-		int roll = 0;
-		for (int i = 0; i <= 3; i++) {
-			roll = Random(6);
-			if (roll <= lesserValue) {
-				lesserValue = roll;
-			}
-			abilityScore += roll;
-		}
-		abilityScore = abilityScore - lesserValue;
-		if (abilityScore > 18) {
-			return 18;
-		} else {
-			return abilityScore;
-		}
+	public int RandomAbilityScore() {
+		int abilityScore = Random(6);
+		int lesserValue = abilityScore;
+		
+		for (int i = 0; i < 3; i++) {
+	        int roll = Random(6);
+	        abilityScore += roll;
+	        lesserValue = roll<lesserValue?roll:lesserValue;
+	    }
+	    return abilityScore - lesserValue;
 	}
 
 	private void GenerateAbilityScores() {
@@ -53,16 +40,11 @@ public class AbilityScores implements CommonMethods {
 	}
 
 	public static int CalculateAbilityScoreModifier(int ability) {
-		return (ability - 10) / 2;
+		return (int) Math.floor((ability - 10) / 2.0);
 	}
 
 	public static void RandomIncrease2() {
-		int number = (int) (Math.random() * 6 +1);
-		if (number < 1) {
-			number = 1;
-		} else if (number > 6) {
-			number = 6;
-		}
+		int number = (int) Math.ceil(Math.random() * 6);
 		
 		switch (number) {
 		case 1:
@@ -87,12 +69,7 @@ public class AbilityScores implements CommonMethods {
 	}
 	
 	public static void RandomIncrease1() {
-		int number = (int) (Math.random() * 6 +1);
-		if (number < 1) {
-			number = 1;
-		} else if (number > 6) {
-			number = 6;
-		}
+		int number = (int) Math.ceil(Math.random() * 6);
 		
 		switch (number) {
 		case 1:
@@ -117,12 +94,7 @@ public class AbilityScores implements CommonMethods {
 	}
 	
 	public static void RandomIncrease1HalfElf() {
-		int number = (int) (Math.random() * 5 +1);
-		if (number < 1) {
-			number = 1;
-		} else if (number > 5) {
-			number = 5;
-		}
+		int number = (int) Math.ceil(Math.random() * 5);
 		
 		switch (number) {
 		case 1:
