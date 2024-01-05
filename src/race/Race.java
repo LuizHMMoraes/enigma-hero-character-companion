@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import character.AbilityScores;
 import character.CommonMethods;
 import proficiency.Proficiency;
-import proficiency.Skill;
 
 public class Race implements CommonMethods {
 
@@ -103,8 +102,6 @@ public class Race implements CommonMethods {
 		this.getProficiency().getWeapon().add("Handaxe");
 		this.getProficiency().getWeapon().add("Throwing Hammer");
 		this.getProficiency().getWeapon().add("Warhammer");
-		this.getProficiency().setTool(new ArrayList<>());
-		this.getProficiency().getTool().add("Smith's Tools");
 		if (subrace == "Hill Dwarf") {
 			AbilityScores.setWisdom(AbilityScores.getWisdom() + 1);
 			this.getRacialTraits().add("Dwarven Toughness");
@@ -205,10 +202,8 @@ public class Race implements CommonMethods {
 			this.setProficiency(new Proficiency("race"));
 			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Elvish"));
 			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage(this.getProficiency().RandomLanguage()));
-			Skill skill = new Skill();
-			skill.RandomSkill();
 			this.getProficiency().setSkill(new ArrayList<>());
-			this.getProficiency().AddSkill(skill);
+			this.getProficiency().AddSkill(getProficiency().RandomSkill());
 	}
 
 	public void HalfOrcModifiers() {

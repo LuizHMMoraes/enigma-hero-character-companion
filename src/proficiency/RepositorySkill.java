@@ -7,51 +7,138 @@ public class RepositorySkill {
 	private String ability;
 	
 	//
+	public RepositorySkill() {
+		
+	}
 	
 	public RepositorySkill(String name, String ability) {
 		this.name = name;
 		this.ability = ability;
 	}
 	
-	public static ArrayList<RepositorySkill> RepositorySkillList() {
+	@Override
+	public boolean equals(Object o) {
+	    if (o == this)
+	        return true;
+	    if (!(o instanceof RepositorySkill))
+	        return false;
+	    RepositorySkill other = (RepositorySkill)o;
+	    boolean currencyCodeEquals = (this.name == null && other.name == null)
+	      || (this.name != null && this.name.equals(other.name));
+	    return this.ability == other.ability && currencyCodeEquals;
+	}
+	
+	public ArrayList<RepositorySkill> RepositorySkillList() {
 		ArrayList<RepositorySkill> skillList = new ArrayList<>();
-		RepositorySkill acrobatics = new RepositorySkill("Acrobatics", "Dexterity");
-		skillList.add(acrobatics);
-		RepositorySkill animalHandling = new RepositorySkill("Animal Handling", "Wisdom");
-		skillList.add(animalHandling);
-		RepositorySkill arcana = new RepositorySkill("Arcana", "Intelligence");
-		skillList.add(arcana);
-		RepositorySkill athletics = new RepositorySkill("Athletics", "Strength");
-		skillList.add(athletics);
-		RepositorySkill deception = new RepositorySkill("Deception", "Dexterity");
-		skillList.add(deception);
-		RepositorySkill history = new RepositorySkill("History", "Intelligence");
-		skillList.add(history);
-		RepositorySkill insight = new RepositorySkill("Inssight", "Wisdom");
-		skillList.add(insight);
-		RepositorySkill intimidation = new RepositorySkill("Intimidation", "Charisma");
-		skillList.add(intimidation);
-		RepositorySkill investigation = new RepositorySkill("Investigation", "Intelligence");
-		skillList.add(investigation);
-		RepositorySkill medicine = new RepositorySkill("Medicine", "Wisdom");
-		skillList.add(medicine);
-		RepositorySkill nature = new RepositorySkill("Nature", "Intelligence");
-		skillList.add(nature);
-		RepositorySkill perception = new RepositorySkill("Perception", "Wisdom");
-		skillList.add(perception);
-		RepositorySkill performance = new RepositorySkill("Performance", "Charisma");
-		skillList.add(performance);
-		RepositorySkill persuasion = new RepositorySkill("Persuasion", "Charisma");
-		skillList.add(persuasion);
-		RepositorySkill religion = new RepositorySkill("Religion", "Intelligence");
-		skillList.add(religion);
-		RepositorySkill sleightOfHand = new RepositorySkill("Sleight of Hand", "Dexterity");
-		skillList.add(sleightOfHand);
-		RepositorySkill stealth = new RepositorySkill("Stealth", "Dexterity");
-		skillList.add(stealth);
-		RepositorySkill survival = new RepositorySkill("Survival", "Wisdom");
-		skillList.add(survival);
+		skillList.add(Acrobatics());
+		skillList.add(AnimalHandling());
+		skillList.add(Arcana());
+		skillList.add(Athletics());
+		skillList.add(Deception());
+		skillList.add(History());
+		skillList.add(Insight());
+		skillList.add(Intimidation());
+		skillList.add(Investigation());
+		skillList.add(Medicine());
+		skillList.add(Nature());
+		skillList.add(Perception());
+		skillList.add(Performance());
+		skillList.add(Persuasion());
+		skillList.add(Religion());
+		skillList.add(SleightOfHand());
+		skillList.add(Stealth());
+		skillList.add(Survival());
 		return skillList;
+	}
+	
+	public RepositorySkill Acrobatics() {
+		RepositorySkill acrobatics = new RepositorySkill("Acrobatics", "Dexterity");
+		return acrobatics;
+	}
+	
+	public RepositorySkill AnimalHandling() {
+		RepositorySkill animalHandling = new RepositorySkill("Animal Handling", "Wisdom");
+		return animalHandling;
+	}
+	
+	public RepositorySkill Arcana() {
+		RepositorySkill arcana = new RepositorySkill("Arcana", "Intelligence");
+		return arcana;
+	}
+	
+	public RepositorySkill Athletics() {
+		RepositorySkill athletics = new RepositorySkill("Athletics", "Strength");
+		return athletics;
+	}
+	
+	public RepositorySkill Deception() {
+		RepositorySkill deception = new RepositorySkill("Deception", "Dexterity");
+		return deception;
+	}
+	
+	public RepositorySkill History() {
+		RepositorySkill history = new RepositorySkill("History", "Intelligence");
+		return history;
+	}
+	
+	public RepositorySkill Insight() {
+		RepositorySkill insight = new RepositorySkill("Insight", "Wisdom");
+		return insight;
+	}
+	
+	public RepositorySkill Intimidation() {
+		RepositorySkill intimidation = new RepositorySkill("Intimidation", "Charisma");
+		return intimidation;
+	}
+	
+	public RepositorySkill Investigation() {
+		RepositorySkill investigation = new RepositorySkill("Investigation", "Intelligence");
+		return investigation;
+	}
+	
+	public RepositorySkill Medicine() {
+		RepositorySkill medicine = new RepositorySkill("Medicine", "Wisdom");
+		return medicine;
+	}
+	
+	public RepositorySkill Nature() {
+		RepositorySkill nature = new RepositorySkill("Nature", "Intelligence");
+		return nature;
+	}
+	
+	public RepositorySkill Perception() {
+		RepositorySkill perception = new RepositorySkill("Perception", "Wisdom");
+		return perception;
+	}
+	
+	public RepositorySkill Performance() {
+		RepositorySkill performance = new RepositorySkill("Performance", "Charisma");
+		return performance;
+	}
+	
+	public RepositorySkill Persuasion() {
+		RepositorySkill persuasion = new RepositorySkill("Persuasion", "Charisma");
+		return persuasion;
+	}
+	
+	public RepositorySkill Religion() {
+		RepositorySkill religion = new RepositorySkill("Religion", "Intelligence");
+		return religion;
+	}
+	
+	public RepositorySkill SleightOfHand() {
+		RepositorySkill sleightOfHand = new RepositorySkill("Sleight of Hand", "Dexterity");
+		return sleightOfHand;
+	}
+	
+	public RepositorySkill Stealth() {
+		RepositorySkill stealth = new RepositorySkill("Stealth", "Dexterity");
+		return stealth;
+	}
+	
+	public RepositorySkill Survival() {
+		RepositorySkill survival = new RepositorySkill("Survival", "Wisdom");
+		return survival;
 	}
 
 	public String getName() {

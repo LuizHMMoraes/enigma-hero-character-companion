@@ -11,9 +11,8 @@ public class Proficiency implements CommonMethods {
 	private ArrayList<String> weapon;
 	private ArrayList<String> armor;
 	private boolean shield;
-	private ArrayList<String> tool;
 	private ArrayList<String> language;
-	private ArrayList<Skill> skill;
+	private ArrayList<RepositorySkill> skill;
 	
 	//
 	public Proficiency() {
@@ -23,12 +22,14 @@ public class Proficiency implements CommonMethods {
 	public Proficiency(String name) {
 		
 		if (name == "race") {
-			this.language = new ArrayList<>();
-			this.language.add("Common");
+			this.setLanguage(new ArrayList<>());
+			this.getLanguage().add("Common");
 			for (int i = 1; i <= AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getIntelligence()); i++) {
-				this.language.add((RandomLanguage()));
+				this.getLanguage().add((RandomLanguage()));
 			} 
-		}	
+		} else if (name == "background") {
+			this.setSkill(new ArrayList<>());
+		}
 	}
 	
 	@Override
@@ -53,12 +54,22 @@ public class Proficiency implements CommonMethods {
 		return language;
 	}
 
-	public boolean AddSkill(Skill skill) {
-		ArrayList<Skill> toAdd = new ArrayList<>();
-		toAdd.add(skill);
-		return this.getSkill().addAll(toAdd);
+	public void AddSkill(RepositorySkill skill) {
+		this.getSkill().add(CheckSkill(skill));
 	}
 	
+	public RepositorySkill RandomSkill() {
+		RepositorySkill skill = new RepositorySkill();
+		skill = skill.RepositorySkillList().get(Random(skill.RepositorySkillList().size()));
+		return skill;
+	}
+	
+	public RepositorySkill CheckSkill(RepositorySkill skill) {
+		while (this.getSkill().contains(skill)) {
+			skill = this.RandomSkill();
+		}
+		return skill;
+	}
 	public ArrayList<String> getSavingThrow() {
 		return savingThrow;
 	}
@@ -91,14 +102,6 @@ public class Proficiency implements CommonMethods {
 		this.shield = shield;
 	}
 
-	public ArrayList<String> getTool() {
-		return tool;
-	}
-
-	public void setTool(ArrayList<String> tool) {
-		this.tool = tool;
-	}
-
 	public ArrayList<String> getLanguage() {
 		return language;
 	}
@@ -107,11 +110,11 @@ public class Proficiency implements CommonMethods {
 		this.language = language;
 	}
 
-	public ArrayList<Skill> getSkill() {
+	public ArrayList<RepositorySkill> getSkill() {
 		return skill;
 	}
 
-	public void setSkill(ArrayList<Skill> skill) {
+	public void setSkill(ArrayList<RepositorySkill> skill) {
 		this.skill = skill;
 	}
 	
