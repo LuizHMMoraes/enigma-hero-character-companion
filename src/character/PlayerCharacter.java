@@ -1,5 +1,6 @@
 package character;
 
+import background.Background;
 import race.Race;
 
 public class PlayerCharacter implements CommonMethods {
@@ -12,15 +13,13 @@ public class PlayerCharacter implements CommonMethods {
 	//private String alignment;
 	//private int acBonus;
 	//private int attackBonus;
-	//private String personalityTraits;
-	//private String ideals;
-	//private String bonds;
-	//private String flaws;
 
 	@SuppressWarnings("unused")
 	private AbilityScores abilityScores;
 
 	private Race race;
+	
+	private Background background;
 
 	//
 
@@ -35,9 +34,12 @@ public class PlayerCharacter implements CommonMethods {
 
 		this.abilityScores = new AbilityScores();
 
-		race = new Race();
-		race.RandomRace();
-		race.ApplyRaceModifiers(race.getName());
+		this.race = new Race();
+		this.race.RandomRace();
+		this.race.ApplyRaceModifiers(race.getName());
+		
+		this.background = new Background().RandomBackground();
+		this.background.ApplyBackground(background.getName());
 
 	}
 
@@ -78,6 +80,14 @@ public class PlayerCharacter implements CommonMethods {
 
 	public void setRace(Race race) {
 		this.race = race;
+	}
+
+	public Background getBackground() {
+		return background;
+	}
+
+	public void setBackground(Background background) {
+		this.background = background;
 	}
 
 }

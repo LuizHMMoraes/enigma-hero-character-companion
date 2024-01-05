@@ -11,9 +11,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import background.Background;
+import background.RepositoryBackground;
 import character.AbilityScores;
 import proficiency.Proficiency;
-import proficiency.Skill;
+import proficiency.RepositorySkill;
 import race.Race;
 import race.RepositoryRace;
 
@@ -143,15 +145,6 @@ class EHTest {
         	assertFalse(languages[i].equals(languages[i+1]));
         }
     }
-
-    @Test
-    void testAddSkill() {
-        Proficiency proficiency = new Proficiency();
-        proficiency.setSkill(new ArrayList<>());
-        Skill skill = new Skill();
-        skill.RandomSkill();
-        assertTrue(proficiency.AddSkill(skill));
-    }
     
     @Test
     void testCheckLanguage() {
@@ -161,4 +154,59 @@ class EHTest {
     	boolean res = proficiency.CheckLanguage("Orc").equals("Orc");
     	assertFalse(res);
     }
+
+    @Test
+    void testAddSkill() {
+        Proficiency proficiency = new Proficiency();
+        proficiency.setSkill(new ArrayList<>());
+        proficiency.AddSkill(new RepositorySkill().Acrobatics());
+        assertTrue(proficiency.getSkill().get(0).getName().contains("Acrobatics"));
+    }
+    
+   @Test
+   void testRandomSkill() {
+	   Proficiency proficiency = new Proficiency();
+       proficiency.setSkill(new ArrayList<>());
+       proficiency.getSkill().add(proficiency.RandomSkill());
+       assertNotNull(proficiency.getSkill().get(0));
+   }
+   
+   @Test 
+   void testCheckSkill(){
+	   Proficiency proficiency = new Proficiency();
+       proficiency.setSkill(new ArrayList<>());
+       proficiency.getSkill().add(proficiency.CheckSkill(new RepositorySkill().Acrobatics()));
+       proficiency.getSkill().add(proficiency.CheckSkill(new RepositorySkill().Acrobatics()));
+       assertFalse(proficiency.getSkill().get(0).getName().equals(proficiency.getSkill().get(1).getName()));
+   }
+   
+   //CLASSE --> Background <--
+   @Test
+   void testRandomBackground() {
+	   Background background = new Background().RandomBackground();
+	   assertNotNull(background.getName());
+	   assertNotNull(background.getFeature());
+	   assertNotNull(background.getEquipment());
+	   assertNotNull(background.getPersonalityTraits());
+	   assertNotNull(background.getIdeals());
+	   assertNotNull(background.getBonds());
+	   assertNotNull(background.getFlaws());
+	   assertNotNull(background.getProficiency());
+   }
+   
+   @Test
+   void testApplyBackground() {
+	   Background background = new Background();
+	   background.setProficiency(new Proficiency("background"));
+	   background.ApplyBackground("Charlatan");
+	   assertTrue(background.getProficiency().getSkill().get(0).getName().equals("Deception"));
+	   assertTrue(background.getProficiency().getSkill().get(1).getName().equals("Sleight of Hand"));
+   }
+   
+   //CLASSE --> RespositoryBackground <--
+   @Test
+   void testBackgroundList() {
+	   RepositoryBackground repoBack = new RepositoryBackground().BackgroundList().get(0);
+	   assertTrue(repoBack.getName().equals("Acolyte"), "Should return true. Index 0 of the list contains 'Acolyte'");
+   }
 }

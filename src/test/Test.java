@@ -1,7 +1,13 @@
 package test;
 
+import java.util.ArrayList;
+
+import background.Background;
+import background.RepositoryBackground;
 import character.AbilityScores;
 import character.PlayerCharacter;
+import proficiency.Proficiency;
+import proficiency.RepositorySkill;
 
 public class Test {
 	public static void main(String[] args) {
@@ -22,7 +28,7 @@ public class Test {
 		
 		System.out.println(pc1.getRace().getProficiency().getLanguage());
 		try {
-			System.out.println(pc1.getRace().getProficiency().getSkill().get(0).getName());
+		//	System.out.println(pc1.getRace().getProficiency().getSkill().get(0).getSkill().getName());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -32,6 +38,15 @@ public class Test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
-	}
-	
+		System.out.println(pc1.getBackground().getName());
+		System.out.println(pc1.getBackground().getFlaws());
+		
+		System.out.println(pc1.getBackground().getProficiency().getSkill().get(0).getName());
+		System.out.println(pc1.getBackground().getProficiency().getSkill().get(1).getName());
+		Background back = new Background().RandomBackground();
+		back.ApplyBackground(back.getName());
+		System.out.println(back.getProficiency().getSkill().get(0).getName());
+		
+		
+		}	
 }
