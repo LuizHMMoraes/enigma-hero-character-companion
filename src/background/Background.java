@@ -98,8 +98,8 @@ public class Background implements CommonMethods {
 		this.getProficiency().AddSkill(new RepositorySkill().Insight());
 		this.getProficiency().AddSkill(new RepositorySkill().Religion());
 		this.getProficiency().setLanguage(new ArrayList<>());
-		this.getProficiency().RandomLanguage();
-		this.getProficiency().RandomLanguage();
+		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
+		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage((this.getProficiency().RandomLanguage())));
 	}
 	
 	public void CharlatanModifiers() {
@@ -126,35 +126,35 @@ public class Background implements CommonMethods {
 		this.getProficiency().AddSkill(new RepositorySkill().Insight());
 		this.getProficiency().AddSkill(new RepositorySkill().Persuasion());
 		this.getProficiency().setLanguage(new ArrayList<>());
-		this.getProficiency().RandomLanguage();
+		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 	
 	public void HermitModifiers() {
 		this.getProficiency().AddSkill(new RepositorySkill().Medicine());
 		this.getProficiency().AddSkill(new RepositorySkill().Religion());
 		this.getProficiency().setLanguage(new ArrayList<>());
-		this.getProficiency().RandomLanguage();
+		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 	
 	public void NobleModifiers() {
 		this.getProficiency().AddSkill(new RepositorySkill().History());
 		this.getProficiency().AddSkill(new RepositorySkill().Persuasion());
 		this.getProficiency().setLanguage(new ArrayList<>());
-		this.getProficiency().RandomLanguage();
+		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 	
 	public void OutlanderModifiers() {
 		this.getProficiency().AddSkill(new RepositorySkill().Athletics());
 		this.getProficiency().AddSkill(new RepositorySkill().Survival());
 		this.getProficiency().setLanguage(new ArrayList<>());
-		this.getProficiency().RandomLanguage();
+		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 	
 	public void SageModifiers() {
 		this.getProficiency().AddSkill(new RepositorySkill().Arcana());
 		this.getProficiency().AddSkill(new RepositorySkill().History());
 		this.getProficiency().setLanguage(new ArrayList<>());
-		this.getProficiency().RandomLanguage();
+		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 	
 	public void SailorModifiers() {

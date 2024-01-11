@@ -203,7 +203,7 @@ public class Race implements CommonMethods {
 			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Elvish"));
 			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage(this.getProficiency().RandomLanguage()));
 			this.getProficiency().setSkill(new ArrayList<>());
-			this.getProficiency().AddSkill(getProficiency().RandomSkill());
+			this.getProficiency().getSkill().add(getProficiency().RandomSkill());
 	}
 
 	public void HalfOrcModifiers() {

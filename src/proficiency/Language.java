@@ -34,31 +34,6 @@ public class Language {
 				this.name.add("Undercommon");
 	}
 
-	public ArrayList<String> LanguageList() {
-				
-		//standard languages
-		name.add("Common");
-		name.add("Dwarvish");
-		name.add("Elvish");
-		name.add("Giant");
-		name.add("Gnomish");
-		name.add("Goblin");
-		name.add("Halfling");
-		name.add("Orc");
-		
-		//exotic languages
-		name.add("Abyssal");
-		name.add("Celestial");
-		name.add("Draconic");
-		name.add("Deep Speech");
-		name.add("Infernal");
-		name.add("Primordial");
-		name.add("Sylvan");
-		name.add("Undercommon");
-		
-		return (name);
-	}
-
 	public ArrayList<String> getName() {
 		return name;
 	}

@@ -38,10 +38,10 @@ public class Proficiency implements CommonMethods {
 	}
 	
 	public String RandomLanguage() {
-		Language lang = new Language();
+		Language language = new Language();
 		String name;
 		do {
-			name = lang.getName().get(Random(lang.getName().size()));
+			name = language.getName().get(Random(language.getName().size()));
 		} while (this.getLanguage().contains(name));
 		return name;
 	}
@@ -94,7 +94,7 @@ public class Proficiency implements CommonMethods {
 		this.armor = armor;
 	}
 
-	public boolean isShield() {
+	public boolean getShield() {
 		return shield;
 	}
 

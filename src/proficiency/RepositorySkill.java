@@ -6,6 +6,7 @@ public class RepositorySkill {
 	private String name;
 	private String ability;
 	
+	
 	//
 	public RepositorySkill() {
 		
@@ -17,16 +18,18 @@ public class RepositorySkill {
 	}
 	
 	@Override
-	public boolean equals(Object o) {
-	    if (o == this)
-	        return true;
-	    if (!(o instanceof RepositorySkill))
-	        return false;
-	    RepositorySkill other = (RepositorySkill)o;
-	    boolean currencyCodeEquals = (this.name == null && other.name == null)
-	      || (this.name != null && this.name.equals(other.name));
-	    return this.ability == other.ability && currencyCodeEquals;
-	}
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof RepositorySkill))
+            return false;
+        RepositorySkill other = (RepositorySkill) o;
+        boolean valueEquals = (this.name == null && other.name == null)
+          || (this.name != null && this.name.equals(other.name));
+        boolean storeEquals = (this.ability == null && other.ability == null)
+          || (this.ability != null && this.ability.equals(other.ability));
+        return valueEquals && storeEquals;
+    }
 	
 	public ArrayList<RepositorySkill> RepositorySkillList() {
 		ArrayList<RepositorySkill> skillList = new ArrayList<>();
@@ -155,7 +158,5 @@ public class RepositorySkill {
 
 	public void setAbility(String ability) {
 		this.ability = ability;
-	}
-	
-	
+	}	
 }

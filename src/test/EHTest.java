@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import background.Background;
 import background.RepositoryBackground;
 import character.AbilityScores;
+import character.PlayerCharacter;
 import proficiency.Proficiency;
 import proficiency.RepositorySkill;
 import race.Race;
@@ -203,10 +204,87 @@ class EHTest {
 	   assertTrue(background.getProficiency().getSkill().get(1).getName().equals("Sleight of Hand"));
    }
    
-   //CLASSE --> RespositoryBackground <--
+   //CLASSE --> RespositoryBackground <--   
    @Test
    void testBackgroundList() {
 	   RepositoryBackground repoBack = new RepositoryBackground().BackgroundList().get(0);
 	   assertTrue(repoBack.getName().equals("Acolyte"), "Should return true. Index 0 of the list contains 'Acolyte'");
+   }
+   
+   //CLASSE --> PlayerCharacter <--
+   @Test
+   void testRandomAlignment() {
+	   PlayerCharacter playerCharacter = new PlayerCharacter();
+	   playerCharacter.RandomAlignment("evil");
+	   assertNotNull(playerCharacter.getAlignment());
+   }
+   
+   @Test
+   void testVerifyDuplicates() {
+	   //seria tão mais fácil mudar os parâmetros de entrada do método...
+	  
+	   Background background = new Background();
+	   background.setProficiency(new Proficiency());
+	   background.getProficiency().setLanguage(new ArrayList<>());
+	   background.getProficiency().getLanguage().add("Common");
+	   background.getProficiency().setSkill(new ArrayList<>());
+	   RepositorySkill skillBackground = new RepositorySkill().Acrobatics();
+	   background.getProficiency().getSkill().add(skillBackground);
+	   
+	   Race race = new Race();
+	   race.setProficiency(new Proficiency());
+	   race.getProficiency().setLanguage(new ArrayList<>());
+	   race.getProficiency().getLanguage().add("Common");
+	   race.getProficiency().setSkill(new ArrayList<>());
+	   RepositorySkill skillRace = new RepositorySkill().Acrobatics();
+	   race.getProficiency().getSkill().add(skillRace);
+	   
+	   PlayerCharacter playerCharacter = new PlayerCharacter();
+	   playerCharacter.setBackground(background);
+	   playerCharacter.setRace(race);
+	   playerCharacter.setProficiency(playerCharacter.VerifyDuplicates());
+	   
+	   assertFalse(playerCharacter.getProficiency().getLanguage().get(0).equals(playerCharacter.getProficiency().getLanguage().get(1)),
+			   "Should return True");
+	   assertFalse(playerCharacter.getProficiency().getSkill().get(0).getName().equals(playerCharacter.getProficiency().getSkill().get(1).getName()),
+			   "Should return True");
+   }
+   
+   @Test
+   void testProficiencyList() {
+	   //precisa das classes de personagem
+   }
+   
+   @Test
+   void testApplySkillProficiencyBonus() {
+	   PlayerCharacter playerCharacter = new PlayerCharacter();
+	   playerCharacter.setProficiency(new Proficiency());
+	   playerCharacter.getProficiency().setSkill(new ArrayList<>());
+	   playerCharacter.getProficiency().getSkill().add(new RepositorySkill().Athletics());
+	   playerCharacter.setProficienyBonus(5);
+	   
+	   assertEquals(5, playerCharacter.ApplySkillProficiencyBonus("Athletics"));
+	   assertEquals(0, playerCharacter.ApplySkillProficiencyBonus("Deception"));
+   }
+   
+   @Test
+   void testApplySavingThrowProficiencyBonus() {
+	   //precisa das classes de personagem
+   }
+   
+   @Test
+   void testApplyExperiencePoints() {
+	   PlayerCharacter playerCharacter = new PlayerCharacter();
+	   playerCharacter.ApplyExperiencePoints(1);
+	   assertEquals(0, playerCharacter.getExperience());
+	   playerCharacter.ApplyExperiencePoints(20);
+	   assertEquals(355000, playerCharacter.getExperience());	   
+   }
+   
+   @Test 
+   void testApplyProficiencyBonus() {
+	   PlayerCharacter playerCharacter = new PlayerCharacter();
+	   playerCharacter.ApplyProficiencyBonus(5);
+	   assertEquals(3, playerCharacter.getProficienyBonus(), "At level 5 the proficiency bônus should be 3");
    }
 }

@@ -113,7 +113,7 @@ public class RepositoryBackground {
 		RepositoryBackground charlatan = new RepositoryBackground();
 		charlatan.setName("Charlatan");
 		charlatan.setFeature("False Identity");
-		charlatan.setEquipment("set of fine clothes, a disguise kit, tools\r\n"
+		charlatan.setEquipment("A set of fine clothes, a disguise kit, tools\r\n"
 				+ "of the con of your choice (ten stoppered bottles filled\r\n"
 				+ "with colored liquid, a set of weighted dice, a deck of\r\n"
 				+ "marked cards, or a signet ring of an imaginary duke),\r\n"
@@ -768,7 +768,7 @@ public class RepositoryBackground {
 		soldier.setName("Soldier");
 		soldier.setFeature("Military Rank");
 		soldier.setEquipment("An insignia of rank, a trophy taken from\r\n"
-				+ "a fallen enemy (a dagger, broken blade, or piece o f a\r\n"
+				+ "a fallen enemy (a dagger, broken blade, or piece of a\r\n"
 				+ "banner), a set of bone dice or deck of cards, a set of\r\n"
 				+ "common clothes, and a belt pouch containing 10 gp");
 		soldier.setPersonalityTraits(new ArrayList<>());
@@ -777,7 +777,7 @@ public class RepositoryBackground {
 		soldier.setFlaws(new ArrayList<>());
 		
 		soldier.getPersonalityTraits().add("I'm always polite and respectful.");
-		soldier.getPersonalityTraits().add("I’m haunted by memories o f war. I can’t get the images\r\n"
+		soldier.getPersonalityTraits().add("I’m haunted by memories of war. I can’t get the images\r\n"
 				+ "of violence out of my mind.");
 		soldier.getPersonalityTraits().add("I’ve lost too many friends, and I’m slow to make new\r\n"
 				+ "ones.");

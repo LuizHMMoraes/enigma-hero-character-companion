@@ -63,7 +63,7 @@ public class RepositoryRace {
 		halfling.setName("Halfling");
 		halfling.setSpeed(7.5);
 		halfling.setSize("Small");
-		halfling.setAlignment("good order");
+		halfling.setAlignment("good");
 		halfling.setRacialTraits(new ArrayList<>());
 		halfling.setSubrace(new ArrayList<>());
 
@@ -185,7 +185,7 @@ public class RepositoryRace {
 		tiefling.setName("Tiefling");
 		tiefling.setSpeed(9.0);
 		tiefling.setSize("Medium");
-		tiefling.setAlignment("caotic");
+		tiefling.setAlignment("evil");
 		tiefling.setRacialTraits(new ArrayList<>());
 		tiefling.setSubrace(new ArrayList<>());
 
