@@ -9,7 +9,7 @@ public class Druid extends Classes {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomSpecialization(int level) {
+    public static String getRandomSpecialization(int level) {
         if (level < 2) {
             return "";
         }
@@ -20,11 +20,11 @@ public class Druid extends Classes {
         }
     }
     
-    static List<String> getRandomAbilities() {
+    public static List<String> getRandomAbilities() {
         return List.of(Druid.Abilities);
     }
     
-    static int calculateRandomHitPoints(int level) {
+    public static int calculateRandomHitPoints(int level) {
         Random random = new Random();
         int additionalHitPoints = 0;
     

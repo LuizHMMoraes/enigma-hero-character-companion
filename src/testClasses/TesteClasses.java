@@ -1,4 +1,4 @@
-package testeClasses;
+package testClasses;
 
 import classes.Classes;
 

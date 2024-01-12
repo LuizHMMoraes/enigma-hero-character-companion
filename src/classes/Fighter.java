@@ -3,39 +3,34 @@ package classes;
 import java.util.List;
 import java.util.Random;
 
-public class Ranger extends Classes {
+public class Fighter extends Classes {
 
-    public Ranger(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
+    public Fighter(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomFightingStyle(int level) {
-        if (level < 2) {
-            return "";
-        }
-        else {
-            Random random = new Random();
-            int index = random.nextInt(Ranger.FightingStyle.length);
-            return Ranger.FightingStyle[index];
-        }
+    public static String getRandomFightingStyle() {
+        Random random = new Random();
+        int index = random.nextInt(Fighter.FightingStyle.length);
+        return Fighter.FightingStyle[index];
     }
 
-    static String getRandomSpecialization(int level) {
+    public static String getRandomSpecialization(int level) {
         if (level < 3) {
             return "";
         }
         else {
             Random random = new Random();
-            int index = random.nextInt(Ranger.Specialization.length);
-            return Ranger.Specialization[index];
+            int index = random.nextInt(Fighter.Specialization.length);
+            return Fighter.Specialization[index];
         }
     }
     
-    static List<String> getRandomAbilities() {
-        return List.of(Ranger.Abilities);
+    public static List<String> getRandomAbilities() {
+        return List.of(Fighter.Abilities);
     }
     
-    static int calculateRandomHitPoints(int level) {
+    public static int calculateRandomHitPoints(int level) {
         Random random = new Random();
         int additionalHitPoints = 0;
     
@@ -51,13 +46,16 @@ public class Ranger extends Classes {
         "Archery",
         "Defense",
         "Dueling",
+        "Great Weapon Fighting",
+        "Protection",
         "Two-Weapon Fighting"
     };
 
-    // Ranger Archetypes
+    // Martial Archetypes
     private static String[] Specialization = {
-        "Hunter",
-        "Beastmaster"
+        "Champion",
+        "Battle Master",
+        "Eldritch Knight",
     };
 
     private static String[] Abilities = {

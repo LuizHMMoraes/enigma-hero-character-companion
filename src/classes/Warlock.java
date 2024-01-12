@@ -9,7 +9,7 @@ public class Warlock extends Classes {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomFightingStyle(int level) {
+    public static String getRandomFightingStyle(int level) {
         if (level < 3) {
             return "";
         }
@@ -20,17 +20,17 @@ public class Warlock extends Classes {
         }
     }
 
-    static String getRandomSpecialization() {
+    public static String getRandomSpecialization() {
         Random random = new Random();
         int index = random.nextInt(Warlock.Specialization.length);
         return Warlock.Specialization[index];
     }
     
-    static List<String> getRandomAbilities() {
+    public static List<String> getRandomAbilities() {
         return List.of(Warlock.Abilities);
     }
     
-    static int calculateRandomHitPoints(int level) {
+    public static int calculateRandomHitPoints(int level) {
         Random random = new Random();
         int additionalHitPoints = 0;
     

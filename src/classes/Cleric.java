@@ -9,17 +9,17 @@ public class Cleric extends Classes {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomSpecialization() {
+    public static String getRandomSpecialization() {
         Random random = new Random();
         int index = random.nextInt(Cleric.Specialization.length);
         return Cleric.Specialization[index];
     }
     
-    static List<String> getRandomAbilities() {
+    public static List<String> getRandomAbilities() {
         return List.of(Cleric.Abilities);
     }
     
-    static int calculateRandomHitPoints(int level) {
+    public static int calculateRandomHitPoints(int level) {
         Random random = new Random();
         int additionalHitPoints = 0;
     

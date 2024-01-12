@@ -9,7 +9,7 @@ public class Monk extends Classes {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomSpecialization(int level) {
+    public static String getRandomSpecialization(int level) {
         if (level < 3) {
             return "";
         }
@@ -20,11 +20,11 @@ public class Monk extends Classes {
         }
     }
     
-    static List<String> getRandomAbilities() {
+    public static List<String> getRandomAbilities() {
         return List.of(Monk.Abilities);
     }
     
-    static int calculateRandomHitPoints(int level) {
+    public static int calculateRandomHitPoints(int level) {
         Random random = new Random();
         int additionalHitPoints = 0;
     

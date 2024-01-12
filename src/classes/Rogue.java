@@ -3,28 +3,28 @@ package classes;
 import java.util.List;
 import java.util.Random;
 
-public class Bard extends Classes {
+public class Rogue extends Classes {
 
-    public Bard(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
+    public Rogue(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomSpecialization(int level) {
+    public static String getRandomSpecialization(int level) {
         if (level < 3) {
             return "";
         }
         else {
             Random random = new Random();
-            int index = random.nextInt(Bard.Specialization.length);
-            return Bard.Specialization[index];
+            int index = random.nextInt(Rogue.Specialization.length);
+            return Rogue.Specialization[index];
         }
     }
     
-    static List<String> getRandomAbilities() {
-        return List.of(Bard.Abilities);
+    public static List<String> getRandomAbilities() {
+        return List.of(Rogue.Abilities);
     }
     
-    static int calculateRandomHitPoints(int level) {
+    public static int calculateRandomHitPoints(int level) {
         Random random = new Random();
         int additionalHitPoints = 0;
     
@@ -35,10 +35,11 @@ public class Bard extends Classes {
         return 8 + additionalHitPoints;
     }
 
-    // Bard Colleges
+    // Roguish Archetypes
     private static String[] Specialization = {
-        "College of Lore",
-        "College of Valor",
+        "Thief",
+        "Assassin",
+        "Arcane Trickster"
     };
 
     private static String[] Abilities = {

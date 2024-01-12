@@ -3,31 +3,36 @@ package classes;
 import java.util.List;
 import java.util.Random;
 
-public class Fighter extends Classes {
+public class Ranger extends Classes {
 
-    public Fighter(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
+    public Ranger(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
         super(className, fightingStyle, specialization, hitPoints, abilities);
     }
 
-    static String getRandomFightingStyle() {
-        Random random = new Random();
-        int index = random.nextInt(Fighter.FightingStyle.length);
-        return Fighter.FightingStyle[index];
+    public static String getRandomFightingStyle(int level) {
+        if (level < 2) {
+            return "";
+        }
+        else {
+            Random random = new Random();
+            int index = random.nextInt(Ranger.FightingStyle.length);
+            return Ranger.FightingStyle[index];
+        }
     }
 
-    static String getRandomSpecialization(int level) {
+    public static String getRandomSpecialization(int level) {
         if (level < 3) {
             return "";
         }
         else {
             Random random = new Random();
-            int index = random.nextInt(Fighter.Specialization.length);
-            return Fighter.Specialization[index];
+            int index = random.nextInt(Ranger.Specialization.length);
+            return Ranger.Specialization[index];
         }
     }
     
-    static List<String> getRandomAbilities() {
-        return List.of(Fighter.Abilities);
+    public static List<String> getRandomAbilities() {
+        return List.of(Ranger.Abilities);
     }
     
     static int calculateRandomHitPoints(int level) {
@@ -46,16 +51,13 @@ public class Fighter extends Classes {
         "Archery",
         "Defense",
         "Dueling",
-        "Great Weapon Fighting",
-        "Protection",
         "Two-Weapon Fighting"
     };
 
-    // Martial Archetypes
+    // Ranger Archetypes
     private static String[] Specialization = {
-        "Champion",
-        "Battle Master",
-        "Eldritch Knight",
+        "Hunter",
+        "Beastmaster"
     };
 
     private static String[] Abilities = {
