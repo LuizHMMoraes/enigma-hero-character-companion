@@ -1,11 +1,10 @@
 package proficiency;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
 import character.AbilityScores;
-import character.CommonMethods;
 
-public class Proficiency implements CommonMethods {
+public class Proficiency {
 
 	private ArrayList<String> savingThrow;
 	private ArrayList<String> weapon;
@@ -32,7 +31,6 @@ public class Proficiency implements CommonMethods {
 		}
 	}
 	
-	@Override
 	public int Random(double number) {
 		return (int) (Math.random() * number);
 	}

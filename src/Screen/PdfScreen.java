@@ -36,13 +36,6 @@ public class PdfScreen extends JPanel {
 
 		PlayerCharacter pc1 = new PlayerCharacter("teste");
 
-		final int modStr = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getStrength());
-		final int modDex = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getDexterity());
-		final int modCon = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
-		final int modInt = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getIntelligence());
-		final int modWis = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getWisdom());
-		final int modCha = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getCharisma());
-
 		JLabel levelLabel = new JLabel("<html>" + String.valueOf(pc1.getLevel()) + "°</html>");
 		levelLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		levelLabel.setBounds(338, 56, 32, 14);
@@ -63,7 +56,7 @@ public class PdfScreen extends JPanel {
 		alignmentLabel.setBounds(380, 82, 92, 14);
 		panel.add(alignmentLabel);
 
-		JLabel initiativeLabel = new JLabel(String.valueOf(modDex));
+		JLabel initiativeLabel = new JLabel(String.valueOf(AbilityScores.modDex));
 		initiativeLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		initiativeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		initiativeLabel.setBounds(277, 152, 46, 25);
@@ -170,7 +163,7 @@ public class PdfScreen extends JPanel {
 		charismaLabel.setBounds(34, 555, 30, 19);
 		panel.add(charismaLabel);
 
-		JLabel charismaModLabel = new JLabel(String.valueOf(modCha));
+		JLabel charismaModLabel = new JLabel(String.valueOf(AbilityScores.modCha));
 		charismaModLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		charismaModLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		charismaModLabel.setBounds(25, 524, 46, 25);
@@ -182,7 +175,7 @@ public class PdfScreen extends JPanel {
 		wisdomLabel.setBounds(34, 482, 30, 19);
 		panel.add(wisdomLabel);
 
-		JLabel wisdomModLabel = new JLabel(String.valueOf(modWis));
+		JLabel wisdomModLabel = new JLabel(String.valueOf(AbilityScores.modWis));
 		wisdomModLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		wisdomModLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		wisdomModLabel.setBounds(25, 453, 46, 25);
@@ -194,7 +187,7 @@ public class PdfScreen extends JPanel {
 		intelligenceLabel.setBounds(34, 410, 30, 19);
 		panel.add(intelligenceLabel);
 
-		JLabel intelligenceModLabel = new JLabel(String.valueOf(modInt));
+		JLabel intelligenceModLabel = new JLabel(String.valueOf(AbilityScores.modInt));
 		intelligenceModLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		intelligenceModLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		intelligenceModLabel.setBounds(25, 381, 46, 25);
@@ -206,7 +199,7 @@ public class PdfScreen extends JPanel {
 		constitutionLabel.setBounds(34, 337, 30, 19);
 		panel.add(constitutionLabel);
 
-		JLabel constitutionModLabel = new JLabel(String.valueOf(modCon));
+		JLabel constitutionModLabel = new JLabel(String.valueOf(AbilityScores.modCon));
 		constitutionModLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		constitutionModLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		constitutionModLabel.setBounds(25, 308, 46, 25);
@@ -218,13 +211,13 @@ public class PdfScreen extends JPanel {
 		dexterityLabel.setBounds(34, 262, 30, 25);
 		panel.add(dexterityLabel);
 
-		JLabel dexterityModLabel = new JLabel(String.valueOf(modDex));
+		JLabel dexterityModLabel = new JLabel(String.valueOf(AbilityScores.modDex));
 		dexterityModLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		dexterityModLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		dexterityModLabel.setBounds(25, 236, 51, 25);
 		panel.add(dexterityModLabel);
 
-		JLabel strenghtModLabel = new JLabel(String.valueOf(modStr));
+		JLabel strenghtModLabel = new JLabel(String.valueOf(AbilityScores.modStr));
 		strenghtModLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		strenghtModLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		strenghtModLabel.setBounds(25, 158, 51, 34);
@@ -237,157 +230,157 @@ public class PdfScreen extends JPanel {
 		panel.add(strenghtLabel);
 
 		JLabel strenghtSavingThrowLabel = new JLabel(
-				String.valueOf(modStr + pc1.ApplySavingThrowProficiencyBonus("Strenght")));
+				String.valueOf(AbilityScores.modStr + pc1.ApplySavingThrowProficiencyBonus("Strenght")));
 		strenghtSavingThrowLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		strenghtSavingThrowLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		strenghtSavingThrowLabel.setBounds(103, 210, 18, 14);
 		panel.add(strenghtSavingThrowLabel);
 
 		JLabel dexteritySavingThrowLabel = new JLabel(
-				String.valueOf(modDex + pc1.ApplySavingThrowProficiencyBonus("Dexterity")));
+				String.valueOf(AbilityScores.modDex + pc1.ApplySavingThrowProficiencyBonus("Dexterity")));
 		dexteritySavingThrowLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		dexteritySavingThrowLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		dexteritySavingThrowLabel.setBounds(103, 223, 18, 14);
 		panel.add(dexteritySavingThrowLabel);
 
 		JLabel constitutionSavingThrowLabel = new JLabel(
-				String.valueOf(modCon + pc1.ApplySavingThrowProficiencyBonus("Constitution")));
+				String.valueOf(AbilityScores.modCon + pc1.ApplySavingThrowProficiencyBonus("Constitution")));
 		constitutionSavingThrowLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		constitutionSavingThrowLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		constitutionSavingThrowLabel.setBounds(103, 237, 18, 14);
 		panel.add(constitutionSavingThrowLabel);
 
 		JLabel intelligenceSavingThrowLabel = new JLabel(
-				String.valueOf(modInt + pc1.ApplySavingThrowProficiencyBonus("Intelligence")));
+				String.valueOf(AbilityScores.modInt + pc1.ApplySavingThrowProficiencyBonus("Intelligence")));
 		intelligenceSavingThrowLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		intelligenceSavingThrowLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		intelligenceSavingThrowLabel.setBounds(103, 251, 18, 14);
 		panel.add(intelligenceSavingThrowLabel);
 
 		JLabel wisdomSavingThrowLabel = new JLabel(
-				String.valueOf(modWis + pc1.ApplySavingThrowProficiencyBonus("Wisdom")));
+				String.valueOf(AbilityScores.modWis + pc1.ApplySavingThrowProficiencyBonus("Wisdom")));
 		wisdomSavingThrowLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		wisdomSavingThrowLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		wisdomSavingThrowLabel.setBounds(103, 264, 18, 14);
 		panel.add(wisdomSavingThrowLabel);
 
 		JLabel charismaSavingThrowLabel = new JLabel(
-				String.valueOf(modCha + pc1.ApplySavingThrowProficiencyBonus("Charisma")));
+				String.valueOf(AbilityScores.modCha + pc1.ApplySavingThrowProficiencyBonus("Charisma")));
 		charismaSavingThrowLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		charismaSavingThrowLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		charismaSavingThrowLabel.setBounds(103, 278, 18, 14);
 		panel.add(charismaSavingThrowLabel);
 		// +
 		// ((pc1.getProficiency().getSkill().contains("Acrobatics"))?pc1.getProficienyBonus():0)));
-		JLabel acrobaticsLabel = new JLabel(String.valueOf(modDex + pc1.ApplySkillProficiencyBonus("Acrobatics")));
+		JLabel acrobaticsLabel = new JLabel(String.valueOf(AbilityScores.modDex + pc1.ApplySkillProficiencyBonus("Acrobatics")));
 		acrobaticsLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		acrobaticsLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		acrobaticsLabel.setBounds(103, 327, 18, 14);
 		panel.add(acrobaticsLabel);
 
-		JLabel animalHandlingLabel = new JLabel(String.valueOf(modWis + pc1.ApplySkillProficiencyBonus("Animal Handling")));
+		JLabel animalHandlingLabel = new JLabel(String.valueOf(AbilityScores.modWis + pc1.ApplySkillProficiencyBonus("Animal Handling")));
 		animalHandlingLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		animalHandlingLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		animalHandlingLabel.setBounds(103, 341, 18, 14);
 		panel.add(animalHandlingLabel);
 
-		JLabel arcanaLabel = new JLabel(String.valueOf(modInt + pc1.ApplySkillProficiencyBonus("Arcana")));
+		JLabel arcanaLabel = new JLabel(String.valueOf(AbilityScores.modInt + pc1.ApplySkillProficiencyBonus("Arcana")));
 		arcanaLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		arcanaLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		arcanaLabel.setBounds(103, 355, 18, 14);
 		panel.add(arcanaLabel);
 
-		JLabel athleticsLabel = new JLabel(String.valueOf(modStr + pc1.ApplySkillProficiencyBonus("Athletics")));
+		JLabel athleticsLabel = new JLabel(String.valueOf(AbilityScores.modStr + pc1.ApplySkillProficiencyBonus("Athletics")));
 		athleticsLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		athleticsLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		athleticsLabel.setBounds(103, 369, 18, 14);
 		panel.add(athleticsLabel);
 
-		JLabel deceptionLabel = new JLabel(String.valueOf(modCha + pc1.ApplySkillProficiencyBonus("Deception")));
+		JLabel deceptionLabel = new JLabel(String.valueOf(AbilityScores.modCha + pc1.ApplySkillProficiencyBonus("Deception")));
 		deceptionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		deceptionLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		deceptionLabel.setBounds(103, 381, 18, 14);
 		panel.add(deceptionLabel);
 
-		JLabel historyLabel = new JLabel(String.valueOf(modInt + pc1.ApplySkillProficiencyBonus("History")));
+		JLabel historyLabel = new JLabel(String.valueOf(AbilityScores.modInt + pc1.ApplySkillProficiencyBonus("History")));
 		historyLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		historyLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		historyLabel.setBounds(103, 395, 18, 14);
 		panel.add(historyLabel);
 
-		JLabel insightLabel = new JLabel(String.valueOf(modWis + pc1.ApplySkillProficiencyBonus("Insight")));
+		JLabel insightLabel = new JLabel(String.valueOf(AbilityScores.modWis + pc1.ApplySkillProficiencyBonus("Insight")));
 		insightLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		insightLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		insightLabel.setBounds(103, 409, 18, 14);
 		panel.add(insightLabel);
 
-		JLabel intimidationLabel = new JLabel(String.valueOf(modCha + pc1.ApplySkillProficiencyBonus("Intimidation")));
+		JLabel intimidationLabel = new JLabel(String.valueOf(AbilityScores.modCha + pc1.ApplySkillProficiencyBonus("Intimidation")));
 		intimidationLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		intimidationLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		intimidationLabel.setBounds(103, 423, 18, 14);
 		panel.add(intimidationLabel);
 
-		JLabel investigationLabel = new JLabel(String.valueOf(modInt + pc1.ApplySkillProficiencyBonus("Investigation")));
+		JLabel investigationLabel = new JLabel(String.valueOf(AbilityScores.modInt + pc1.ApplySkillProficiencyBonus("Investigation")));
 		investigationLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		investigationLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		investigationLabel.setBounds(103, 436, 18, 14);
 		panel.add(investigationLabel);
 
-		JLabel medicineLabel = new JLabel(String.valueOf(modWis + pc1.ApplySkillProficiencyBonus("Medicine")));
+		JLabel medicineLabel = new JLabel(String.valueOf(AbilityScores.modWis + pc1.ApplySkillProficiencyBonus("Medicine")));
 		medicineLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		medicineLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		medicineLabel.setBounds(103, 450, 18, 14);
 		panel.add(medicineLabel);
 
-		JLabel natureLabel = new JLabel(String.valueOf(modInt + pc1.ApplySkillProficiencyBonus("Nature")));
+		JLabel natureLabel = new JLabel(String.valueOf(AbilityScores.modInt + pc1.ApplySkillProficiencyBonus("Nature")));
 		natureLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		natureLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		natureLabel.setBounds(103, 463, 18, 14);
 		panel.add(natureLabel);
 
-		JLabel perceptionLabel = new JLabel(String.valueOf(modWis + pc1.ApplySkillProficiencyBonus("Perception")));
+		JLabel perceptionLabel = new JLabel(String.valueOf(AbilityScores.modWis + pc1.ApplySkillProficiencyBonus("Perception")));
 		perceptionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		perceptionLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		perceptionLabel.setBounds(103, 477, 18, 14);
 		panel.add(perceptionLabel);
 
-		JLabel performanceLabel = new JLabel(String.valueOf(modCha + pc1.ApplySkillProficiencyBonus("Performance")));
+		JLabel performanceLabel = new JLabel(String.valueOf(AbilityScores.modCha + pc1.ApplySkillProficiencyBonus("Performance")));
 		performanceLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		performanceLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		performanceLabel.setBounds(103, 491, 18, 14);
 		panel.add(performanceLabel);
 
-		JLabel persuasionLabel = new JLabel(String.valueOf(modCha + pc1.ApplySkillProficiencyBonus("Persuasion")));
+		JLabel persuasionLabel = new JLabel(String.valueOf(AbilityScores.modCha + pc1.ApplySkillProficiencyBonus("Persuasion")));
 		persuasionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		persuasionLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		persuasionLabel.setBounds(103, 505, 18, 14);
 		panel.add(persuasionLabel);
 
-		JLabel religionLabel = new JLabel(String.valueOf(modInt + pc1.ApplySkillProficiencyBonus("Religion")));
+		JLabel religionLabel = new JLabel(String.valueOf(AbilityScores.modInt + pc1.ApplySkillProficiencyBonus("Religion")));
 		religionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		religionLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		religionLabel.setBounds(103, 519, 18, 14);
 		panel.add(religionLabel);
 
-		JLabel sleightOfHandLabel = new JLabel(String.valueOf(modDex + pc1.ApplySkillProficiencyBonus("Sleight of Hand")));
+		JLabel sleightOfHandLabel = new JLabel(String.valueOf(AbilityScores.modDex + pc1.ApplySkillProficiencyBonus("Sleight of Hand")));
 		sleightOfHandLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		sleightOfHandLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		sleightOfHandLabel.setBounds(103, 532, 18, 14);
 		panel.add(sleightOfHandLabel);
 
-		JLabel stealthLabel = new JLabel(String.valueOf(modDex + pc1.ApplySkillProficiencyBonus("Stealth")));
+		JLabel stealthLabel = new JLabel(String.valueOf(AbilityScores.modDex + pc1.ApplySkillProficiencyBonus("Stealth")));
 		stealthLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		stealthLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		stealthLabel.setBounds(103, 546, 18, 14);
 		panel.add(stealthLabel);
 
-		JLabel survivalLabel = new JLabel(String.valueOf(modWis + pc1.ApplySkillProficiencyBonus("Survival")));
+		JLabel survivalLabel = new JLabel(String.valueOf(AbilityScores.modWis + pc1.ApplySkillProficiencyBonus("Survival")));
 		survivalLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		survivalLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		survivalLabel.setBounds(103, 560, 18, 14);
 		panel.add(survivalLabel);
 
-		JLabel passivePerceptionLabel = new JLabel(String.valueOf(modInt + 10 + pc1.ApplySkillProficiencyBonus("Perception")));
+		JLabel passivePerceptionLabel = new JLabel(String.valueOf(AbilityScores.modInt + 10 + pc1.ApplySkillProficiencyBonus("Perception")));
 		passivePerceptionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		passivePerceptionLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		passivePerceptionLabel.setBounds(23, 602, 25, 20);

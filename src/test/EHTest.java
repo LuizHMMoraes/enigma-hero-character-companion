@@ -92,7 +92,7 @@ class EHTest {
     //CLASSE --> RepositoryRace <--
     @Test
     void testDwarf() {
-        RepositoryRace dwarf = RepositoryRace.Dwarf();
+        RepositoryRace dwarf = new RepositoryRace().Dwarf();
         assertEquals("Dwarf", dwarf.getName());
         assertEquals(7.5, dwarf.getSpeed());
         assertEquals("Medium", dwarf.getSize());

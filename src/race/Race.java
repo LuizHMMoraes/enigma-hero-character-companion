@@ -3,10 +3,9 @@ package race;
 import java.util.ArrayList;
 
 import character.AbilityScores;
-import character.CommonMethods;
 import proficiency.Proficiency;
 
-public class Race implements CommonMethods {
+public class Race {
 
 	private String name;
 	private Double speed;
@@ -33,15 +32,14 @@ public class Race implements CommonMethods {
 		this.subrace = subrace;
 	}
 
-	@Override
+
 	public int Random(double number) {
-		// TODO Auto-generated method stub
 		return (int) (Math.random() * number);
 	}
 
 	public Race RandomRace() {
-		RepositoryRace randomRace;
-		randomRace = RepositoryRace.RaceList().get(Random(RepositoryRace.RaceList().size()));
+		RepositoryRace randomRace = new RepositoryRace();
+		randomRace = randomRace.RaceList().get(Random(randomRace.RaceList().size()));
 
 		this.setName(randomRace.getName());
 		this.setSpeed(randomRace.getSpeed());
@@ -92,11 +90,11 @@ public class Race implements CommonMethods {
 		}
 	}
 
+//Aqui COMEÇA a metodologia para aplicação de proficiências e modificadores.
 	public void DwarfModifiers(String subrace) {
 		AbilityScores.setConstitution(AbilityScores.getConstitution() + 2);
 		this.setProficiency(new Proficiency("race"));
 		this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Dwarvish"));
-		//por enquanto hardcode em "equipamentos"
 		this.getProficiency().setWeapon(new ArrayList<>());
 		this.getProficiency().getWeapon().add("Battleaxe");
 		this.getProficiency().getWeapon().add("Handaxe");
@@ -220,6 +218,7 @@ public class Race implements CommonMethods {
 			this.setProficiency(new Proficiency("race"));
 			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Infernal"));
 		}
+//Aqui TERMINA a metodologia para aplicação de proficiências e modificadores.
 
 	public String getName() {
 		return name;

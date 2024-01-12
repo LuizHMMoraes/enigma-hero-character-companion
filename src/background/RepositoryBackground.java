@@ -38,8 +38,9 @@ public class RepositoryBackground {
 		backgroundList.add(Urchin());
 		return backgroundList;
 	}
-
-	public static RepositoryBackground Acolyte() {
+	
+//Aqui COMEÇA a metodologia para construção de cada antecedente de acordo com o Livro do Jogador.
+	public RepositoryBackground Acolyte() {
 		RepositoryBackground acolyte = new RepositoryBackground();
 		acolyte.setName("Acolyte");
 		acolyte.setFeature("Shelter of the Faithful");
@@ -109,7 +110,7 @@ public class RepositoryBackground {
 		return acolyte;
 	}
 	
-	public static RepositoryBackground Charlatan() {
+	public RepositoryBackground Charlatan() {
 		RepositoryBackground charlatan = new RepositoryBackground();
 		charlatan.setName("Charlatan");
 		charlatan.setFeature("False Identity");
@@ -179,7 +180,7 @@ public class RepositoryBackground {
 		return charlatan;
 	}
 	
-	public static RepositoryBackground Criminal() {
+	public RepositoryBackground Criminal() {
 		RepositoryBackground criminal = new RepositoryBackground();
 		criminal.setName("Criminal");
 		criminal.setFeature("Criminal Contact");
@@ -241,7 +242,7 @@ public class RepositoryBackground {
 		return criminal;
 	}
 	
-	public static RepositoryBackground Entertainer() {
+	public RepositoryBackground Entertainer() {
 		RepositoryBackground entertainer = new RepositoryBackground();
 		entertainer.setName("Entertainer");
 		entertainer.setFeature("By Popular Demand");
@@ -303,7 +304,7 @@ public class RepositoryBackground {
 		return entertainer;
 	}
 	
-	public static RepositoryBackground FolkHero() {
+	public RepositoryBackground FolkHero() {
 		RepositoryBackground folkHero = new RepositoryBackground();
 		folkHero.setName("Folk Hero");
 		folkHero.setFeature("Rustic Hospitality");
@@ -367,7 +368,7 @@ public class RepositoryBackground {
 		return folkHero;
 	}
 	
-	public static RepositoryBackground GuildArtisan() {
+	public RepositoryBackground GuildArtisan() {
 		RepositoryBackground guildArtisan = new RepositoryBackground();
 		guildArtisan.setName("Guild Artisan");
 		guildArtisan.setFeature("Guild Membership");
@@ -436,7 +437,7 @@ public class RepositoryBackground {
 		return guildArtisan;
 	}
 	
-	public static RepositoryBackground Hermit() {
+	public RepositoryBackground Hermit() {
 		RepositoryBackground hermit = new RepositoryBackground();
 		hermit.setName("Hermit");
 		hermit.setFeature("Discovery");
@@ -502,7 +503,7 @@ public class RepositoryBackground {
 		return hermit;
 	}
 	
-	public static RepositoryBackground Noble() {
+	public RepositoryBackground Noble() {
 		RepositoryBackground noble = new RepositoryBackground();
 		noble.setName("Noble");
 		noble.setFeature("Position of Privilege");
@@ -567,7 +568,7 @@ public class RepositoryBackground {
 		return noble;
 	}
 	
-	public static RepositoryBackground Outlander() {
+	public RepositoryBackground Outlander() {
 		RepositoryBackground outlander = new RepositoryBackground();
 		outlander.setName("Outlander");
 		outlander.setFeature("Wanderer");
@@ -634,7 +635,7 @@ public class RepositoryBackground {
 		return outlander;
 	}
 	
-	public static RepositoryBackground Sage() {
+	public RepositoryBackground Sage() {
 		RepositoryBackground sage = new RepositoryBackground();
 		sage.setName("Sage");
 		sage.setFeature("Researcher");
@@ -701,7 +702,7 @@ public class RepositoryBackground {
 		return sage;
 	}
 	
-	public static RepositoryBackground Sailor() {
+	public RepositoryBackground Sailor() {
 		RepositoryBackground sailor = new RepositoryBackground();
 		sailor.setName("Sailor");
 		sailor.setFeature("Ship's Passage");
@@ -763,7 +764,7 @@ public class RepositoryBackground {
 		return sailor;
 	}
 	
-	public static RepositoryBackground Soldier() {
+	public RepositoryBackground Soldier() {
 		RepositoryBackground soldier = new RepositoryBackground();
 		soldier.setName("Soldier");
 		soldier.setFeature("Military Rank");
@@ -823,7 +824,7 @@ public class RepositoryBackground {
 		return soldier;
 	}
 	
-	public static RepositoryBackground Urchin() {
+	public RepositoryBackground Urchin() {
 		RepositoryBackground urchin = new RepositoryBackground();
 		urchin.setName("Urchin");
 		urchin.setFeature("City Secrets");
@@ -881,6 +882,7 @@ public class RepositoryBackground {
 				+ "deserve.");
 		return urchin;
 	}
+//Aqui TERMINA a metodologia para construção de cada antecedente de acordo com o Livro do Jogador.	
 
 	public String getName() {
 		return name;

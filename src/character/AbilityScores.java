@@ -1,6 +1,6 @@
 package character;
 
-public class AbilityScores implements CommonMethods {
+public class AbilityScores {
 
 	private static int strength;
 	private static int dexterity;
@@ -8,12 +8,19 @@ public class AbilityScores implements CommonMethods {
 	private static int intelligence;
 	private static int wisdom;
 	private static int charisma;
+	
+	public final static int modStr = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getStrength());
+	public final static int modDex = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getDexterity());
+	public final static int modCon = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
+	public final static int modInt = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getIntelligence());
+	public final static int modWis = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getWisdom());
+	public final static int modCha = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getCharisma());
 
 	public AbilityScores() {
 		GenerateAbilityScores();
 	}
 
-	@Override
+	
 	public int Random(double number) {
 		return (int) Math.ceil(Math.random() * number);
 	}

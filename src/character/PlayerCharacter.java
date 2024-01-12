@@ -1,6 +1,6 @@
 package character;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Comparator;
 
 import background.Background;
@@ -8,7 +8,7 @@ import proficiency.Proficiency;
 import proficiency.RepositorySkill;
 import race.Race;
 
-public class PlayerCharacter implements CommonMethods {
+public class PlayerCharacter {
 
 	private String characterName;
 	private int hitPoints;
@@ -38,6 +38,7 @@ public class PlayerCharacter implements CommonMethods {
 		this.setCharacterName(characterName);
 
 		this.setAbilityScores(new AbilityScores());
+		this.setLevel(Random(20));
 
 		this.setRace(new Race().RandomRace());
 		this.getRace().ApplyRaceModifiers(this.getRace().getName());
@@ -53,7 +54,6 @@ public class PlayerCharacter implements CommonMethods {
 		this.setProficiency(this.VerifyDuplicates());
 	}
 
-	@Override
 	public int Random(double number) {
 		return (int) (Math.random() * number);
 	}
@@ -100,10 +100,16 @@ public class PlayerCharacter implements CommonMethods {
 		this.setAlignment(orderCaos + " - " + goodEvil);
 	}
 
-	public void CalculateHitPoints() {
-		// setHitPoints(this.getLevel() *
-		// (this.getHitDice()+AbilityScore.CalculateAbilityScoreModifier(AbilityScore.getConstiution())));
-	}
+	/*
+	 * public int CalculateHitPoints(int level) { int hitPoints =
+	 * this.getClass().getHitDice() + AbilityScore.modCon; int rollHitPointsDice =
+	 * Random(this.getClass().getHitDice()); for(int i = 2; i <= level; i++) {
+	 * 
+	 * if (rollHitPointsDice < (this.getClass().getHitDice()/2) + 1){ rollHitPoints
+	 * = this.getClass().getHitDice()/2) + 1; }
+	 * 
+	 * hitPoints += rollHitPointsDice + AbilityScore.modCon; } return hitPoints; }
+	 */
 
 	public Proficiency VerifyDuplicates() {
 		Proficiency verifyDuplicates = new Proficiency();
@@ -149,8 +155,8 @@ public class PlayerCharacter implements CommonMethods {
 			}
 		}
 		if (raceProfciencies.getArmor() != null) {
-			for (int j = 0; j < raceProfciencies.getArmor().size(); j++) {
-				profciencyList.add(raceProfciencies.getArmor().get(j));
+			for (int i = 0; i < raceProfciencies.getArmor().size(); i++) {
+				profciencyList.add(raceProfciencies.getArmor().get(i));
 			}
 		}
 		if (raceProfciencies.getShield()) {
