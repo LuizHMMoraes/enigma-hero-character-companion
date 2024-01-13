@@ -2,11 +2,9 @@ package proficiency;
 
 import java.util.ArrayList;
 
-import character.AbilityScores;
-
 public class RepositorySkill {
 	private String name;
-	private Integer ability;
+	private String ability;
 	
 	
 	//
@@ -14,7 +12,7 @@ public class RepositorySkill {
 		
 	}
 	
-	public RepositorySkill(String name, Integer ability) {
+	public RepositorySkill(String name, String ability) {
 		this.name = name;
 		this.ability = ability;
 	}
@@ -57,92 +55,92 @@ public class RepositorySkill {
 	}
 	
 	public RepositorySkill Acrobatics() {
-		RepositorySkill acrobatics = new RepositorySkill("Acrobatics", AbilityScores.modDex);
+		RepositorySkill acrobatics = new RepositorySkill("Acrobatics", "Dexterity");
 		return acrobatics;
 	}
 	
 	public RepositorySkill AnimalHandling() {
-		RepositorySkill animalHandling = new RepositorySkill("Animal Handling", AbilityScores.modWis);
+		RepositorySkill animalHandling = new RepositorySkill("Animal Handling", "Wisdom");
 		return animalHandling;
 	}
 	
 	public RepositorySkill Arcana() {
-		RepositorySkill arcana = new RepositorySkill("Arcana", AbilityScores.modInt);
+		RepositorySkill arcana = new RepositorySkill("Arcana", "Intelligence");
 		return arcana;
 	}
 	
 	public RepositorySkill Athletics() {
-		RepositorySkill athletics = new RepositorySkill("Athletics", AbilityScores.modStr);
+		RepositorySkill athletics = new RepositorySkill("Athletics", "Strength");
 		return athletics;
 	}
 	
 	public RepositorySkill Deception() {
-		RepositorySkill deception = new RepositorySkill("Deception", AbilityScores.modDex);
+		RepositorySkill deception = new RepositorySkill("Deception", "Dexterity");
 		return deception;
 	}
 	
 	public RepositorySkill History() {
-		RepositorySkill history = new RepositorySkill("History", AbilityScores.modInt);
+		RepositorySkill history = new RepositorySkill("History", "Intelligence");
 		return history;
 	}
 	
 	public RepositorySkill Insight() {
-		RepositorySkill insight = new RepositorySkill("Insight", AbilityScores.modWis);
+		RepositorySkill insight = new RepositorySkill("Insight", "Wisdom");
 		return insight;
 	}
 	
 	public RepositorySkill Intimidation() {
-		RepositorySkill intimidation = new RepositorySkill("Intimidation", AbilityScores.modCha);
+		RepositorySkill intimidation = new RepositorySkill("Intimidation", "Charisma");
 		return intimidation;
 	}
 	
 	public RepositorySkill Investigation() {
-		RepositorySkill investigation = new RepositorySkill("Investigation", AbilityScores.modInt);
+		RepositorySkill investigation = new RepositorySkill("Investigation", "Intelligence");
 		return investigation;
 	}
 	
 	public RepositorySkill Medicine() {
-		RepositorySkill medicine = new RepositorySkill("Medicine", AbilityScores.modWis);
+		RepositorySkill medicine = new RepositorySkill("Medicine", "Wisdom");
 		return medicine;
 	}
 	
 	public RepositorySkill Nature() {
-		RepositorySkill nature = new RepositorySkill("Nature", AbilityScores.modInt);
+		RepositorySkill nature = new RepositorySkill("Nature", "Intelligence");
 		return nature;
 	}
 	
 	public RepositorySkill Perception() {
-		RepositorySkill perception = new RepositorySkill("Perception", AbilityScores.modWis);
+		RepositorySkill perception = new RepositorySkill("Perception", "Wisdom");
 		return perception;
 	}
 	
 	public RepositorySkill Performance() {
-		RepositorySkill performance = new RepositorySkill("Performance", AbilityScores.modCha);
+		RepositorySkill performance = new RepositorySkill("Performance", "Charisma");
 		return performance;
 	}
 	
 	public RepositorySkill Persuasion() {
-		RepositorySkill persuasion = new RepositorySkill("Persuasion", AbilityScores.modCha);
+		RepositorySkill persuasion = new RepositorySkill("Persuasion", "Charisma");
 		return persuasion;
 	}
 	
 	public RepositorySkill Religion() {
-		RepositorySkill religion = new RepositorySkill("Religion", AbilityScores.modInt);
+		RepositorySkill religion = new RepositorySkill("Religion", "Intelligence");
 		return religion;
 	}
 	
 	public RepositorySkill SleightOfHand() {
-		RepositorySkill sleightOfHand = new RepositorySkill("Sleight of Hand", AbilityScores.modDex);
+		RepositorySkill sleightOfHand = new RepositorySkill("Sleight of Hand", "Dexterity");
 		return sleightOfHand;
 	}
 	
 	public RepositorySkill Stealth() {
-		RepositorySkill stealth = new RepositorySkill("Stealth", AbilityScores.modDex);
+		RepositorySkill stealth = new RepositorySkill("Stealth", "Dexterity");
 		return stealth;
 	}
 	
 	public RepositorySkill Survival() {
-		RepositorySkill survival = new RepositorySkill("Survival", AbilityScores.modWis);
+		RepositorySkill survival = new RepositorySkill("Survival", "Wisdom");
 		return survival;
 	}
 
@@ -154,12 +152,11 @@ public class RepositorySkill {
 		this.name = name;
 	}
 
-	public Integer getAbility() {
+	public String getAbility() {
 		return ability;
 	}
 
-	public void setAbility(Integer ability) {
+	public void setAbility(String ability) {
 		this.ability = ability;
-	}
-
+	}	
 }

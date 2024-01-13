@@ -38,6 +38,7 @@ public class PlayerCharacter {
 		this.setCharacterName(characterName);
 
 		this.setAbilityScores(new AbilityScores());
+		
 		this.setLevel(Random(20));
 
 		this.setRace(new Race().RandomRace());
@@ -48,6 +49,7 @@ public class PlayerCharacter {
 		this.setBackground(new Background().RandomBackground());
 		this.getBackground().ApplyBackground(this.getBackground().getName());
 		// instância de classe
+		
 		this.ApplyExperiencePoints(this.getLevel());
 		this.ApplyProficiencyBonus(this.getLevel());
 
@@ -188,7 +190,7 @@ public class PlayerCharacter {
 
 	public void ApplyExperiencePoints(int level) {
 		ArrayList<Integer> experienceThreshold = new ArrayList<>();
-		experienceThreshold.add(null);
+		experienceThreshold.add(0);
 		experienceThreshold.add(0);
 		experienceThreshold.add(300);
 		experienceThreshold.add(900);

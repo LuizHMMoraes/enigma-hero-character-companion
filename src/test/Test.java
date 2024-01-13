@@ -1,6 +1,7 @@
 package test;
 
-import character.AbilityScores; 
+import character.AbilityScores;
+import character.Feat;
 import character.PlayerCharacter;
 import proficiency.RepositorySkill;
 
@@ -29,7 +30,6 @@ public class Test {
 		 * skill.RepositorySkillList().get(pc1.Random(skill.RepositorySkillList().size()
 		 * )); System.out.println("WHY  "+skill.getHasProficiency());
 		 */
-
 
 	}
 }

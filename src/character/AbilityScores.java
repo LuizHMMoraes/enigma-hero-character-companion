@@ -8,19 +8,11 @@ public class AbilityScores {
 	private static int intelligence;
 	private static int wisdom;
 	private static int charisma;
-	
-	public final static int modStr = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getStrength());
-	public final static int modDex = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getDexterity());
-	public final static int modCon = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
-	public final static int modInt = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getIntelligence());
-	public final static int modWis = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getWisdom());
-	public final static int modCha = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getCharisma());
 
 	public AbilityScores() {
 		GenerateAbilityScores();
 	}
 
-	
 	public int Random(double number) {
 		return (int) Math.ceil(Math.random() * number);
 	}
@@ -28,13 +20,13 @@ public class AbilityScores {
 	public int RandomAbilityScore() {
 		int abilityScore = Random(6);
 		int lesserValue = abilityScore;
-		
+
 		for (int i = 0; i < 3; i++) {
-	        int roll = Random(6);
-	        abilityScore += roll;
-	        lesserValue = roll<lesserValue?roll:lesserValue;
-	    }
-	    return abilityScore - lesserValue;
+			int roll = Random(6);
+			abilityScore += roll;
+			lesserValue = roll < lesserValue ? roll : lesserValue;
+		}
+		return abilityScore - lesserValue;
 	}
 
 	private void GenerateAbilityScores() {
@@ -50,74 +42,187 @@ public class AbilityScores {
 		return (int) Math.floor((ability - 10) / 2.0);
 	}
 
+	public static boolean IncreaseStrength(int number) {
+		if (AbilityScores.getStrength() + number < 21) {
+			AbilityScores.setStrength(AbilityScores.getStrength() + number);
+			return true;
+		} else
+			return false;
+	}
+
+	public static boolean IncreaseDexterity(int number) {
+		if (AbilityScores.getDexterity() + number < 21) {
+			AbilityScores.setDexterity(AbilityScores.getDexterity() + number);
+			return true;
+		} else
+			return false;
+	}
+
+	public static boolean IncreaseConstitution(int number) {
+		if (AbilityScores.getConstitution() + number < 21) {
+			AbilityScores.setConstitution(AbilityScores.getConstitution() + number);
+			return true;
+		} else
+			return false;
+	}
+
+	public static boolean IncreaseIntelligence(int number) {
+		if (AbilityScores.getIntelligence() + number < 21) {
+			AbilityScores.setIntelligence(AbilityScores.getIntelligence() + number);
+			return true;
+		} else
+			return false;
+	}
+
+	public static boolean IncreaseWisdom(int number) {
+		if (AbilityScores.getWisdom() + number < 21) {
+			AbilityScores.setWisdom(AbilityScores.getWisdom() + number);
+			return true;
+		} else
+			return false;
+	}
+
+	public static boolean IncreaseCharisma(int number) {
+		if (AbilityScores.getCharisma() + number < 21) {
+			AbilityScores.setCharisma(AbilityScores.getCharisma() + number);
+			return true;
+		} else
+			return false;
+	}
+
 	public static void RandomIncrease2() {
 		int number = (int) Math.ceil(Math.random() * 6);
-		
+
 		switch (number) {
 		case 1:
-			AbilityScores.setStrength(AbilityScores.getStrength() + 2);
+			if (IncreaseStrength(2)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease2();
 			break;
+
 		case 2:
-			AbilityScores.setDexterity(AbilityScores.getDexterity() + 2);
+			if (IncreaseDexterity(2)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease2();;
 			break;
+
 		case 3:
-			AbilityScores.setConstitution(AbilityScores.getConstitution() + 2);
+			if (IncreaseConstitution(2)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease2();
 			break;
+
 		case 4:
-			AbilityScores.setIntelligence(AbilityScores.getIntelligence() + 2);
+			if (IncreaseIntelligence(2)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease2();
 			break;
+
 		case 5:
-			AbilityScores.setWisdom(AbilityScores.getWisdom() + 2);
+			if (IncreaseWisdom(2)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease2();
 			break;
+
 		case 6:
-			AbilityScores.setCharisma(AbilityScores.getCharisma() + 2);
+			if (IncreaseCharisma(2)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease2();
 			break;
 		}
 	}
-	
+
 	public static void RandomIncrease1() {
 		int number = (int) Math.ceil(Math.random() * 6);
-		
+
 		switch (number) {
 		case 1:
-			AbilityScores.setStrength(AbilityScores.getStrength() + 1);
+			if (IncreaseStrength(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 2:
-			AbilityScores.setDexterity(AbilityScores.getDexterity() + 1);
+			if (IncreaseDexterity(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();;
 			break;
+
 		case 3:
-			AbilityScores.setConstitution(AbilityScores.getConstitution() + 1);
+			if (IncreaseConstitution(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 4:
-			AbilityScores.setIntelligence(AbilityScores.getIntelligence() + 1);
+			if (IncreaseIntelligence(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 5:
-			AbilityScores.setWisdom(AbilityScores.getWisdom() + 1);
+			if (IncreaseWisdom(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 6:
-			AbilityScores.setCharisma(AbilityScores.getCharisma() + 1);
+			if (IncreaseCharisma(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
 		}
 	}
-	
+
 	public static void RandomIncrease1HalfElf() {
 		int number = (int) Math.ceil(Math.random() * 5);
-		
+
 		switch (number) {
 		case 1:
-			AbilityScores.setStrength(AbilityScores.getStrength() + 1);
+			if (IncreaseStrength(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 2:
-			AbilityScores.setDexterity(AbilityScores.getDexterity() + 1);
+			if (IncreaseDexterity(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();;
 			break;
+
 		case 3:
-			AbilityScores.setConstitution(AbilityScores.getConstitution() + 1);
+			if (IncreaseConstitution(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 4:
-			AbilityScores.setIntelligence(AbilityScores.getIntelligence() + 1);
+			if (IncreaseIntelligence(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
+
 		case 5:
-			AbilityScores.setWisdom(AbilityScores.getWisdom() + 1);
+			if (IncreaseWisdom(1)) {
+				break;
+			} else
+				AbilityScores.RandomIncrease1();
 			break;
 		}
 	}

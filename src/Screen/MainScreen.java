@@ -78,7 +78,7 @@ public class MainScreen {
 		mainSreen.setLayout(null);
 		mainSreen.setVisible(true);
 
-		JButton btnRandomCharacterButton = new JButton("Personagem Aleatório");
+		JButton btnRandomCharacterButton = new JButton("Random Character");
 		btnRandomCharacterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mainSreen.setVisible(false);
@@ -115,7 +115,7 @@ public class MainScreen {
 		randomCharacterScreen.setLayout(null);
 		randomCharacterScreen.add(titleLabel2);
 
-		JButton btnBackMainScreenButton = new JButton("Voltar a tela inicial");
+		JButton btnBackMainScreenButton = new JButton("Return to main screen");
 		btnBackMainScreenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mainSreen.setVisible(true);
@@ -126,11 +126,11 @@ public class MainScreen {
 		btnBackMainScreenButton.setBorder(BorderFactory.createRaisedBevelBorder());
 		randomCharacterScreen.add(btnBackMainScreenButton);
 
-		JButton btnGenerateRandomCharacterButton = new JButton("Gerar Personagem");
+		JButton btnGenerateRandomCharacterButton = new JButton("Generate Character");
 		btnGenerateRandomCharacterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
 				@SuppressWarnings("unused")
-				PdfScreen pdfScreen = new PdfScreen();			
+				SheetScreen sheetScreen = new SheetScreen();			
 			}
 		});
 		btnGenerateRandomCharacterButton.setBounds(489, 333, 185, 35);
