@@ -2,7 +2,6 @@ package screen;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
 
 import character.AbilityScores;
 import character.PlayerCharacter;
@@ -13,12 +12,17 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class SheetScreen extends JPanel {
 
-	private JFrame pdfScreen;
+	private JFrame sheetScreen;
 	private final JPanel panel = new JPanel();
+
+	public static String getTextFieldCharacterName = "None";
+	public static String getTextFiedPlayerName = "None";
 	public static int initiative = 0;
 	public static int passivePerception = 10;
 	public static double speed = 0.0;
@@ -28,20 +32,20 @@ public class SheetScreen extends JPanel {
 
 	public SheetScreen() {
 
-		pdfScreen = new JFrame();
-		pdfScreen.setIconImage(Toolkit.getDefaultToolkit().getImage(SheetScreen.class.getResource("/screen/icon.jpg")));
-		pdfScreen.setTitle("EnigmaHero: Character Companion");
-		pdfScreen.setBounds(100, 10, 620, 850);
-		pdfScreen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		pdfScreen.setLocationRelativeTo(null);
-		pdfScreen.getContentPane().setLayout(null);
-		pdfScreen.setVisible(true);
+		sheetScreen = new JFrame();
+		sheetScreen.setIconImage(Toolkit.getDefaultToolkit().getImage(SheetScreen.class.getResource("/screen/icon.jpg")));
+		sheetScreen.setTitle("EnigmaHero: Character Companion");
+		sheetScreen.setBounds(100, 10, 620, 850);
+		sheetScreen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		sheetScreen.setLocationRelativeTo(null);
+		sheetScreen.getContentPane().setLayout(null);
+		sheetScreen.setVisible(true);
 
 		panel.setBounds(0, 0, 604, 838);
-		pdfScreen.getContentPane().add(panel);
+		sheetScreen.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		PlayerCharacter pc1 = new PlayerCharacter("teste");
+		PlayerCharacter pc1 = new PlayerCharacter(getTextFieldCharacterName, getTextFiedPlayerName);
 		
 		int modStr = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getStrength());
 		int modDex = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getDexterity());
@@ -50,9 +54,14 @@ public class SheetScreen extends JPanel {
 		int modWis = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getWisdom());
 		int modCha = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getCharisma());
 		
-		JButton btnSpellScreenButton = new JButton("Spells page");
-		btnSpellScreenButton.setBounds(487, 11, 107, 23);
-		panel.add(btnSpellScreenButton);
+		JLabel nameLabel = new JLabel(pc1.getCharacterName());
+		nameLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		nameLabel.setBounds(39, 70, 209, 14);
+		panel.add(nameLabel);
+		
+		JLabel playerNameLabel = new JLabel(pc1.getPlayerName());
+		playerNameLabel.setBounds(473, 57, 97, 14);
+		panel.add(playerNameLabel);
 		
 		JLabel levelLabel = new JLabel("<html>" + String.valueOf(pc1.getLevel()) + "°</html>");
 		levelLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -63,11 +72,6 @@ public class SheetScreen extends JPanel {
 		experiencePointsLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		experiencePointsLabel.setBounds(485, 82, 67, 14);
 		panel.add(experiencePointsLabel);
-
-		JLabel nameLabel = new JLabel(pc1.getCharacterName());
-		nameLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		nameLabel.setBounds(50, 70, 92, 14);
-		panel.add(nameLabel);
 
 		JLabel alignmentLabel = new JLabel(pc1.getAlignment());
 		alignmentLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -403,6 +407,38 @@ public class SheetScreen extends JPanel {
 		passivePerceptionLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		passivePerceptionLabel.setBounds(23, 602, 25, 20);
 		panel.add(passivePerceptionLabel);
+		
+		JPanel spellSheetPanel = new JPanel();
+		spellSheetPanel.setBounds(0, 0, 604, 838);
+		sheetScreen.getContentPane().add(spellSheetPanel);
+		spellSheetPanel.setLayout(null);
+		spellSheetPanel.setVisible(false);
+		
+		JButton btnMainSheetButton = new JButton("Main sheet");
+		btnMainSheetButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(true);
+				spellSheetPanel.setVisible(false);
+			}
+		});
+		btnMainSheetButton.setBounds(487, 11, 107, 23);
+		spellSheetPanel.add(btnMainSheetButton);
+		
+		JLabel spellSheetLabel = new JLabel("");
+		spellSheetLabel.setIcon(new ImageIcon(SheetScreen.class.getResource("/screen/spellSheet.png")));
+		spellSheetLabel.setBounds(-8, 5, 620, 803);
+		spellSheetPanel.add(spellSheetLabel);
+		
+		JButton btnSpellScreenButton = new JButton("Spells sheet");
+		btnSpellScreenButton.setFocusPainted(false);
+		btnSpellScreenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				spellSheetPanel.setVisible(true);
+			}
+		});
+		btnSpellScreenButton.setBounds(487, 11, 107, 23);
+		panel.add(btnSpellScreenButton);
 
 		JLabel dndSheetLabel = new JLabel("");
 		dndSheetLabel.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -411,11 +447,6 @@ public class SheetScreen extends JPanel {
 		dndSheetLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		dndSheetLabel.setIcon(new ImageIcon(SheetScreen.class.getResource("/screen/dnd5Sheet.jpg")));
 		panel.add(dndSheetLabel);
-
-		JTextPane displayInfo = new JTextPane();
-		displayInfo.setBounds(286, 813, 32, 34);
-		panel.add(displayInfo);
-		displayInfo.setText(pc1.getCharacterName() + "\n" + pc1.getProficienyBonus());
-
+		
 	}
 }

@@ -11,6 +11,7 @@ import race.Race;
 public class PlayerCharacter {
 
 	private String characterName;
+	private String playerName;
 	private int hitPoints;
 	private int proficienyBonus;
 	private int experience;
@@ -34,8 +35,9 @@ public class PlayerCharacter {
 
 	}
 
-	public PlayerCharacter(String characterName) {
+	public PlayerCharacter(String characterName, String playerName) {
 		this.setCharacterName(characterName);
+		this.setPlayerName(playerName);
 
 		this.setAbilityScores(new AbilityScores());
 		
@@ -305,5 +307,13 @@ public class PlayerCharacter {
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
 	}
 }
