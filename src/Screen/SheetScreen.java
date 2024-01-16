@@ -30,6 +30,7 @@ public class SheetScreen {
 	public static int passivePerception = 10;
 	public static double speed = 0.0;
 	public static int bonusHitPoints = 0;
+	public static int bonusHitPointsDwarf = 0;
 	
 	
 
@@ -93,6 +94,10 @@ public class SheetScreen {
 		proficinecyBonusLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		proficinecyBonusLabel.setBounds(85, 172, 32, 25);
 		panel.add(proficinecyBonusLabel);
+		
+		JLabel hitPointLabel = new JLabel(String.valueOf((bonusHitPoints * playerCharacter.getLevel()) + (bonusHitPointsDwarf * playerCharacter.getLevel())));
+		hitPointLabel.setBounds(300, 199, 46, 25);
+		panel.add(hitPointLabel);
 
 		JLabel languagesLabel = new JLabel(
 				"<html> Languages: " + playerCharacter.getProficiency().getLanguage().toString() + "</html>");

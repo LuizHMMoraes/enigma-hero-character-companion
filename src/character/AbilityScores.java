@@ -100,35 +100,30 @@ public class AbilityScores {
 			} else
 				AbilityScores.RandomIncrease2();
 			break;
-
 		case 2:
 			if (IncreaseDexterity(2)) {
 				break;
 			} else
 				AbilityScores.RandomIncrease2();;
 			break;
-
 		case 3:
 			if (IncreaseConstitution(2)) {
 				break;
 			} else
 				AbilityScores.RandomIncrease2();
 			break;
-
 		case 4:
 			if (IncreaseIntelligence(2)) {
 				break;
 			} else
 				AbilityScores.RandomIncrease2();
 			break;
-
 		case 5:
 			if (IncreaseWisdom(2)) {
 				break;
 			} else
 				AbilityScores.RandomIncrease2();
 			break;
-
 		case 6:
 			if (IncreaseCharisma(2)) {
 				break;

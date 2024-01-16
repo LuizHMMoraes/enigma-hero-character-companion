@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import character.AbilityScores;
 import proficiency.Proficiency;
+import screen.SheetScreen;
 
 public class Race {
 
@@ -103,7 +104,7 @@ public class Race {
 		if (subrace == "Hill Dwarf") {
 			AbilityScores.setWisdom(AbilityScores.getWisdom() + 1);
 			this.getRacialTraits().add("Dwarven Toughness");
-			//implementar lógica de aumento de 1 de vida/nível
+			SheetScreen.bonusHitPointsDwarf = 1;
 		} else {
 			AbilityScores.setStrength(AbilityScores.getStrength() + 2);
 			this.getRacialTraits().add("Dwarven Armor Training");
