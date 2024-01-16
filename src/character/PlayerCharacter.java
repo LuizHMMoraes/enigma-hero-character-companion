@@ -41,7 +41,7 @@ public class PlayerCharacter {
 
 		this.setAbilityScores(new AbilityScores());
 		
-		this.setLevel(Random(20));
+		this.setLevel(RandomLevel(20));
 
 		this.setRace(new Race().RandomRace());
 		this.getRace().ApplyRaceModifiers(this.getRace().getName());
@@ -60,6 +60,10 @@ public class PlayerCharacter {
 
 	public int Random(double number) {
 		return (int) (Math.random() * number);
+	}
+	
+	public int RandomLevel(double number) {
+		return (int) Math.ceil(Math.random() * number);
 	}
 
 	public void RandomAlignment(String suggestedAlignment) {

@@ -58,7 +58,7 @@ public class Proficiency {
 	
 	public Skill RandomSkill() {
 		Skill skill = new Skill();
-		skill = skill.RepositorySkillList().get(Random(skill.RepositorySkillList().size()));
+		skill = skill.SkillList().get(Random(skill.SkillList().size()));
 		return skill;
 	}
 	

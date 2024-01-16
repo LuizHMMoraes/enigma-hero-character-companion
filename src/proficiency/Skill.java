@@ -31,7 +31,7 @@ public class Skill {
         return valueEquals && storeEquals;
     }
 	
-	public ArrayList<Skill> RepositorySkillList() {
+	public ArrayList<Skill> SkillList() {
 		ArrayList<Skill> skillList = new ArrayList<>();
 		skillList.add(Acrobatics());
 		skillList.add(AnimalHandling());
