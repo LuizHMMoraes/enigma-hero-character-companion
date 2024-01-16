@@ -11,7 +11,7 @@ public class Proficiency {
 	private ArrayList<String> armor;
 	private boolean shield;
 	private ArrayList<String> language;
-	private ArrayList<RepositorySkill> skill;
+	private ArrayList<Skill> skill;
 	
 	//
 	public Proficiency() {
@@ -52,17 +52,17 @@ public class Proficiency {
 		return language;
 	}
 
-	public void AddSkill(RepositorySkill skill) {
+	public void AddSkill(Skill skill) {
 		this.getSkill().add(CheckSkill(skill));
 	}
 	
-	public RepositorySkill RandomSkill() {
-		RepositorySkill skill = new RepositorySkill();
+	public Skill RandomSkill() {
+		Skill skill = new Skill();
 		skill = skill.RepositorySkillList().get(Random(skill.RepositorySkillList().size()));
 		return skill;
 	}
 	
-	public RepositorySkill CheckSkill(RepositorySkill skill) {
+	public Skill CheckSkill(Skill skill) {
 		while (this.getSkill().contains(skill)) {
 			skill = this.RandomSkill();
 		}
@@ -108,11 +108,11 @@ public class Proficiency {
 		this.language = language;
 	}
 
-	public ArrayList<RepositorySkill> getSkill() {
+	public ArrayList<Skill> getSkill() {
 		return skill;
 	}
 
-	public void setSkill(ArrayList<RepositorySkill> skill) {
+	public void setSkill(ArrayList<Skill> skill) {
 		this.skill = skill;
 	}
 	

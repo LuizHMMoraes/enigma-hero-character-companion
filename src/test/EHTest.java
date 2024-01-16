@@ -16,7 +16,7 @@ import background.RepositoryBackground;
 import character.AbilityScores;
 import character.PlayerCharacter;
 import proficiency.Proficiency;
-import proficiency.RepositorySkill;
+import proficiency.Skill;
 import race.Race;
 import race.RepositoryRace;
 
@@ -160,7 +160,7 @@ class EHTest {
     void testAddSkill() {
         Proficiency proficiency = new Proficiency();
         proficiency.setSkill(new ArrayList<>());
-        proficiency.AddSkill(new RepositorySkill().Acrobatics());
+        proficiency.AddSkill(new Skill().Acrobatics());
         assertTrue(proficiency.getSkill().get(0).getName().contains("Acrobatics"));
     }
     
@@ -176,8 +176,8 @@ class EHTest {
    void testCheckSkill(){
 	   Proficiency proficiency = new Proficiency();
        proficiency.setSkill(new ArrayList<>());
-       proficiency.getSkill().add(proficiency.CheckSkill(new RepositorySkill().Acrobatics()));
-       proficiency.getSkill().add(proficiency.CheckSkill(new RepositorySkill().Acrobatics()));
+       proficiency.getSkill().add(proficiency.CheckSkill(new Skill().Acrobatics()));
+       proficiency.getSkill().add(proficiency.CheckSkill(new Skill().Acrobatics()));
        assertFalse(proficiency.getSkill().get(0).getName().equals(proficiency.getSkill().get(1).getName()));
    }
    
@@ -228,7 +228,7 @@ class EHTest {
 	   background.getProficiency().setLanguage(new ArrayList<>());
 	   background.getProficiency().getLanguage().add("Common");
 	   background.getProficiency().setSkill(new ArrayList<>());
-	   RepositorySkill skillBackground = new RepositorySkill().Acrobatics();
+	   Skill skillBackground = new Skill().Acrobatics();
 	   background.getProficiency().getSkill().add(skillBackground);
 	   
 	   Race race = new Race();
@@ -236,7 +236,7 @@ class EHTest {
 	   race.getProficiency().setLanguage(new ArrayList<>());
 	   race.getProficiency().getLanguage().add("Common");
 	   race.getProficiency().setSkill(new ArrayList<>());
-	   RepositorySkill skillRace = new RepositorySkill().Acrobatics();
+	   Skill skillRace = new Skill().Acrobatics();
 	   race.getProficiency().getSkill().add(skillRace);
 	   
 	   PlayerCharacter playerCharacter = new PlayerCharacter();
@@ -260,7 +260,7 @@ class EHTest {
 	   PlayerCharacter playerCharacter = new PlayerCharacter();
 	   playerCharacter.setProficiency(new Proficiency());
 	   playerCharacter.getProficiency().setSkill(new ArrayList<>());
-	   playerCharacter.getProficiency().getSkill().add(new RepositorySkill().Athletics());
+	   playerCharacter.getProficiency().getSkill().add(new Skill().Athletics());
 	   playerCharacter.setProficienyBonus(5);
 	   
 	   assertEquals(5, playerCharacter.ApplySkillProficiencyBonus("Athletics"));

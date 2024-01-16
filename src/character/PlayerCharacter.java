@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 import background.Background;
 import proficiency.Proficiency;
-import proficiency.RepositorySkill;
+import proficiency.Skill;
 import race.Race;
 
 public class PlayerCharacter {
@@ -142,7 +142,7 @@ public class PlayerCharacter {
 		return verifyDuplicates;
 	}
 
-	public ArrayList<String> SkillList(ArrayList<RepositorySkill> charSkills) {
+	public ArrayList<String> SkillList(ArrayList<Skill> charSkills) {
 		ArrayList<String> skillList = new ArrayList<>();
 		for (int i = 0; i < charSkills.size(); i++) {
 			skillList.add(charSkills.get(i).getName());

@@ -3,7 +3,7 @@ package background;
 import java.util.ArrayList;
 
 import proficiency.Proficiency;
-import proficiency.RepositorySkill;
+import proficiency.Skill;
 
 public class Background {
 
@@ -95,8 +95,8 @@ public class Background {
 
 //Aqui COMEÇA a metodologia para aplicação de proficiências.	
 	public void AcolyteModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Insight());
-		this.getProficiency().AddSkill(new RepositorySkill().Religion());
+		this.getProficiency().AddSkill(new Skill().Insight());
+		this.getProficiency().AddSkill(new Skill().Religion());
 		this.getProficiency().setLanguage(new ArrayList<>());
 		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 		this.getProficiency().getLanguage()
@@ -104,73 +104,73 @@ public class Background {
 	}
 
 	public void CharlatanModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Deception());
-		this.getProficiency().AddSkill(new RepositorySkill().SleightOfHand());
+		this.getProficiency().AddSkill(new Skill().Deception());
+		this.getProficiency().AddSkill(new Skill().SleightOfHand());
 	}
 
 	public void CriminalModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Deception());
-		this.getProficiency().AddSkill(new RepositorySkill().Stealth());
+		this.getProficiency().AddSkill(new Skill().Deception());
+		this.getProficiency().AddSkill(new Skill().Stealth());
 	}
 
 	public void EntertainerModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Acrobatics());
-		this.getProficiency().AddSkill(new RepositorySkill().Performance());
+		this.getProficiency().AddSkill(new Skill().Acrobatics());
+		this.getProficiency().AddSkill(new Skill().Performance());
 	}
 
 	public void FolkHeroModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().AnimalHandling());
-		this.getProficiency().AddSkill(new RepositorySkill().Survival());
+		this.getProficiency().AddSkill(new Skill().AnimalHandling());
+		this.getProficiency().AddSkill(new Skill().Survival());
 	}
 
 	public void GuildArtisanModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Insight());
-		this.getProficiency().AddSkill(new RepositorySkill().Persuasion());
+		this.getProficiency().AddSkill(new Skill().Insight());
+		this.getProficiency().AddSkill(new Skill().Persuasion());
 		this.getProficiency().setLanguage(new ArrayList<>());
 		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 
 	public void HermitModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Medicine());
-		this.getProficiency().AddSkill(new RepositorySkill().Religion());
+		this.getProficiency().AddSkill(new Skill().Medicine());
+		this.getProficiency().AddSkill(new Skill().Religion());
 		this.getProficiency().setLanguage(new ArrayList<>());
 		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 
 	public void NobleModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().History());
-		this.getProficiency().AddSkill(new RepositorySkill().Persuasion());
+		this.getProficiency().AddSkill(new Skill().History());
+		this.getProficiency().AddSkill(new Skill().Persuasion());
 		this.getProficiency().setLanguage(new ArrayList<>());
 		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 
 	public void OutlanderModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Athletics());
-		this.getProficiency().AddSkill(new RepositorySkill().Survival());
+		this.getProficiency().AddSkill(new Skill().Athletics());
+		this.getProficiency().AddSkill(new Skill().Survival());
 		this.getProficiency().setLanguage(new ArrayList<>());
 		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 
 	public void SageModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Arcana());
-		this.getProficiency().AddSkill(new RepositorySkill().History());
+		this.getProficiency().AddSkill(new Skill().Arcana());
+		this.getProficiency().AddSkill(new Skill().History());
 		this.getProficiency().setLanguage(new ArrayList<>());
 		this.getProficiency().getLanguage().add(this.getProficiency().RandomLanguage());
 	}
 
 	public void SailorModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Athletics());
-		this.getProficiency().AddSkill(new RepositorySkill().Perception());
+		this.getProficiency().AddSkill(new Skill().Athletics());
+		this.getProficiency().AddSkill(new Skill().Perception());
 	}
 
 	public void SoldierModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().Athletics());
-		this.getProficiency().AddSkill(new RepositorySkill().Intimidation());
+		this.getProficiency().AddSkill(new Skill().Athletics());
+		this.getProficiency().AddSkill(new Skill().Intimidation());
 	}
 
 	public void UrchinModifiers() {
-		this.getProficiency().AddSkill(new RepositorySkill().SleightOfHand());
-		this.getProficiency().AddSkill(new RepositorySkill().Stealth());
+		this.getProficiency().AddSkill(new Skill().SleightOfHand());
+		this.getProficiency().AddSkill(new Skill().Stealth());
 	}
 //Aqui TERMINA a metodologia para aplicação de proficiências.
 
