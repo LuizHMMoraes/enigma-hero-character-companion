@@ -62,6 +62,72 @@ public class Proficiency {
 		return skill;
 	}
 	
+	public Skill RandomSkillBarbarian() {
+		Skill skill = new Skill();
+		skill = skill.BarbarianSkillList().get(Random(skill.BarbarianSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillCleric() {
+		Skill skill = new Skill();
+		skill = skill.ClericSkillList().get(Random(skill.ClericSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillDruid() {
+		Skill skill = new Skill();
+		skill = skill.DruidSkillList().get(Random(skill.DruidSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillFighter() {
+		Skill skill = new Skill();
+		skill = skill.FighterSkillList().get(Random(skill.FighterSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillMonk() {
+		Skill skill = new Skill();
+		skill = skill.MonkSkillList().get(Random(skill.MonkSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillPaladin() {
+		Skill skill = new Skill();
+		skill = skill.PaladinSkillList().get(Random(skill.PaladinSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillRanger() {
+		Skill skill = new Skill();
+		skill = skill.RangerSkillList().get(Random(skill.RangerSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillRogue() {
+		Skill skill = new Skill();
+		skill = skill.RogueSkillList().get(Random(skill.RogueSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillSorcerer() {
+		Skill skill = new Skill();
+		skill = skill.SorcererSkillList().get(Random(skill.SorcererSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillWarlock() {
+		Skill skill = new Skill();
+		skill = skill.WarlockSkillList().get(Random(skill.WarlockSkillList().size()));
+		return skill;
+	}
+	
+	public Skill RandomSkillWizard() {
+		Skill skill = new Skill();
+		skill = skill.WizardSkillList().get(Random(skill.WizardSkillList().size()));
+		return skill;
+	}
+	
 	public Skill CheckSkill(Skill skill) {
 		while (this.getSkill().contains(skill)) {
 			skill = this.RandomSkill();

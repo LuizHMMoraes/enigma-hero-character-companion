@@ -24,8 +24,8 @@ public class SheetScreen {
 	
 	public static SheetScreen sheet;
 	
-	public static String getTextFieldCharacterName = "None";
-	public static String getTextFiedPlayerName = "None";
+	public static String getTextFieldCharacterName = "";
+	public static String getTextFiedPlayerName = "";
 	public static int initiative = 0;
 	public static int passivePerception = 10;
 	public static double speed = 0.0;

@@ -31,29 +31,6 @@ public class Skill {
         return valueEquals && storeEquals;
     }
 	
-	public ArrayList<Skill> SkillList() {
-		ArrayList<Skill> skillList = new ArrayList<>();
-		skillList.add(Acrobatics());
-		skillList.add(AnimalHandling());
-		skillList.add(Arcana());
-		skillList.add(Athletics());
-		skillList.add(Deception());
-		skillList.add(History());
-		skillList.add(Insight());
-		skillList.add(Intimidation());
-		skillList.add(Investigation());
-		skillList.add(Medicine());
-		skillList.add(Nature());
-		skillList.add(Perception());
-		skillList.add(Performance());
-		skillList.add(Persuasion());
-		skillList.add(Religion());
-		skillList.add(SleightOfHand());
-		skillList.add(Stealth());
-		skillList.add(Survival());
-		return skillList;
-	}
-	
 	public Skill Acrobatics() {
 		Skill acrobatics = new Skill("Acrobatics", "Dexterity");
 		return acrobatics;
@@ -143,7 +120,162 @@ public class Skill {
 		Skill survival = new Skill("Survival", "Wisdom");
 		return survival;
 	}
+	
+	public ArrayList<Skill> SkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Acrobatics());
+		skillList.add(AnimalHandling());
+		skillList.add(Arcana());
+		skillList.add(Athletics());
+		skillList.add(Deception());
+		skillList.add(History());
+		skillList.add(Insight());
+		skillList.add(Intimidation());
+		skillList.add(Investigation());
+		skillList.add(Medicine());
+		skillList.add(Nature());
+		skillList.add(Perception());
+		skillList.add(Performance());
+		skillList.add(Persuasion());
+		skillList.add(Religion());
+		skillList.add(SleightOfHand());
+		skillList.add(Stealth());
+		skillList.add(Survival());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> BarbarianSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(AnimalHandling());
+		skillList.add(Athletics());
+		skillList.add(Intimidation());
+		skillList.add(Nature());
+		skillList.add(Perception());
+		skillList.add(Survival());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> ClericSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(History());
+		skillList.add(Insight());
+		skillList.add(Medicine());
+		skillList.add(Persuasion());
+		skillList.add(Religion());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> DruidSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(AnimalHandling());
+		skillList.add(Arcana());
+		skillList.add(Insight());
+		skillList.add(Medicine());
+		skillList.add(Nature());
+		skillList.add(Perception());
+		skillList.add(Religion());
+		skillList.add(Survival());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> FighterSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Acrobatics());
+		skillList.add(AnimalHandling());
+		skillList.add(Athletics());
+		skillList.add(History());
+		skillList.add(Insight());
+		skillList.add(Intimidation());
+		skillList.add(Perception());
+		skillList.add(Survival());
+		return skillList;
+	}
 
+	public ArrayList<Skill> MonkSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Acrobatics());
+		skillList.add(Athletics());
+		skillList.add(History());
+		skillList.add(Insight());
+		skillList.add(Religion());
+		skillList.add(Stealth());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> PaladinSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Athletics());
+		skillList.add(Insight());
+		skillList.add(Intimidation());
+		skillList.add(Medicine());
+		skillList.add(Persuasion());
+		skillList.add(Religion());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> RangerSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(AnimalHandling());
+		skillList.add(Athletics());
+		skillList.add(Insight());
+		skillList.add(Investigation());
+		skillList.add(Nature());
+		skillList.add(Perception());
+		skillList.add(Stealth());
+		skillList.add(Survival());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> RogueSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Acrobatics());
+		skillList.add(Athletics());
+		skillList.add(Deception());
+		skillList.add(Insight());
+		skillList.add(Intimidation());
+		skillList.add(Investigation());
+		skillList.add(Perception());
+		skillList.add(Performance());
+		skillList.add(Persuasion());
+		skillList.add(SleightOfHand());
+		skillList.add(Stealth());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> SorcererSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Arcana());
+		skillList.add(Deception());
+		skillList.add(Insight());
+		skillList.add(Intimidation());
+		skillList.add(Persuasion());
+		skillList.add(Religion());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> WarlockSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Arcana());
+		skillList.add(Deception());
+		skillList.add(History());
+		skillList.add(Intimidation());
+		skillList.add(Investigation());
+		skillList.add(Nature());
+		skillList.add(Religion());
+		return skillList;
+	}
+	
+	public ArrayList<Skill> WizardSkillList() {
+		ArrayList<Skill> skillList = new ArrayList<>();
+		skillList.add(Arcana());
+		skillList.add(History());
+		skillList.add(Insight());
+		skillList.add(Investigation());
+		skillList.add(Medicine());
+		skillList.add(Religion());
+		return skillList;
+	}
+	
 	public String getName() {
 		return name;
 	}

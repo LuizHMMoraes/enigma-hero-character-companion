@@ -1,6 +1,6 @@
 package character;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.Comparator;
 
 import background.Background;
@@ -28,6 +28,8 @@ public class PlayerCharacter {
 	private Background background;
 
 	private Proficiency proficiency;
+	
+	private ArrayList<Feat> feat;
 
 	//
 
@@ -52,8 +54,9 @@ public class PlayerCharacter {
 		this.getBackground().ApplyBackground(this.getBackground().getName());
 		// instância de classe
 		
+		this.setFeat(new ArrayList<>());
 		this.ApplyExperiencePoints(this.getLevel());
-		this.ApplyProficiencyBonus(this.getLevel());
+		this.CalculateProficiencyBonus(this.getLevel());
 
 		this.setProficiency(this.VerifyDuplicates());
 	}
@@ -220,8 +223,23 @@ public class PlayerCharacter {
 
 		this.setExperience(experienceThreshold.get(level));
 	}
+	
+	public void ApplyAbilityScoreImprovement(int abilityScoreImprovementCounter) {
+		for (int i = 1; i <= abilityScoreImprovementCounter; i++) {
+			int roll = Random(2);
+			if(roll == 0) {
+				AbilityScores.RandomIncrease1();
+				AbilityScores.RandomIncrease1();
+			} else if (roll == 1) {
+				AbilityScores.RandomIncrease2();
+			} else {
+				Feat feat = new Feat().RandomFeat();
+				this.getFeat().add(feat);
+			}
+		}
+	}
 
-	public void ApplyProficiencyBonus(int level) {
+	public void CalculateProficiencyBonus(int level) {
 		if (level <= 4) {
 			this.setProficienyBonus(2);
 		} else if (level >= 5 && level <= 8) {
@@ -319,5 +337,13 @@ public class PlayerCharacter {
 
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
+	}
+
+	public ArrayList<Feat> getFeat() {
+		return feat;
+	}
+
+	public void setFeat(ArrayList<Feat> feat) {
+		this.feat = feat;
 	}
 }

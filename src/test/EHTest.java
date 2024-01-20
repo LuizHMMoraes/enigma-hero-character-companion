@@ -23,6 +23,8 @@ import race.RepositoryRace;
 class EHTest {
 
 	private AbilityScores abilityScores;
+	private Proficiency proficiency;
+	private PlayerCharacter playerCharacter;
 
 	@BeforeAll
 	static void start() {
@@ -44,6 +46,8 @@ class EHTest {
 	@BeforeEach
     void setUp() {
         abilityScores = new AbilityScores();
+        proficiency = new Proficiency();
+        playerCharacter = new PlayerCharacter();
     }
 	
 	@Test
@@ -133,7 +137,6 @@ class EHTest {
  //CLASSE --> Proficiency <--
     @Test
     void testRandomLanguage() {
-        Proficiency proficiency = new Proficiency();
         proficiency.setLanguage(new ArrayList<>());
         proficiency.getLanguage().add(proficiency.RandomLanguage());
         proficiency.getLanguage().add(proficiency.RandomLanguage());
@@ -149,7 +152,6 @@ class EHTest {
     
     @Test
     void testCheckLanguage() {
-    	Proficiency proficiency = new Proficiency();
     	proficiency.setLanguage(new ArrayList<>());
     	proficiency.getLanguage().add("Orc");
     	boolean res = proficiency.CheckLanguage("Orc").equals("Orc");
@@ -158,7 +160,6 @@ class EHTest {
 
     @Test
     void testAddSkill() {
-        Proficiency proficiency = new Proficiency();
         proficiency.setSkill(new ArrayList<>());
         proficiency.AddSkill(new Skill().Acrobatics());
         assertTrue(proficiency.getSkill().get(0).getName().contains("Acrobatics"));
@@ -166,7 +167,6 @@ class EHTest {
     
    @Test
    void testRandomSkill() {
-	   Proficiency proficiency = new Proficiency();
        proficiency.setSkill(new ArrayList<>());
        proficiency.getSkill().add(proficiency.RandomSkill());
        assertNotNull(proficiency.getSkill().get(0));
@@ -174,7 +174,6 @@ class EHTest {
    
    @Test 
    void testCheckSkill(){
-	   Proficiency proficiency = new Proficiency();
        proficiency.setSkill(new ArrayList<>());
        proficiency.getSkill().add(proficiency.CheckSkill(new Skill().Acrobatics()));
        proficiency.getSkill().add(proficiency.CheckSkill(new Skill().Acrobatics()));
@@ -257,7 +256,6 @@ class EHTest {
    
    @Test
    void testApplySkillProficiencyBonus() {
-	   PlayerCharacter playerCharacter = new PlayerCharacter();
 	   playerCharacter.setProficiency(new Proficiency());
 	   playerCharacter.getProficiency().setSkill(new ArrayList<>());
 	   playerCharacter.getProficiency().getSkill().add(new Skill().Athletics());
@@ -274,7 +272,6 @@ class EHTest {
    
    @Test
    void testApplyExperiencePoints() {
-	   PlayerCharacter playerCharacter = new PlayerCharacter();
 	   playerCharacter.ApplyExperiencePoints(1);
 	   assertEquals(0, playerCharacter.getExperience());
 	   playerCharacter.ApplyExperiencePoints(20);
@@ -282,9 +279,38 @@ class EHTest {
    }
    
    @Test 
-   void testApplyProficiencyBonus() {
-	   PlayerCharacter playerCharacter = new PlayerCharacter();
-	   playerCharacter.ApplyProficiencyBonus(5);
+   void testCalculateProficiencyBonus() {
+	   playerCharacter.CalculateProficiencyBonus(5);
 	   assertEquals(3, playerCharacter.getProficienyBonus(), "At level 5 the proficiency bônus should be 3");
+   }
+
+   @Test
+   void testApplyAbilityScoreImprovement() {   
+	   int initialStrength = AbilityScores.getStrength();
+       int initialDexterity = AbilityScores.getDexterity();
+       int initialConstitution = AbilityScores.getConstitution();
+       int initialIntelligence = AbilityScores.getIntelligence();
+       int initialWisdom = AbilityScores.getWisdom();
+       int initialCharisma = AbilityScores.getCharisma();
+       playerCharacter.setFeat(new ArrayList<>());
+       playerCharacter.ApplyAbilityScoreImprovement(1);
+       boolean hasFeat = !playerCharacter.getFeat().isEmpty();       
+       
+	   assertTrue(
+               AbilityScores.getStrength() == initialStrength + 2 ||
+               AbilityScores.getDexterity() == initialDexterity + 2 ||
+               AbilityScores.getConstitution() == initialConstitution + 2 ||
+               AbilityScores.getIntelligence() == initialIntelligence + 2 ||
+               AbilityScores.getWisdom() == initialWisdom + 2 ||
+               AbilityScores.getCharisma() == initialCharisma + 2 ||
+               AbilityScores.getStrength() == initialStrength + 1 ||
+               AbilityScores.getDexterity() == initialDexterity + 1 ||
+               AbilityScores.getConstitution() == initialConstitution + 1 ||
+               AbilityScores.getIntelligence() == initialIntelligence + 1 ||
+               AbilityScores.getWisdom() == initialWisdom + 1 ||
+               AbilityScores.getCharisma() == initialCharisma + 1 ||
+               hasFeat,
+               "At least one ability should be increased or hasFeat should return true"
+       );
    }
 }
