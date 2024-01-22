@@ -80,10 +80,16 @@ public class SheetScreen {
 		playerNameLabel.setBounds(473, 57, 97, 14);
 		panel.add(playerNameLabel);
 		
-		JLabel levelLabel = new JLabel("<html>" + String.valueOf(characterLevel) + "�</html>");
+		JLabel levelLabel = new JLabel("<html>" + String.valueOf(characterLevel) + "</html>");
 		levelLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		levelLabel.setBounds(338, 56, 32, 14);
 		panel.add(levelLabel);
+
+		//HitPoints
+		JLabel hitPointsLabel = new JLabel("<html>" + String.valueOf(playerCharacter.getHitPoints()) + "</html>");
+		hitPointsLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		hitPointsLabel.setBounds(292, 227, 32, 18);
+		panel.add(hitPointsLabel);
 
 		JLabel classNameLabel = new JLabel(className);
 		classNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));

@@ -37,15 +37,11 @@ public class PlayerCharacter {
 	private ArrayList<Feat> feat;
 
 	private Classes playerClass;
-
 	private String className;
-
 	private Proficiency classProficiency;
 
 	private List<List<String>> knownSpells;
-
 	private Spell spell;
-
 	private SpellsRepository spellsRepository;
 
 	//
@@ -79,6 +75,8 @@ public class PlayerCharacter {
         spell = new Spell(spellsRepository);
 		this.setSpell(spell);
 		this.setSpellsRepository(spellsRepository);
+
+		this.setHitPoints(CalculateHitPoints(level));
 
 		// Spellcasters
 		if (className == "Bard" || className == "Cleric" || className == "Druid" || className == "Paladin" || className == "Ranger" 
@@ -144,16 +142,22 @@ public class PlayerCharacter {
 		this.setAlignment(orderCaos + " - " + goodEvil);
 	}
 
-	/*
-	 * public int CalculateHitPoints(int level) { int hitPoints =
-	 * playerClass.getHitDice() + AbilityScore.modCon; int rollHitPointsDice =
-	 * Random(playerClass.getHitDice()); for(int i = 2; i <= level; i++) {
-	 * 
-	 * if (rollHitPointsDice < (playerClass.getHitDice()/2) + 1){ rollHitPoints
-	 * = playerClass.getHitDice()/2) + 1; }
-	 * 
-	 * hitPoints += rollHitPointsDice + AbilityScore.modCon; } return hitPoints; }
-	 */
+	 public int CalculateHitPoints(int level) {
+		int hitPoints = playerClass.getHitDice() + AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
+		int rollHitPointsDice = Random(playerClass.getHitDice());
+
+		for(int i = 2; i <= level; i++) {
+			rollHitPointsDice = Random(playerClass.getHitDice());
+
+			if (rollHitPointsDice < (playerClass.getHitDice()/2) + 1) {
+				rollHitPointsDice = (playerClass.getHitDice()/2) + 1;
+			}
+
+			hitPoints += rollHitPointsDice + AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
+		}
+
+		return hitPoints;
+	 }
 
 	 public Proficiency VerifyDuplicates() {
 		Proficiency verifyDuplicates = new Proficiency();
