@@ -46,39 +46,6 @@ public class Spell {
 
         return count;
     }
-
-    /*
-    public void fillSlots(int level, String className) {
-        int[] slots = calculateSlots(level, className);
-
-        Set<String> selectedSpells = new HashSet<>();
-
-        for (int i = 0; i < slots.length; i++) {
-
-            if (slots[i] > 0) {
-                if (i==0) {
-                    System.out.println("Cantrips:");
-                }
-                else {
-                    System.out.println("Level " + i + ":");
-                }
-    
-                for (int j = 0; j < slots[i]; j++) {
-                    String randomSpell = getRandomKnownSpell(className, i);
-    
-                    while (selectedSpells.contains(randomSpell)) {
-                        randomSpell = getRandomKnownSpell(className, i);
-                    }
-    
-                    System.out.println(randomSpell);
-                    selectedSpells.add(randomSpell);
-                }
-    
-                System.out.println("");
-            }
-        }
-    }
-    */
     
     public List<String> getAllSpellsForLevel(String className, int level) {
         List<String> allSpells = spellRepository.getSpellsByClassAndLevel(className, level);
@@ -164,7 +131,7 @@ public class Spell {
 
         int maxKnowSpells = getNumberOfKnownSpells(className, level);
     
-        if (maxKnowSpells == -1) {          // Cleric, Druid OU Paladin
+        if (maxKnowSpells == -1) {          // Cleric, Druid or Paladin
             for (int i = 0; i < slots.length; i++) {
 
                 if (i == 0) {
@@ -189,7 +156,7 @@ public class Spell {
             }
         } else {                        // Bard, Ranger, Sorcerer, Warlock or Wizard
 
-            // Adiciona as cantrips
+            // Cantrips
             List<String> spellsForLevel;
             int availableSlots = slots[0];
             if (availableSlots > 0) {
@@ -199,7 +166,6 @@ public class Spell {
             }
             spellsByLevel.add(spellsForLevel);
 
-            // Inicializa as listas da lista spellsByLevel
             for (int i = 0; i < 9; i++) {
                 spellsByLevel.add(new ArrayList<>());
             }
