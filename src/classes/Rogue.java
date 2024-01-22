@@ -97,7 +97,7 @@ public class Rogue extends Classes {
     };
 
     private static String[][] FeaturesThief = {
-        {"Expertise", "Sneak Attack", "Thieves's Cant"},
+        {"Expertise", "Sneak Attack", "Thieves s Cant"},
         {"Cunning Action"},
         {"Fast Hands", "Second-Story Work"}, //archetype feature
         {}, //ability score improvement
@@ -113,14 +113,14 @@ public class Rogue extends Classes {
         {"Blindsense"},
         {"Slippery Mind"},
         {}, //ability score improvement
-        {"Thief's Reflexes"}, //archetype feature
+        {"Thief s Reflexes"}, //archetype feature
         {"Elusive"},
         {}, //ability score improvement
         {"Stroke of Luck"},
     };
 
     private static String[][] FeaturesAssassin = {
-        {"Expertise", "Sneak Attack", "Thieves's Cant"},
+        {"Expertise", "Sneak Attack", "Thieves s Cant"},
         {"Cunning Action"},
         {"Bonus Proficiencies", "Assassinate"}, //archetype feature
         {}, //ability score improvement
@@ -143,7 +143,7 @@ public class Rogue extends Classes {
     };
 
     private static String[][] FeaturesArcaneTrickster = {
-        {"Expertise", "Sneak Attack", "Thieves's Cant"},
+        {"Expertise", "Sneak Attack", "Thieves s Cant"},
         {"Cunning Action"},
         {"Spellcasting", "Mage Hand Legerdemain"}, //archetype feature
         {}, //ability score improvement

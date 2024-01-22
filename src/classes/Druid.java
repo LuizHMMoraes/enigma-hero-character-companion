@@ -106,15 +106,15 @@ public class Druid extends Classes {
         {"Circle Spells"},
         {"Wild Shape Improvement"}, //ability score improvement
         {"Circle Spells"},
-        {"Land's Stride"}, //circle feature
+        {"Land s Stride"}, //circle feature
         {"Circle Spells"},
         {"Wild Shape Improvement"}, //ability score improvement
         {"Circle Spells"},
-        {"Nature's Ward"}, //circle feature
+        {"Nature s Ward"}, //circle feature
         {},
         {}, //ability score improvement
         {},
-        {"Nature's Sanctuary"}, //circle feature
+        {"Nature s Sanctuary"}, //circle feature
         {},
         {}, //ability score improvement
         {},

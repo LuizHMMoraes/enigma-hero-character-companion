@@ -278,7 +278,7 @@ public class Wizard extends Classes {
         {},
         {}, //ability score improvement
         {},
-        {"Transmuter's Stone"}, //tradition feature
+        {"Transmuter s Stone"}, //tradition feature
         {},
         {}, //ability score improvement
         {},

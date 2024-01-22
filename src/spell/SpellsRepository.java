@@ -258,7 +258,7 @@ public class SpellsRepository {
             "Animal Friendship", "Bane", "Charm Person", "Comprehend Languages", "Cure Wounds",
             "Detect Magic", "Disguise Self", "Dissonant Whispers", "Faerie Fire", "Feather Fall",
             "Healing Word", "Heroism", "Identify", "Illusory Script", "Longstrider", "Silent Image",
-            "Sleep", "Speak with Animals", "Tasha's Hideous Laughter", "Thunderwave", "Unseen Servant");
+            "Sleep", "Speak with Animals", "Tasha s Hideous Laughter", "Thunderwave", "Unseen Servant");
         
         addSpells("Bard", 2,
             "Animal Messenger", "Blindness/Deafness", "Calm Emotions", "Cloud of Daggers", "Crown of Madness",
@@ -268,7 +268,7 @@ public class SpellsRepository {
 
         addSpells("Bard", 3,
             "Bestow Curse", "Clairvoyance", "Dispel Magic", "Fear", "Feign Death",
-            "Glyph of Warding", "Hypnotic Pattern", "Leomund's Tiny Hut", "Major Image", "Nondetection",
+            "Glyph of Warding", "Hypnotic Pattern", "Leomund s Tiny Hut", "Major Image", "Nondetection",
             "Plant Growth", "Sending", "Speak with Dead", "Speak with Plants", "Stinking Cloud", "Tongues");
 
         addSpells("Bard", 4,
@@ -281,12 +281,12 @@ public class SpellsRepository {
             "Modify Memory", "Planar Binding", "Raise Dead", "Scrying", "Seeming", "Teleportation Circle");
 
         addSpells("Bard", 6,
-            "Eyebite", "Find the Path", "Guards and Wards", "Mass Suggestion", "Otto's Irresistible Dance",
+            "Eyebite", "Find the Path", "Guards and Wards", "Mass Suggestion", "Otto s Irresistible Dance",
             "Programmed Illusion", "True Seeing");
 
         addSpells("Bard", 7,
-            "Etherealness", "Forcecage", "Mirage Arcane", "Mordenkainen's Magnificent Mansion",
-            "Mordenkainen's Sword", "Project Image", "Regenerate", "Resurrection", "Symbol", "Teleport");
+            "Etherealness", "Forcecage", "Mirage Arcane", "Mordenkainen s Magnificent Mansion",
+            "Mordenkainen s Sword", "Project Image", "Regenerate", "Resurrection", "Symbol", "Teleport");
 
         addSpells("Bard", 8,
             "Dominate Monster", "Feeblemind", "Glibness", "Mind Blank", "Power Word Stun");
@@ -326,7 +326,7 @@ public class SpellsRepository {
 
         addSpells("Cleric", 6,
             "Blade Barrier", "Create Undead", "Find the Path", "Forbiddance", "Harm",
-            "Heal", "Heroes' Feast", "Planar Ally", "True Seeing", "Word of Recall");
+            "Heal", "Heroes  Feast", "Planar Ally", "True Seeing", "Word of Recall");
 
         addSpells("Cleric", 7,
             "Conjure Celestial", "Divine Word", "Etherealness", "Fire Storm", "Plane Shift",
@@ -372,7 +372,7 @@ public class SpellsRepository {
             "Reincarnate", "Scrying", "Tree Stride", "Wall of Stone");
 
         addSpells("Druid", 6,
-            "Conjure Fey", "Find the Path", "Heal", "Heroes' Feast", "Move Earth",
+            "Conjure Fey", "Find the Path", "Heal", "Heroes  Feast", "Move Earth",
             "Sunbeam", "Transport via Plants", "Wall of Thorns", "Wind Walk");
 
         addSpells("Druid", 7,
@@ -397,7 +397,7 @@ public class SpellsRepository {
             "Magic Weapon", "Protection from Poison", "Zone of Truth");
 
         addSpells("Paladin", 3,
-            "Aura of Vitality", "Blinding Smite", "Create Food and Water", "Crusader's Mantle",
+            "Aura of Vitality", "Blinding Smite", "Create Food and Water", "Crusader s Mantle",
             "Daylight", "Dispel Magic", "Elemental Weapon", "Magic Circle", "Remove Curse", "Revivify");
 
         addSpells("Paladin", 4,
@@ -411,7 +411,7 @@ public class SpellsRepository {
         // RANGER
         addSpells("Ranger", 1,
             "Alarm", "Animal Friendship", "Cure Wounds", "Detect Magic", "Detect Poison and Disease",
-            "Ensnaring Strike", "Fog Cloud", "Goodberry", "Hail of Thorns", "Hunter's Mark",
+            "Ensnaring Strike", "Fog Cloud", "Goodberry", "Hail of Thorns", "Hunter s Mark",
             "Jump", "Longstrider", "Speak with Animals");
 
         addSpells("Ranger", 2,
@@ -528,7 +528,7 @@ public class SpellsRepository {
             "False Life", "Feather Fall", "Find Familiar", "Fog Cloud", "Grease", "Identify",
             "Illusory Script", "Jump", "Longstrider", "Mage Armor", "Magic Missile",
             "Protection from Evil and Good", "Ray of Sickness", "Shield", "Silent Image",
-            "Sleep", "Tasha's Hideous Laughter", "Tenser's Floating Disk", "Thunderwave",
+            "Sleep", "Tasha s Hideous Laughter", "Tenser s Floating Disk", "Thunderwave",
             "Unseen Servant", "Witch Bolt");
 
         addSpells("Wizard", 2,
@@ -536,14 +536,14 @@ public class SpellsRepository {
             "Continual Flame", "Crown of Madness", "Darkness", "Darkvision", "Detect Thoughts",
             "Enlarge/Reduce", "Flaming Sphere", "Gentle Repose", "Gust of Wind", "Hold Person",
             "Invisibility", "Knock", "Levitate", "Locate Object", "Magic Mouth", "Magic Weapon",
-            "Melf's Acid Arrow", "Mirror Image", "Misty Step", "Nystul's Magic Aura",
+            "Melf s Acid Arrow", "Mirror Image", "Misty Step", "Nystul s Magic Aura",
             "Phantasmal Force", "Ray of Enfeeblement", "Rope Trick", "Scorching Ray",
             "See Invisibility", "Shatter", "Spider Climb", "Suggestion", "Web");
 
         addSpells("Wizard", 3,
             "Animate Dead", "Bestow Curse", "Blink", "Clairvoyance", "Counterspell",
             "Dispel Magic", "Fear", "Feign Death", "Fireball", "Fly", "Gaseous Form",
-            "Glyph of Warding", "Haste", "Hypnotic Pattern", "Leomund's Tiny Hut",
+            "Glyph of Warding", "Haste", "Hypnotic Pattern", "Leomund s Tiny Hut",
             "Lightning Bolt", "Magic Circle", "Major Image", "Nondetection",
             "Phantom Steed", "Protection from Energy", "Remove Curse", "Sending",
             "Sleet Storm", "Slow", "Stinking Cloud", "Tongues", "Vampiric Touch",
@@ -551,30 +551,30 @@ public class SpellsRepository {
 
         addSpells("Wizard", 4,
             "Arcane Eye", "Banishment", "Blight", "Confusion", "Conjure Minor Elementals",
-            "Control Water", "Dimension Door", "Evard's Black Tentacles", "Fabricate",
+            "Control Water", "Dimension Door", "Evard s Black Tentacles", "Fabricate",
             "Fire Shield", "Greater Invisibility", "Hallucinatory Terrain", "Ice Storm",
-            "Leomund's Secret ChestLocate Creature", "Mordenkainen's Faithful Hound",
-            "Mordenkainen's Private Sanctum", "Otiluke's Resilient Sphere",
+            "Leomund s Secret ChestLocate Creature", "Mordenkainen s Faithful Hound",
+            "Mordenkainen s Private Sanctum", "Otiluke s Resilient Sphere",
             "Phantasmal Killer", "Polymorph", "Stone Shape", "Stoneskin", "Wall of Fire");
 
         addSpells("Wizard", 5,
-            "Animate Objects", "Bigby's Hand", "CloudkilI", "Cone of Cold",
+            "Animate Objects", "Bigby s Hand", "CloudkilI", "Cone of Cold",
             "Conjure Elemental", "Contact Other Plane", "Creation", "Dominate Person",
             "Dream", "Geas", "Hold Monster", "Legend Lore", "Mislead", "Modify Memory",
-            "Passwall", "Planar Binding", "Rary's Telepathic Bond", "Scrying", "Seeming",
+            "Passwall", "Planar Binding", "Rary s Telepathic Bond", "Scrying", "Seeming",
             "Telekinesis", "Teleportation Circle", "Wall of Force", "Wall of Stone");
 
         addSpells("Wizard", 6,
             "Arcane Gate", "Chain Lightning", "Circle of Death", "Contingency",
-            "Create Undead", "Disintegrate", "Drawmij's Instant Summons", "Eyebite",
+            "Create Undead", "Disintegrate", "Drawmij s Instant Summons", "Eyebite",
             "Flesh to Stone", "Globe of Invulnerability", "Guards and Wards", "Magic Jar",
-            "Mass Suggestion", "Move Earth", "Otiluke's Freezing Sphere",
-            "Otto's Irresistible Dance", "Programmed Illusion", "Sunbeam", "True Seeing",
+            "Mass Suggestion", "Move Earth", "Otiluke s Freezing Sphere",
+            "Otto s Irresistible Dance", "Programmed Illusion", "Sunbeam", "True Seeing",
             "Wall of Ice");
 
         addSpells("Wizard", 7,
             "Delayed Blast Fireball", "Etherealness", "Finger of Death", "Forcecage",
-            "Mirage Arcane", "Mordenkainen's Magnificent Mansion", "Mordenkainen's Sword",
+            "Mirage Arcane", "Mordenkainen s Magnificent Mansion", "Mordenkainen s Sword",
             "Plane Shift", "Prismatic Spray", "Project Image", "Reverse Gravity",
             "Sequester", "Simulacrum", "Symbol", "Teleport");
 

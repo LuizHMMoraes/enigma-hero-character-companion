@@ -127,12 +127,12 @@ public class Warlock extends Classes {
     };
 
     private static String[][] FeaturesFiend = {
-        {"Pact Magic", "Expanded Spell List", "Dark One's Blessing"}, //patron feature
+        {"Pact Magic", "Expanded Spell List", "Dark One s Blessing"}, //patron feature
         {"Eldritch Invocations"},
         {"Pact Boon"},
         {}, //ability score improvement
         {},
-        {"Dark One's Own Luck"}, //patron feature
+        {"Dark One s Own Luck"}, //patron feature
         {},
         {}, //ability score improvement
         {},

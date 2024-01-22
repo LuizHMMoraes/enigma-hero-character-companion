@@ -243,7 +243,7 @@ public class Cleric extends Classes {
         {},
         {}, //ability score improvement
         {"Destroy Undead (CR 1/2)"},
-        {"Channel Divinity (2/rest)", "Channel Divinity: War God's Blessing"}, //domain feature
+        {"Channel Divinity (2/rest)", "Channel Divinity: War God s Blessing"}, //domain feature
         {},
         {"Destroy Undead (CR 1)", "Divine Strike"}, //domain feature, ability score improvement
         {},

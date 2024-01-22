@@ -207,7 +207,7 @@ class EHTest {
    @Test
    void testBackgroundList() {
 	   RepositoryBackground repoBack = new RepositoryBackground().BackgroundList().get(0);
-	   assertTrue(repoBack.getName().equals("Acolyte"), "Should return true. Index 0 of the list contains 'Acolyte'");
+	   assertTrue(repoBack.getName().equals("Acolyte"), "Should return true. Index 0 of the list contains  Acolyte ");
    }
    
    //CLASSE --> PlayerCharacter <--

@@ -114,19 +114,19 @@ public class Ranger extends Classes {
     private static String[][] FeaturesHunter = {
         {"Favored Enemy", "Natural Explorer"},
         {"Fighting Style", "Spellcasting"},
-        {"Primeval Awareness", "Hunter's Prey"}, //archetype feature
+        {"Primeval Awareness", "Hunter s Prey"}, //archetype feature
         {}, //ability score improvement
         {"Extra Attack"},
         {"Favored Enemy and Natural Explorer improvements"},
         {"Defensive Tactics"}, //archetype feature
-        {"Land's Stride"}, //ability score improvement
+        {"Land s Stride"}, //ability score improvement
         {},
         {"Natural Explorer improvement", "Hide in Plain Sight"},
         {"Multiattack"}, //archetype feature
         {}, //ability score improvement
         {},
         {"Favored Enemy improvement", "Vanish"},
-        {"Superior Hunter's Defense"}, //archetype feature
+        {"Superior Hunter s Defense"}, //archetype feature
         {}, //ability score improvement
         {},
         {"Feral Senses"}, 
@@ -137,12 +137,12 @@ public class Ranger extends Classes {
     private static String[][] FeaturesBeastmaster = {
         {"Favored Enemy", "Natural Explorer"},
         {"Fighting Style", "Spellcasting"},
-        {"Primeval Awareness", "Ranger's Companion"}, //archetype feature
+        {"Primeval Awareness", "Ranger s Companion"}, //archetype feature
         {}, //ability score improvement
         {"Extra Attack"},
         {"Favored Enemy and Natural Explorer improvements"},
         {"Exceptional Training"}, //archetype feature
-        {"Land's Stride"}, //ability score improvement
+        {"Land s Stride"}, //ability score improvement
         {},
         {"Natural Explorer improvement", "Hide in Plain Sight"},
         {"Bestial Fury"}, //archetype feature
