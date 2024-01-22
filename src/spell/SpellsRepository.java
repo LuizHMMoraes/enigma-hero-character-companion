@@ -8,6 +8,7 @@ import java.util.Map;
 public class SpellsRepository {
     private Map<String, Map<Integer, List<String>>> spellsByClassAndLevel;
     private static Map<String, int[][]> slotTables = new HashMap<>();
+    static Map<String, int[][]> numberOfKnownSpells = new HashMap<>();
 
     public static int[][] getSlotTable(String classType) {
         return slotTables.get(classType);
@@ -221,6 +222,28 @@ public class SpellsRepository {
             {5, 4, 3, 3, 3, 3, 1, 1, 1, 1},
             {5, 4, 3, 3, 3, 3, 2, 1, 1, 1},
             {5, 4, 3, 3, 3, 3, 2, 2, 1, 1}
+        });
+
+
+        // Initializes the table with the number of spells known for each level of each character class
+        numberOfKnownSpells.put("Bard", new int[][]{
+            {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {14}, {15}, {15}, {16}, {18}, {19}, {19}, {20}, {22}, {22}, {22}
+        });
+
+        numberOfKnownSpells.put("Ranger", new int[][]{
+            {0}, {2}, {3}, {3}, {4}, {4}, {5}, {5}, {6}, {6}, {7}, {7}, {8}, {8}, {9}, {9}, {10}, {10}, {11}, {11}
+        });
+
+        numberOfKnownSpells.put("Sorcerer", new int[][]{
+            {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {12}, {13}, {13}, {14}, {14}, {15}, {15}, {15}, {15}
+        });
+
+        numberOfKnownSpells.put("Warlock", new int[][]{
+            {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {10}, {11}, {11}, {12}, {12}, {13}, {13}, {14}, {14}, {15}, {15}
+        });
+
+        numberOfKnownSpells.put("Wizard", new int[][]{
+            {6}, {8}, {10}, {12}, {14}, {16}, {18}, {20}, {22}, {24}, {26}, {28}, {30}, {32}, {34}, {36}, {38}, {40}, {42}, {44}
         });
     }
 
@@ -520,7 +543,7 @@ public class SpellsRepository {
         addSpells("Wizard", 3,
             "Animate Dead", "Bestow Curse", "Blink", "Clairvoyance", "Counterspell",
             "Dispel Magic", "Fear", "Feign Death", "Fireball", "Fly", "Gaseous Form",
-            "Glyph o f Warding", "Haste", "Hypnotic Pattern", "Leomund's Tiny Hut",
+            "Glyph of Warding", "Haste", "Hypnotic Pattern", "Leomund's Tiny Hut",
             "Lightning Bolt", "Magic Circle", "Major Image", "Nondetection",
             "Phantom Steed", "Protection from Energy", "Remove Curse", "Sending",
             "Sleet Storm", "Slow", "Stinking Cloud", "Tongues", "Vampiric Touch",

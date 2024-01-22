@@ -3,19 +3,21 @@ package classes;
 import java.util.List;
 import java.util.Random;
 
-public abstract class Classes {
-    public String className;
-    public String fightingStyle;
-    public String specialization;
-    public int hitPoints;
-    public List<String> abilities;
+import proficiency.Proficiency;
 
-    public Classes(String className, String fightingStyle, String specialization, int hitPoints, List<String> abilities) {
-        this.className = className;
-        this.fightingStyle = fightingStyle;
-        this.specialization = specialization;
-        this.hitPoints = hitPoints;
-        this.abilities = abilities;
+public abstract class Classes {
+    private String className;
+    private String specialization;
+    private List<String> features;
+    private Proficiency classProficiency;
+    private int hitDice;
+
+    public Classes(String className, String specialization, List<String> features, Proficiency classProficiency, int hitDice) {
+        this.setClassName(className);
+        this.setSpecialization(specialization);
+        this.setFeatures(features);
+        this.setClassProficiency(classProficiency);
+        this.setHitDice(hitDice);
     }
 
     public static String RandomClass() {
@@ -34,92 +36,136 @@ public abstract class Classes {
 
         switch (randomClassName) {
             case "Barbarian":
-                String barbarianFightingStyle = "";
                 String barbarianSpecialization = Barbarian.getRandomSpecialization(level);
-                List<String> barbarianAbilities = Barbarian.getRandomAbilities();
-                int barbarianHitPoints = Barbarian.calculateRandomHitPoints(level);
-                return new Barbarian(randomClassName, barbarianFightingStyle, barbarianSpecialization, barbarianHitPoints, barbarianAbilities);
+                List<String> barbarianFeatures = Barbarian.getRandomFeatures(level, barbarianSpecialization);
+                Proficiency barbarianProficiency = Barbarian.getProficiency();
+                int barbarianHitDice = Barbarian.getBarbarianHitDice();
+                return new Barbarian(randomClassName, barbarianSpecialization, barbarianFeatures, barbarianProficiency, barbarianHitDice);
 
             case "Bard":
-                String bardFightingStyle = "";
                 String bardSpecialization = Bard.getRandomSpecialization(level);
-                List<String> bardAbilities = Bard.getRandomAbilities();
-                int bardHitPoints = Bard.calculateRandomHitPoints(level);
-                return new Bard(randomClassName, bardFightingStyle, bardSpecialization, bardHitPoints, bardAbilities);
+                List<String> bardFeatures = Bard.getRandomFeatures(level, bardSpecialization);
+                Proficiency bardProficiency = Bard.getProficiency();
+                int bardHitDice = Bard.getBardHitDice();
+                return new Bard(randomClassName, bardSpecialization, bardFeatures, bardProficiency, bardHitDice);
 
             case "Cleric":
-                String clericFightingStyle = "";
                 String clericSpecialization = Cleric.getRandomSpecialization();
-                List<String> clericAbilities = Cleric.getRandomAbilities();
-                int clericHitPoints = Cleric.calculateRandomHitPoints(level);
-                return new Cleric(randomClassName, clericFightingStyle, clericSpecialization, clericHitPoints, clericAbilities);
+                List<String> clericFeatures = Cleric.getRandomFeatures(level, clericSpecialization);
+                Proficiency clericProficiency = Cleric.getProficiency();
+                int clericHitDice = Cleric.getClericHitDice();
+                return new Cleric(randomClassName, clericSpecialization, clericFeatures, clericProficiency, clericHitDice);
 
             case "Druid":
-                String druidFightingStyle = "";
                 String druidSpecialization = Druid.getRandomSpecialization(level);
-                List<String> druidAbilities = Druid.getRandomAbilities();
-                int druidHitPoints = Druid.calculateRandomHitPoints(level);
-                return new Druid(randomClassName, druidFightingStyle, druidSpecialization, druidHitPoints, druidAbilities);
+                List<String> druidFeatures = Druid.getRandomFeatures(level, druidSpecialization);
+                Proficiency druidProficiency = Druid.getProficiency();
+                int druidHitDice = Druid.getDruidHitDice();
+                return new Druid(randomClassName, druidSpecialization, druidFeatures, druidProficiency, druidHitDice);
 
             case "Fighter":
                 String fighterFightingStyle = Fighter.getRandomFightingStyle();
                 String fighterSpecialization = Fighter.getRandomSpecialization(level);
-                List<String> fighterAbilities = Fighter.getRandomAbilities();
-                int fighterHitPoints = Fighter.calculateRandomHitPoints(level);
-                return new Fighter(randomClassName, fighterFightingStyle, fighterSpecialization, fighterHitPoints, fighterAbilities);
+                List<String> fighterFeatures = Fighter.getRandomFeatures(level, fighterSpecialization);
+                Proficiency fighterProficiency = Fighter.getProficiency();
+                int fighterHitDice = Fighter.getFighterHitDice();
+                return new Fighter(randomClassName, fighterFightingStyle, fighterSpecialization, fighterFeatures, fighterProficiency, fighterHitDice);
             
             case "Monk":
-                String monkFightingStyle = "";
                 String monkSpecialization = Monk.getRandomSpecialization(level);
-                List<String> monkAbilities = Monk.getRandomAbilities();
-                int monkHitPoints = Monk.calculateRandomHitPoints(level);
-                return new Monk(randomClassName, monkFightingStyle, monkSpecialization, monkHitPoints, monkAbilities);
+                List<String> monkFeatures = Monk.getRandomFeatures(level, monkSpecialization);
+                Proficiency monkProficiency = Monk.getProficiency();
+                int monkHitDice = Monk.getMonkHitDice();
+                return new Monk(randomClassName, monkSpecialization, monkFeatures, monkProficiency, monkHitDice);
 
             case "Paladin":
                 String paladinFightingStyle = Paladin.getRandomFightingStyle(level);
                 String paladinSpecialization = Paladin.getRandomSpecialization(level);
-                List<String> paladinAbilities = Paladin.getRandomAbilities();
-                int paladinHitPoints = Paladin.calculateRandomHitPoints(level);
-                return new Paladin(randomClassName, paladinFightingStyle, paladinSpecialization, paladinHitPoints, paladinAbilities);
+                List<String> paladinFeatures = Paladin.getRandomFeatures(level, paladinSpecialization);
+                Proficiency paladinProficiency = Paladin.getProficiency();
+                int paladinHitDice = Paladin.getPaladinHitDice();
+                return new Paladin(randomClassName, paladinFightingStyle, paladinSpecialization, paladinFeatures, paladinProficiency, paladinHitDice);
 
             case "Ranger":
                 String rangerFightingStyle = Ranger.getRandomFightingStyle(level);
                 String rangerSpecialization = Ranger.getRandomSpecialization(level);
-                List<String> rangerAbilities = Ranger.getRandomAbilities();
-                int rangerHitPoints = Ranger.calculateRandomHitPoints(level);
-                return new Ranger(randomClassName, rangerFightingStyle, rangerSpecialization, rangerHitPoints, rangerAbilities);
+                List<String> rangerFeatures = Ranger.getRandomFeatures(level, rangerSpecialization);
+                Proficiency rangerProficiency = Ranger.getProficiency();
+                int rangerHitDice = Ranger.getRangerHitDice();
+                return new Ranger(randomClassName, rangerFightingStyle, rangerSpecialization, rangerFeatures, rangerProficiency, rangerHitDice);
 
             case "Rogue":
-                String rogueFightingStyle = "";
                 String rogueSpecialization = Rogue.getRandomSpecialization(level);
-                List<String> rogueAbilities = Rogue.getRandomAbilities();
-                int rogueHitPoints = Rogue.calculateRandomHitPoints(level);
-                return new Rogue(randomClassName, rogueFightingStyle, rogueSpecialization, rogueHitPoints, rogueAbilities);
+                List<String> rogueFeatures = Rogue.getRandomFeatures(level, rogueSpecialization);
+                Proficiency rogueProficiency = Rogue.getProficiency();
+                int rogueHitDice = Rogue.getRogueHitDice();
+                return new Rogue(randomClassName, rogueSpecialization, rogueFeatures, rogueProficiency, rogueHitDice);
 
             case "Sorcerer":
-                String sorcererFightingStyle = "";
                 String sorcererSpecialization = Sorcerer.getRandomSpecialization();
-                List<String> sorcererAbilities = Sorcerer.getRandomAbilities();
-                int sorcererHitPoints = Sorcerer.calculateRandomHitPoints(level);
-                return new Sorcerer(randomClassName, sorcererFightingStyle, sorcererSpecialization, sorcererHitPoints, sorcererAbilities);
+                List<String> sorcererFeatures = Sorcerer.getRandomFeatures(level, sorcererSpecialization);
+                Proficiency sorcererProficiency = Sorcerer.getProficiency();
+                int sorcererHitDice = Sorcerer.getSorcererHitDice();
+                return new Sorcerer(randomClassName, sorcererSpecialization, sorcererFeatures, sorcererProficiency, sorcererHitDice);
 
             case "Warlock":
                 String warlockFightingStyle = Warlock.getRandomFightingStyle(level);
                 String warlockSpecialization = Warlock.getRandomSpecialization();
-                List<String> warlockAbilities = Warlock.getRandomAbilities();
-                int warlockHitPoints = Warlock.calculateRandomHitPoints(level);
-                return new Warlock(randomClassName, warlockFightingStyle, warlockSpecialization, warlockHitPoints, warlockAbilities);
+                List<String> warlockFeatures = Warlock.getRandomFeatures(level, warlockSpecialization);
+                Proficiency warlockProficiency = Warlock.getProficiency();
+                int warlockHitDice = Warlock.getWarlockHitDice();
+                return new Warlock(randomClassName, warlockFightingStyle, warlockSpecialization, warlockFeatures, warlockProficiency, warlockHitDice);
 
             case "Wizard":
-                String wizardFightingStyle = "";
                 String wizardSpecialization = Wizard.getRandomSpecialization(level);
-                List<String> wizardAbilities = Wizard.getRandomAbilities();
-                int wizardHitPoints = Wizard.calculateRandomHitPoints(level);
-                return new Wizard(randomClassName, wizardFightingStyle, wizardSpecialization, wizardHitPoints, wizardAbilities);
+                List<String> wizardFeatures = Wizard.getRandomFeatures(level, wizardSpecialization);
+                Proficiency wizardProficiency = Wizard.getProficiency();
+                int wizardHitDice = Wizard.getWizardHitDice();
+                return new Wizard(randomClassName, wizardSpecialization, wizardFeatures, wizardProficiency, wizardHitDice);
 
             default:
                 throw new IllegalArgumentException("Unknown class: " + randomClassName);
         }
+    }
+
+    public String getClassName() {
+		return className;
+	}
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public String getSpecialization() {
+		return specialization;
+	}
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public List<String> getFeatures() {
+		return features;
+	}
+
+    public void setFeatures(List<String> features) {
+        this.features = features;
+    }
+
+    public Proficiency getClassProficiency() {
+		return classProficiency;
+	}
+
+    public void setClassProficiency(Proficiency classProficiency) {
+        this.classProficiency = classProficiency;
+    }
+    
+    public int getHitDice() {
+		return hitDice;
+	}
+
+    public void setHitDice(int hitDice) {
+        this.hitDice = hitDice;
     }
 
 }
