@@ -1,4 +1,4 @@
-package screen;
+package Screen;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 
@@ -32,6 +33,15 @@ public class SheetScreen {
 	public static int bonusHitPoints = 0;
 	public static int bonusHitPointsDwarf = 0;
 	
+
+	private String formatAsList(List<String> strings) {
+		StringBuilder formattedList = new StringBuilder("<style>p{line-height: 10.5;}</style>");
+		for (String str : strings) {
+			formattedList.append("<p>").append(str).append("</p>");
+		}
+		return formattedList.toString();
+	}
+	
 	
 
 	public SheetScreen() {
@@ -50,6 +60,9 @@ public class SheetScreen {
 		panel.setLayout(null);
 
 		playerCharacter = new PlayerCharacter(getTextFieldCharacterName, getTextFiedPlayerName);
+
+		String className = playerCharacter.getClassName();
+		int characterLevel = playerCharacter.getLevel();
 		
 		int modStr = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getStrength());
 		int modDex = AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getDexterity());
@@ -67,10 +80,21 @@ public class SheetScreen {
 		playerNameLabel.setBounds(473, 57, 97, 14);
 		panel.add(playerNameLabel);
 		
-		JLabel levelLabel = new JLabel("<html>" + String.valueOf(playerCharacter.getLevel()) + "°</html>");
+		JLabel levelLabel = new JLabel("<html>" + String.valueOf(characterLevel) + "</html>");
 		levelLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		levelLabel.setBounds(338, 56, 32, 14);
 		panel.add(levelLabel);
+
+		//HitPoints
+		JLabel hitPointsLabel = new JLabel("<html>" + String.valueOf(playerCharacter.getHitPoints()) + "</html>");
+		hitPointsLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		hitPointsLabel.setBounds(292, 227, 32, 18);
+		panel.add(hitPointsLabel);
+
+		JLabel classNameLabel = new JLabel(className);
+		classNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		classNameLabel.setBounds(265, 56, 97, 14);
+		panel.add(classNameLabel);
 
 		JLabel experiencePointsLabel = new JLabel(String.valueOf(playerCharacter.getExperience()));
 		experiencePointsLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -82,7 +106,6 @@ public class SheetScreen {
 		alignmentLabel.setBounds(380, 82, 92, 14);
 		panel.add(alignmentLabel);
 
-		
 		JLabel initiativeLabel = new JLabel(String.valueOf(modDex + initiative));
 		initiativeLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		initiativeLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -95,7 +118,7 @@ public class SheetScreen {
 		proficinecyBonusLabel.setBounds(85, 172, 32, 25);
 		panel.add(proficinecyBonusLabel);
 		
-		JLabel hitPointLabel = new JLabel(String.valueOf((bonusHitPoints * playerCharacter.getLevel()) + (bonusHitPointsDwarf * playerCharacter.getLevel())));
+		JLabel hitPointLabel = new JLabel(String.valueOf((bonusHitPoints * characterLevel) + (bonusHitPointsDwarf * characterLevel)));
 		hitPointLabel.setBounds(300, 199, 46, 25);
 		panel.add(hitPointLabel);
 
@@ -108,10 +131,10 @@ public class SheetScreen {
 		panel.add(languagesLabel);
 
 		JLabel skillsLabel = new JLabel(
-				"<html>Skills: " + playerCharacter.SkillList(playerCharacter.getProficiency().getSkill()).toString() + "</html>");
+				"<html>Skills: " + playerCharacter.SkillList(playerCharacter.getProficiency().getSkill(), playerCharacter.getClassProficiency().getSkill()).toString() + "</html>");
 		skillsLabel.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		skillsLabel.setVerticalAlignment(SwingConstants.TOP);
-		skillsLabel.setBounds(25, 674, 170, 34);
+		skillsLabel.setBounds(25, 674, 170, 54);
 		panel.add(skillsLabel);
 
 		JLabel raceTraitsLabel = new JLabel("<html>Traits: " + playerCharacter.getRace().getRacialTraits().toString() + "</html>");
@@ -133,25 +156,33 @@ public class SheetScreen {
 		panel.add(speedLabel);
 
 		String charProficiency;
-		if (playerCharacter.ProficiencyList(playerCharacter.getRace().getProficiency()).isEmpty()) {
+		if (playerCharacter.ProficiencyList(playerCharacter.getRace().getProficiency(), playerCharacter.getPlayerClass().getClassProficiency()).isEmpty()) {
 			charProficiency = "";
 		} else {
-			charProficiency = "<html>Armor&Weapons: " + playerCharacter.ProficiencyList(playerCharacter.getRace().getProficiency()).toString()
+			charProficiency = "<html>Armor&Weapons: " + playerCharacter.ProficiencyList(playerCharacter.getRace().getProficiency(), playerCharacter.getPlayerClass().getClassProficiency()).toString()
 					+ "</html>";
 		}
 		JLabel raceProficiencyLabel = new JLabel(charProficiency);
-		raceProficiencyLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		raceProficiencyLabel.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		raceProficiencyLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		raceProficiencyLabel.setVerticalAlignment(SwingConstants.TOP);
-		raceProficiencyLabel.setBounds(25, 702, 170, 71);
+		raceProficiencyLabel.setBounds(25, 715, 170, 71);
 		panel.add(raceProficiencyLabel);
 
 		JLabel backgroundFeatureLabel = new JLabel("<html>Feature: " + playerCharacter.getBackground().getFeature() + "</html>");
 		backgroundFeatureLabel.setVerticalAlignment(SwingConstants.TOP);
 		backgroundFeatureLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		backgroundFeatureLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		backgroundFeatureLabel.setBounds(416, 437, 154, 34);
+		backgroundFeatureLabel.setBounds(416, 453, 154, 34);
 		panel.add(backgroundFeatureLabel);
+
+		// Class features
+		JLabel classFeatureLabel = new JLabel("<html>Class Features: " + playerCharacter.getPlayerClass().getFeatures() + "</html>");
+		classFeatureLabel.setVerticalAlignment(SwingConstants.TOP);
+		classFeatureLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		classFeatureLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		classFeatureLabel.setBounds(416, 487, 154, 250);
+		panel.add(classFeatureLabel);
 
 		JLabel backgroundEquipmentLabel = new JLabel("<html>" + playerCharacter.getBackground().getEquipment() + "</html>");
 		backgroundEquipmentLabel.setVerticalAlignment(SwingConstants.TOP);
@@ -421,6 +452,145 @@ public class SheetScreen {
 		sheetScreen.getContentPane().add(spellSheetPanel);
 		spellSheetPanel.setLayout(null);
 		spellSheetPanel.setVisible(false);
+
+		//Slots de magia
+		if (className == "Bard" || className == "Cleric" || className == "Druid" || className == "Paladin" || className == "Ranger" 
+			|| className == "Sorcerer" || className == "Warlock" || className == "Wizard") {
+
+				//Lista de cantrips
+				JLabel cantrips = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(0)) + "</html>");
+				cantrips.setVerticalAlignment(SwingConstants.TOP);
+				cantrips.setHorizontalAlignment(SwingConstants.LEFT);
+				cantrips.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				cantrips.setBounds(40, 180, 154, 250);
+				spellSheetPanel.add(cantrips);
+				
+				//Slots e magias conhecidas de nivel 1
+				JLabel slots1 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 1)));
+				slots1.setHorizontalAlignment(SwingConstants.CENTER);
+				slots1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots1.setBounds(55, 326, 18, 14);
+				spellSheetPanel.add(slots1);
+
+				JLabel spells1 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(1)) + "</html>");
+				spells1.setVerticalAlignment(SwingConstants.TOP);
+				spells1.setHorizontalAlignment(SwingConstants.LEFT);
+				spells1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells1.setBounds(40, 353, 154, 250);
+				spellSheetPanel.add(spells1);
+
+				//Slots e magias conhecidas de nivel 2
+				JLabel slots2 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 2)));
+				slots2.setHorizontalAlignment(SwingConstants.CENTER);
+				slots2.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots2.setBounds(55, 558, 18, 14);
+				spellSheetPanel.add(slots2);
+
+				JLabel spells2 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(2)) + "</html>");
+				spells2.setVerticalAlignment(SwingConstants.TOP);
+				spells2.setHorizontalAlignment(SwingConstants.LEFT);
+				spells2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells2.setBounds(40, 583, 154, 250);
+				spellSheetPanel.add(spells2);
+
+				//Slots e magias conhecidas de nivel 3
+				JLabel slots3 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 3)));
+				slots3.setHorizontalAlignment(SwingConstants.CENTER);
+				slots3.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots3.setBounds(246, 157, 18, 14);
+				spellSheetPanel.add(slots3);
+
+				JLabel spells3 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(3)) + "</html>");
+				spells3.setVerticalAlignment(SwingConstants.TOP);
+				spells3.setHorizontalAlignment(SwingConstants.LEFT);
+				spells3.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells3.setBounds(231, 181, 154, 250);
+				spellSheetPanel.add(spells3);
+
+				//Slots e magias conhecidas de nivel 4
+				JLabel slots4 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 4)));
+				slots4.setHorizontalAlignment(SwingConstants.CENTER);
+				slots4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots4.setBounds(246, 385, 18, 14);
+				spellSheetPanel.add(slots4);
+
+				JLabel spells4 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(4)) + "</html>");
+				spells4.setVerticalAlignment(SwingConstants.TOP);
+				spells4.setHorizontalAlignment(SwingConstants.LEFT);
+				spells4.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells4.setBounds(231, 410, 154, 250);
+				spellSheetPanel.add(spells4);
+
+				//Slots e magias conhecidas de nivel 5
+				JLabel slots5 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 5)));
+				slots5.setHorizontalAlignment(SwingConstants.CENTER);
+				slots5.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots5.setBounds(246, 614, 18, 14);
+				spellSheetPanel.add(slots5);
+
+				JLabel spells5 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(5)) + "</html>");
+				spells5.setVerticalAlignment(SwingConstants.TOP);
+				spells5.setHorizontalAlignment(SwingConstants.LEFT);
+				spells5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells5.setBounds(231, 639, 154, 250);
+				spellSheetPanel.add(spells5);
+
+				//Slots e magias conhecidas de nivel 6
+				JLabel slots6 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 6)));
+				slots6.setHorizontalAlignment(SwingConstants.CENTER);
+				slots6.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots6.setBounds(437, 156, 18, 14);
+				spellSheetPanel.add(slots6);
+
+				JLabel spells6 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(6)) + "</html>");
+				spells6.setVerticalAlignment(SwingConstants.TOP);
+				spells6.setHorizontalAlignment(SwingConstants.LEFT);
+				spells6.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells6.setBounds(420, 181, 154, 250);
+				spellSheetPanel.add(spells6);
+
+				//Slots e magias conhecidas de nivel 7
+				JLabel slots7 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 7)));
+				slots7.setHorizontalAlignment(SwingConstants.CENTER);
+				slots7.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots7.setBounds(437, 328, 18, 14);
+				spellSheetPanel.add(slots7);
+
+				JLabel spells7 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(7)) + "</html>");
+				spells7.setVerticalAlignment(SwingConstants.TOP);
+				spells7.setHorizontalAlignment(SwingConstants.LEFT);
+				spells7.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells7.setBounds(420, 353, 154, 250);
+				spellSheetPanel.add(spells7);
+
+				//Slots e magias conhecidas de nivel 8
+				JLabel slots8 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 8)));
+				slots8.setHorizontalAlignment(SwingConstants.CENTER);
+				slots8.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots8.setBounds(437, 500, 18, 14);
+				spellSheetPanel.add(slots8);
+
+				JLabel spells8 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(8)) + "</html>");
+				spells8.setVerticalAlignment(SwingConstants.TOP);
+				spells8.setHorizontalAlignment(SwingConstants.LEFT);
+				spells8.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells8.setBounds(420, 525, 154, 250);
+				spellSheetPanel.add(spells8);
+
+				//Slots e magias conhecidas de nivel 9
+				JLabel slots9 = new JLabel(String.valueOf(playerCharacter.getSpell().getSpellSlots(className, characterLevel, 9)));
+				slots9.setHorizontalAlignment(SwingConstants.CENTER);
+				slots9.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				slots9.setBounds(437, 642, 18, 14);
+				spellSheetPanel.add(slots9);
+
+				JLabel spells9 = new JLabel("<html>" + formatAsList(playerCharacter.getKnownSpells().get(9)) + "</html>");
+				spells9.setVerticalAlignment(SwingConstants.TOP);
+				spells9.setHorizontalAlignment(SwingConstants.LEFT);
+				spells9.setFont(new Font("Tahoma", Font.PLAIN, 11));
+				spells9.setBounds(420, 668, 154, 250);
+				spellSheetPanel.add(spells9);
+			}
 		
 		JButton btnMainSheetButton = new JButton("Main sheet");
 		btnMainSheetButton.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -470,8 +640,6 @@ public class SheetScreen {
 		dndSheetLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		dndSheetLabel.setIcon(new ImageIcon(SheetScreen.class.getResource("/screen/dnd5Sheet.jpg")));
 		panel.add(dndSheetLabel);
-		
-		
 		
 	}
 }

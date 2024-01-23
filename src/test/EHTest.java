@@ -28,7 +28,7 @@ class EHTest {
 
 	@BeforeAll
 	static void start() {
-		System.out.println("Os testes estão começando!");
+		System.out.println("Os testes estï¿½o comeï¿½ando!");
 	}
 	
 	@Test
@@ -207,7 +207,7 @@ class EHTest {
    @Test
    void testBackgroundList() {
 	   RepositoryBackground repoBack = new RepositoryBackground().BackgroundList().get(0);
-	   assertTrue(repoBack.getName().equals("Acolyte"), "Should return true. Index 0 of the list contains 'Acolyte'");
+	   assertTrue(repoBack.getName().equals("Acolyte"), "Should return true. Index 0 of the list contains  Acolyte ");
    }
    
    //CLASSE --> PlayerCharacter <--
@@ -220,7 +220,7 @@ class EHTest {
    
    @Test
    void testVerifyDuplicates() {
-	   //seria tão mais fácil mudar os parâmetros de entrada do método...
+	   //seria tï¿½o mais fï¿½cil mudar os parï¿½metros de entrada do mï¿½todo...
 	  
 	   Background background = new Background();
 	   background.setProficiency(new Proficiency());
@@ -281,7 +281,7 @@ class EHTest {
    @Test 
    void testCalculateProficiencyBonus() {
 	   playerCharacter.CalculateProficiencyBonus(5);
-	   assertEquals(3, playerCharacter.getProficienyBonus(), "At level 5 the proficiency bônus should be 3");
+	   assertEquals(3, playerCharacter.getProficienyBonus(), "At level 5 the proficiency bï¿½nus should be 3");
    }
 
    @Test

@@ -2,11 +2,16 @@ package character;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 import background.Background;
 import proficiency.Proficiency;
 import proficiency.Skill;
 import race.Race;
+import classes.Classes;
+import spell.Spell;
+import spell.SpellsRepository;
+
 
 public class PlayerCharacter {
 
@@ -31,6 +36,14 @@ public class PlayerCharacter {
 	
 	private ArrayList<Feat> feat;
 
+	private Classes playerClass;
+	private String className;
+	private Proficiency classProficiency;
+
+	private List<List<String>> knownSpells;
+	private Spell spell;
+	private SpellsRepository spellsRepository;
+
 	//
 
 	public PlayerCharacter() {
@@ -52,7 +65,25 @@ public class PlayerCharacter {
 
 		this.setBackground(new Background().RandomBackground());
 		this.getBackground().ApplyBackground(this.getBackground().getName());
-		// instância de classe
+
+		playerClass = Classes.createRandomClass(level);
+		this.setPlayerClass(playerClass);
+		this.setClassName(playerClass.getClassName());
+		this.setClassProficiency(playerClass.getClassProficiency());
+
+		spellsRepository = new SpellsRepository();
+        spell = new Spell(spellsRepository);
+		this.setSpell(spell);
+		this.setSpellsRepository(spellsRepository);
+
+		this.setHitPoints(CalculateHitPoints(level));
+
+		// Spellcasters
+		if (className == "Bard" || className == "Cleric" || className == "Druid" || className == "Paladin" || className == "Ranger" 
+			|| className == "Sorcerer" || className == "Warlock" || className == "Wizard") {
+				knownSpells = spell.getKnownSpells(className, level);
+				this.setKnownSpells(knownSpells);
+			}
 		
 		this.setFeat(new ArrayList<>());
 		this.ApplyExperiencePoints(this.getLevel());
@@ -111,22 +142,28 @@ public class PlayerCharacter {
 		this.setAlignment(orderCaos + " - " + goodEvil);
 	}
 
-	/*
-	 * public int CalculateHitPoints(int level) { int hitPoints =
-	 * this.getClass().getHitDice() + AbilityScore.modCon; int rollHitPointsDice =
-	 * Random(this.getClass().getHitDice()); for(int i = 2; i <= level; i++) {
-	 * 
-	 * if (rollHitPointsDice < (this.getClass().getHitDice()/2) + 1){ rollHitPoints
-	 * = this.getClass().getHitDice()/2) + 1; }
-	 * 
-	 * hitPoints += rollHitPointsDice + AbilityScore.modCon; } return hitPoints; }
-	 */
+	 public int CalculateHitPoints(int level) {
+		int hitPoints = playerClass.getHitDice() + AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
+		int rollHitPointsDice = Random(playerClass.getHitDice());
 
-	public Proficiency VerifyDuplicates() {
+		for(int i = 2; i <= level; i++) {
+			rollHitPointsDice = Random(playerClass.getHitDice());
+
+			if (rollHitPointsDice < (playerClass.getHitDice()/2) + 1) {
+				rollHitPointsDice = (playerClass.getHitDice()/2) + 1;
+			}
+
+			hitPoints += rollHitPointsDice + AbilityScores.CalculateAbilityScoreModifier(AbilityScores.getConstitution());
+		}
+
+		return hitPoints;
+	 }
+
+	 public Proficiency VerifyDuplicates() {
 		Proficiency verifyDuplicates = new Proficiency();
 		verifyDuplicates.setSkill(new ArrayList<>()); // aqui setSkill(backgroundSkill)
 
-		// não precisa esse loop pra background, só pra classe
+		// nï¿½o precisa esse loop pra background, sï¿½ pra classe
 		for (int i = 0; i < this.getBackground().getProficiency().getSkill().size(); i++) {
 			verifyDuplicates.getSkill()
 					.add(verifyDuplicates.CheckSkill(this.getBackground().getProficiency().getSkill().get(i)));
@@ -149,38 +186,73 @@ public class PlayerCharacter {
 		return verifyDuplicates;
 	}
 
-	public ArrayList<String> SkillList(ArrayList<Skill> charSkills) {
+	public ArrayList<String> SkillList(ArrayList<Skill> charSkills, ArrayList<Skill> classSkills) {
 		ArrayList<String> skillList = new ArrayList<>();
-		for (int i = 0; i < charSkills.size(); i++) {
-			skillList.add(charSkills.get(i).getName());
-		}
+		for (Skill charSkill : charSkills) {
+            String skillName = charSkill.getName();
+            if (!skillList.contains(skillName)) {
+                skillList.add(skillName);
+            }
+        }
+		for (Skill classSkill : classSkills) {
+            String skillName = classSkill.getName();
+            if (!skillList.contains(skillName)) {
+                skillList.add(skillName);
+            }
+        }
 		return skillList;
 	}
 
-	// precisa adicionar outro parâmetro "classProficiency"
-	public ArrayList<String> ProficiencyList(Proficiency raceProfciencies) {
-		ArrayList<String> profciencyList = new ArrayList<>();
-		if (raceProfciencies.getWeapon() != null) {
-			for (int i = 0; i < raceProfciencies.getWeapon().size(); i++) {
-				profciencyList.add(raceProfciencies.getWeapon().get(i));
+	public ArrayList<String> ProficiencyList(Proficiency raceProficiencies, Proficiency classProficiencies) {
+		ArrayList<String> proficiencyList = new ArrayList<>();
+		if (raceProficiencies.getWeapon() != null) {
+			for (String weapon : raceProficiencies.getWeapon()) {
+				if (!proficiencyList.contains(weapon)) {
+					proficiencyList.add(weapon);
+				}
 			}
 		}
-		if (raceProfciencies.getArmor() != null) {
-			for (int i = 0; i < raceProfciencies.getArmor().size(); i++) {
-				profciencyList.add(raceProfciencies.getArmor().get(i));
+		if (classProficiencies.getWeapon() != null) {
+			for (String weapon : classProficiencies.getWeapon()) {
+				if (!proficiencyList.contains(weapon)) {
+					proficiencyList.add(weapon);
+				}
 			}
-		}
-		if (raceProfciencies.getShield()) {
-			profciencyList.add("Shield");
 		}
 
-		return profciencyList;
+		if (raceProficiencies.getArmor() != null) {
+			for (String armor : raceProficiencies.getArmor()) {
+				if (!proficiencyList.contains(armor)) {
+					proficiencyList.add(armor);
+				}
+			}
+		}
+		if (classProficiencies.getArmor() != null) {
+			for (String armor : classProficiencies.getArmor()) {
+				if (!proficiencyList.contains(armor)) {
+					proficiencyList.add(armor);
+				}
+			}
+		}
+		
+		if (raceProficiencies.getShield()) {
+			proficiencyList.add("Shield");
+		} else if (classProficiencies.getShield()) {
+			proficiencyList.add("Shield");
+		}
+
+		return proficiencyList;
 	}
 
 	public int ApplySkillProficiencyBonus(String skill) {
 		int proficiency = 0;
 		for (int i = 0; i < this.getProficiency().getSkill().size(); i++) {
 			if (this.getProficiency().getSkill().get(i).getName().contains(skill)) {
+				proficiency = this.getProficienyBonus();
+			}
+		}
+		for (int i = 0; i < playerClass.getClassProficiency().getSkill().size(); i++) {
+			if (playerClass.getClassProficiency().getSkill().get(i).getName().contains(skill)) {
 				proficiency = this.getProficienyBonus();
 			}
 		}
@@ -191,6 +263,11 @@ public class PlayerCharacter {
 		int proficiency = 0;
 		if (this.getProficiency().getSavingThrow() != null) {
 			if (this.getProficiency().getSavingThrow().contains(saving)) {
+				proficiency = this.getProficienyBonus();
+			}
+		}
+		if (playerClass.getClassProficiency().getSavingThrow() != null) {
+			if (playerClass.getClassProficiency().getSavingThrow().contains(saving)) {
 				proficiency = this.getProficienyBonus();
 			}
 		}
@@ -345,5 +422,53 @@ public class PlayerCharacter {
 
 	public void setFeat(ArrayList<Feat> feat) {
 		this.feat = feat;
+	}
+
+	public Classes getPlayerClass() {
+		return playerClass;
+	}
+
+	public void setPlayerClass(Classes playerClass) {
+		this.playerClass = playerClass;
+	}
+
+	public Proficiency getClassProficiency() {
+		return classProficiency;
+	}
+
+	public void setClassProficiency(Proficiency classProficiency) {
+		this.classProficiency = classProficiency;
+	}
+
+	public Spell getSpell() {
+		return spell;
+	}
+
+	public void setSpell(Spell spell) {
+		this.spell = spell;
+	}
+
+	public SpellsRepository getSpellsRepository() {
+		return spellsRepository;
+	}
+
+	public void setSpellsRepository(SpellsRepository spellsRepository) {
+		this.spellsRepository = spellsRepository;
+	}
+
+	public List<List<String>> getKnownSpells() {
+		return knownSpells;
+	}
+
+	public void setKnownSpells(List<List<String>> knownSpells) {
+		this.knownSpells = knownSpells;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
 	}
 }

@@ -2,7 +2,7 @@ package character;
 
 import java.util.ArrayList;
 
-import screen.SheetScreen;
+import Screen.SheetScreen;
 
 public class Feat {
 	private String name;

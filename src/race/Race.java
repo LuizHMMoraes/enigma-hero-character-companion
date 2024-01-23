@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import character.AbilityScores;
 import proficiency.Proficiency;
-import screen.SheetScreen;
+import Screen.SheetScreen;
 
 public class Race {
 
@@ -91,7 +91,7 @@ public class Race {
 		}
 	}
 
-//Aqui COMEÇA a metodologia para aplicação de proficiências e modificadores.
+//Aqui COMEï¿½A a metodologia para aplicaï¿½ï¿½o de proficiï¿½ncias e modificadores.
 	public void DwarfModifiers(String subrace) {
 		AbilityScores.setConstitution(AbilityScores.getConstitution() + 2);
 		this.setProficiency(new Proficiency("race"));
@@ -189,7 +189,7 @@ public class Race {
 			this.getRacialTraits().add("Speak with Small Beasts");
 		} else {
 			AbilityScores.setConstitution(AbilityScores.getConstitution() + 1);
-			this.getRacialTraits().add("Artificer’s Lore");
+			this.getRacialTraits().add("Artificerï¿½s Lore");
 			this.getRacialTraits().add("Tinker");
 		}
 	}
@@ -219,7 +219,7 @@ public class Race {
 			this.setProficiency(new Proficiency("race"));
 			this.getProficiency().getLanguage().add(this.getProficiency().CheckLanguage("Infernal"));
 		}
-//Aqui TERMINA a metodologia para aplicação de proficiências e modificadores.
+//Aqui TERMINA a metodologia para aplicaï¿½ï¿½o de proficiï¿½ncias e modificadores.
 
 	public String getName() {
 		return name;

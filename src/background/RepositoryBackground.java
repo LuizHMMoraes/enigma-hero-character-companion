@@ -39,7 +39,7 @@ public class RepositoryBackground {
 		return backgroundList;
 	}
 	
-//Aqui COMEÇA a metodologia para construção de cada antecedente de acordo com o Livro do Jogador.
+//Aqui COMEï¿½A a metodologia para construï¿½ï¿½o de cada antecedente de acordo com o Livro do Jogador.
 	public RepositoryBackground Acolyte() {
 		RepositoryBackground acolyte = new RepositoryBackground();
 		acolyte.setName("Acolyte");
@@ -54,7 +54,7 @@ public class RepositoryBackground {
 		acolyte.setFlaws(new ArrayList<>());
 		
 		acolyte.getPersonalityTraits().add("I idolize a particular hero of my faith, and constantly\r\n"
-				+ "refer to that person’s deeds and example.");
+				+ "refer to that personï¿½s deeds and example.");
 		acolyte.getPersonalityTraits().add("I can find common ground between the fiercest\r\n"
 				+ "enemies, empathizing with them and always working toward peace.");
 		acolyte.getPersonalityTraits().add("I see omens in every event and action. The gods try to\r\n"
@@ -64,11 +64,11 @@ public class RepositoryBackground {
 				+ "almost every situation.");
 		acolyte.getPersonalityTraits().add("I am tolerant (or intolerant) of other faiths and respect\r\n"
 				+ "(or condemn) the worship of other gods.");
-		acolyte.getPersonalityTraits().add("I've enjoyed fine food, drink, and high society among\r\n"
-				+ "my temple’s elite. Rough living grates on me.");
-		acolyte.getPersonalityTraits().add("I've enjoyed fine food, drink, and high society among\r\n"
-				+ "my temple’s elite. Rough living grates on me.");
-		acolyte.getPersonalityTraits().add("I’ve spent so long in the temple that I have little\r\n"
+		acolyte.getPersonalityTraits().add("I ve enjoyed fine food, drink, and high society among\r\n"
+				+ "my templeï¿½s elite. Rough living grates on me.");
+		acolyte.getPersonalityTraits().add("I ve enjoyed fine food, drink, and high society among\r\n"
+				+ "my templeï¿½s elite. Rough living grates on me.");
+		acolyte.getPersonalityTraits().add("Iï¿½ve spent so long in the temple that I have little\r\n"
 				+ "practical experience dealing with people in the outside\r\n"
 				+ "world.");
 		
@@ -78,11 +78,11 @@ public class RepositoryBackground {
 				+ "what the personal cost.");
 		acolyte.getIdeals().add("We must help bring about the changes the\r\n"
 				+ "gods are constantly working in the world.");
-		acolyte.getIdeals().add("I hope to one day rise to the top of my faith’s\r\n"
+		acolyte.getIdeals().add("I hope to one day rise to the top of my faithï¿½s\r\n"
 				+ "religious hierarchy.");
 		acolyte.getIdeals().add("I trust that my deity will guide my actions, I have\r\n"
 				+ "faith that if I work hard, things will go well.");
-		acolyte.getIdeals().add("I seek to prove myself worthy of my god’s\r\n"
+		acolyte.getIdeals().add("I seek to prove myself worthy of my godï¿½s\r\n"
 				+ "favor by matching my actions against his or her\r\n"
 				+ "teachings.");
 		
@@ -99,7 +99,7 @@ public class RepositoryBackground {
 		
 		acolyte.getFlaws().add("I judge others harshly, and myself even more severely.");
 		acolyte.getFlaws().add("I put too much trust in those who wield power within\r\n"
-				+ "my temple’s hierarchy.");
+				+ "my templeï¿½s hierarchy.");
 		acolyte.getFlaws().add("My piety sometimes leads me to blindly trust those\r\n"
 				+ "that profess faith in my god.");
 		acolyte.getFlaws().add("I am inflexible in my thinking.");
@@ -129,9 +129,9 @@ public class RepositoryBackground {
 		charlatan.getPersonalityTraits().add("I have a joke for every occasion, especially occasions\r\n"
 				+ "where humor is inappropriate.");
 		charlatan.getPersonalityTraits().add("Flattery is my preferred trick for getting what I want.");
-		charlatan.getPersonalityTraits().add("I’m a born gambler who can't resist taking a risk for a\r\n"
+		charlatan.getPersonalityTraits().add("Iï¿½m a born gambler who can t resist taking a risk for a\r\n"
 				+ "potential payoff.");
-		charlatan.getPersonalityTraits().add("I lie about almost everything, even when there’s no\r\n"
+		charlatan.getPersonalityTraits().add("I lie about almost everything, even when thereï¿½s no\r\n"
 				+ "good reason to.");
 		charlatan.getPersonalityTraits().add("Sarcasm and insults are my weapons of choice.");
 		charlatan.getPersonalityTraits().add("I keep multiple holy symbols on me and invoke\r\n"
@@ -139,43 +139,43 @@ public class RepositoryBackground {
 				+ "moment.");
 		charlatan.getPersonalityTraits().add("I pocket anything I see that might have some value.");
 		
-		charlatan.getIdeals().add("I am a free spirit— no one tells me what\r\n"
+		charlatan.getIdeals().add("I am a free spiritï¿½ no one tells me what\r\n"
 				+ "to do.");
-		charlatan.getIdeals().add("I never target people who can’t afford to lose\r\n"
+		charlatan.getIdeals().add("I never target people who canï¿½t afford to lose\r\n"
 				+ "a few coins.");
 		charlatan.getIdeals().add("I distribute the money I acquire to the people\r\n"
 				+ "who really need it.");
 		charlatan.getIdeals().add("I never run the same con twice.");
 		charlatan.getIdeals().add("Material goods come and go. Bonds of\r\n"
 				+ "friendship last forever.");
-		charlatan.getIdeals().add("I’m determined to make something\r\n"
+		charlatan.getIdeals().add("Iï¿½m determined to make something\r\n"
 				+ "of myself.");
 		
 		charlatan.getBonds().add("I fleeced the wrong person and must work to ensure\r\n"
 				+ "that this individual never crosses paths with me or\r\n"
 				+ "those I care about.");
-		charlatan.getBonds().add("I owe everything to my mentor—a horrible person\r\n"
-				+ "who’s probably rotting in jail somewhere.");
-		charlatan.getBonds().add("Somewhere out there, I have a child who doesn’t\r\n"
-				+ "know me. I’m making the world better for him or her.");
-		charlatan.getBonds().add("I come from a noble family, and one day I’ll reclaim my\r\n"
+		charlatan.getBonds().add("I owe everything to my mentorï¿½a horrible person\r\n"
+				+ "whoï¿½s probably rotting in jail somewhere.");
+		charlatan.getBonds().add("Somewhere out there, I have a child who doesnï¿½t\r\n"
+				+ "know me. Iï¿½m making the world better for him or her.");
+		charlatan.getBonds().add("I come from a noble family, and one day Iï¿½ll reclaim my\r\n"
 				+ "lands and title from those who stole them from me.");
 		charlatan.getBonds().add("A powerful person killed someone I love. Some day\r\n"
-				+ "soon, I’ll have my revenge.");
-		charlatan.getBonds().add("I swindled and ruined a person who didn’t deserve it. I\r\n"
+				+ "soon, Iï¿½ll have my revenge.");
+		charlatan.getBonds().add("I swindled and ruined a person who didnï¿½t deserve it. I\r\n"
 				+ "seek to atone for my misdeeds but might never be able\r\n"
 				+ "to forgive myself.");
 		
-		charlatan.getFlaws().add("I can’t resist a pretty face.");
-		charlatan.getFlaws().add("I'm always in debt. I spend my ill-gotten gains on\r\n"
+		charlatan.getFlaws().add("I canï¿½t resist a pretty face.");
+		charlatan.getFlaws().add("I m always in debt. I spend my ill-gotten gains on\r\n"
 				+ "decadent luxuries faster than I bring them in.");
-		charlatan.getFlaws().add("I’m convinced that no one could ever fool me the way\r\n"
+		charlatan.getFlaws().add("Iï¿½m convinced that no one could ever fool me the way\r\n"
 				+ "I fool others.");
-		charlatan.getFlaws().add("I’m too greedy for my own good. I can’t resist taking a\r\n"
-				+ "risk if there’s money involved.");
-		charlatan.getFlaws().add("I can’t resist swindling people who are more powerful\r\n"
+		charlatan.getFlaws().add("Iï¿½m too greedy for my own good. I canï¿½t resist taking a\r\n"
+				+ "risk if thereï¿½s money involved.");
+		charlatan.getFlaws().add("I canï¿½t resist swindling people who are more powerful\r\n"
 				+ "than me.");
-		charlatan.getFlaws().add("I hate to admit it and will hate myself for it, but I'll run\r\n"
+		charlatan.getFlaws().add("I hate to admit it and will hate myself for it, but I ll run\r\n"
 				+ "and preserve my own hide if the going gets tough.");
 		return charlatan;
 	}
@@ -195,50 +195,50 @@ public class RepositoryBackground {
 		criminal.getPersonalityTraits().add("I am always calm, no matter what the situation. I never\r\n"
 				+ " raise my voice or let my emotions control me.");
 		criminal.getPersonalityTraits().add("The first thing I do in a new place is note the locations\r\n"
-				+ " of everything valuable – or where such things could be\r\n"
+				+ " of everything valuable ï¿½ or where such things could be\r\n"
 				+ " hidden.");
 		criminal.getPersonalityTraits().add("I would rather make a new friend than a new enemy.");
 		criminal.getPersonalityTraits().add("I am incredibly slow to trust. Those who seem the fairest\r\n"
 				+ " often have the most to hide.");
-		criminal.getPersonalityTraits().add("I don't pay attention to the risks in a situation. Never tell\r\n"
+		criminal.getPersonalityTraits().add("I don t pay attention to the risks in a situation. Never tell\r\n"
 				+ " me the odds.");
 		criminal.getPersonalityTraits().add("The best way to get me to do something is to tell me I\r\n"
-				+ " can't do it.");
+				+ " can t do it.");
 		criminal.getPersonalityTraits().add("I blow up at the slightest insult.");
 		
-		criminal.getIdeals().add("I don’t steal from others in the trade.");
+		criminal.getIdeals().add("I donï¿½t steal from others in the trade.");
 		criminal.getIdeals().add("Chains are meant to be broken, as are those\r\n"
 				+ "who would forge them.");
 		criminal.getIdeals().add("I steal from the wealthy so that I can help\r\n"
 				+ "people in need.");
 		criminal.getIdeals().add("I will do whatever it takes to become\r\n"
 				+ "wealthy.");
-		criminal.getIdeals().add("I’m loyal to my friends, not to any ideals, and\r\n"
+		criminal.getIdeals().add("Iï¿½m loyal to my friends, not to any ideals, and\r\n"
 				+ "everyone else can take a trip down the Styx for all I\r\n"
 				+ "care.");
-		criminal.getIdeals().add("There’s a spark of good in everyone.");
+		criminal.getIdeals().add("Thereï¿½s a spark of good in everyone.");
 		
-		criminal.getBonds().add("I’m trying to pay off an old debt I owe to a generous\r\n"
+		criminal.getBonds().add("Iï¿½m trying to pay off an old debt I owe to a generous\r\n"
 				+ "benefactor.");
 		criminal.getBonds().add("My ill-gotten gains go to support my family.");
 		criminal.getBonds().add("Something important was taken from me, and I aim to\r\n"
 				+ "steal it back.");
 		criminal.getBonds().add("I will become the greatest thief that ever lived.");
-		criminal.getBonds().add("I’m guilty of a terrible crime. I hope I can redeem\r\n"
+		criminal.getBonds().add("Iï¿½m guilty of a terrible crime. I hope I can redeem\r\n"
 				+ "myself for it.");
 		criminal.getBonds().add("Someone I loved died because of a mistake I made.\r\n"
 				+ "That will never happen again.");
 		
-		criminal.getFlaws().add("When I see something valuable, I can’t think about\r\n"
+		criminal.getFlaws().add("When I see something valuable, I canï¿½t think about\r\n"
 				+ "anything but how to steal it.");
 		criminal.getFlaws().add("When faced with a choice between money and my\r\n"
 				+ "friends, I usually choose the money.");
-		criminal.getFlaws().add("If there’s a plan, I’ll forget it. If I don’t forget it, I’ll\r\n"
+		criminal.getFlaws().add("If thereï¿½s a plan, Iï¿½ll forget it. If I donï¿½t forget it, Iï¿½ll\r\n"
 				+ "ignore it.");
-		criminal.getFlaws().add("I have a “tell” that reveals when I'm lying.");
+		criminal.getFlaws().add("I have a ï¿½tellï¿½ that reveals when I m lying.");
 		criminal.getFlaws().add("I turn tail and run when things look bad.");
 		criminal.getFlaws().add("An innocent person is in prison for a crime that I\r\n"
-				+ "committed. I’m okay with that.");
+				+ "committed. Iï¿½m okay with that.");
 		return criminal;
 	}
 	
@@ -257,13 +257,13 @@ public class RepositoryBackground {
 		entertainer.getPersonalityTraits().add("I know a story relevant to almost every situation.");
 		entertainer.getPersonalityTraits().add("Whenever I come to a new place, I collect local rumors\r\n"
 				+ "and spread gossip.");
-		entertainer.getPersonalityTraits().add("I’m a hopeless romantic, always searching for that\r\n"
-				+ "“special someone.”");
+		entertainer.getPersonalityTraits().add("Iï¿½m a hopeless romantic, always searching for that\r\n"
+				+ "ï¿½special someone.ï¿½");
 		entertainer.getPersonalityTraits().add("Nobody stays angry at me or around me for long, since\r\n"
 				+ "I can defuse any amount of tension.");
 		entertainer.getPersonalityTraits().add("I love a good insult, even one directed at me.");
-		entertainer.getPersonalityTraits().add("I get bitter if I’m not the center of attention.");
-		entertainer.getPersonalityTraits().add("I’ll settle for nothing less than perfection.");
+		entertainer.getPersonalityTraits().add("I get bitter if Iï¿½m not the center of attention.");
+		entertainer.getPersonalityTraits().add("Iï¿½ll settle for nothing less than perfection.");
 		entertainer.getPersonalityTraits().add("I change my mood or my mind as quickly as I change\r\n"
 				+ "key in a song.");
 		
@@ -274,26 +274,26 @@ public class RepositoryBackground {
 				+ "are.");
 		entertainer.getIdeals().add("The world is in need of new ideas and bold\r\n"
 				+ "action.");
-		entertainer.getIdeals().add("I’m only in it for the money and fame.");
-		entertainer.getIdeals().add("I like seeing the smiles on people’s faces when\r\n"
-				+ "I perform. That’s all that matters.");
+		entertainer.getIdeals().add("Iï¿½m only in it for the money and fame.");
+		entertainer.getIdeals().add("I like seeing the smiles on peopleï¿½s faces when\r\n"
+				+ "I perform. Thatï¿½s all that matters.");
 		entertainer.getIdeals().add("Art should reflect the soul; it should come\r\n"
 				+ "from within and reveal who we really are.");
 		
 		entertainer.getBonds().add("My instrument is my most treasured possession, and it\r\n"
 				+ "reminds me of someone I love.");
 		entertainer.getBonds().add("Someone stole my precious instrument, and someday\r\n"
-				+ "I’ll get it back.");
+				+ "Iï¿½ll get it back.");
 		entertainer.getBonds().add("I want to be famous, whatever it takes.");
 		entertainer.getBonds().add("I idolize a hero of the old tales and measure my deeds\r\n"
-				+ "against that person’s.");
+				+ "against that personï¿½s.");
 		entertainer.getBonds().add("I will do anything to prove myself superior to my hated\r\n"
 				+ "rival.");
 		entertainer.getBonds().add("I would do anything for the other members of my\r\n"
 				+ "old troupe.");
 		
-		entertainer.getFlaws().add("I’ll do anything to win fame and renown.");
-		entertainer.getFlaws().add("I’ll do anything to win fame and renown.");
+		entertainer.getFlaws().add("Iï¿½ll do anything to win fame and renown.");
+		entertainer.getFlaws().add("Iï¿½ll do anything to win fame and renown.");
 		entertainer.getFlaws().add("A scandal prevents me from ever going home again.\r\n"
 				+ "That kind of trouble seems to follow me around.");
 		entertainer.getFlaws().add("I once satirized a noble who still wants my head. It was\r\n"
@@ -308,7 +308,7 @@ public class RepositoryBackground {
 		RepositoryBackground folkHero = new RepositoryBackground();
 		folkHero.setName("Folk Hero");
 		folkHero.setFeature("Rustic Hospitality");
-		folkHero.setEquipment("A set of artisan’s tools (one of your choice),\r\n"
+		folkHero.setEquipment("A set of artisanï¿½s tools (one of your choice),\r\n"
 				+ "a shovel, an iron pot, a set of common clothes, and a\r\n"
 				+ "belt pouch containing 10 gp");
 		folkHero.setPersonalityTraits(new ArrayList<>());
@@ -317,12 +317,12 @@ public class RepositoryBackground {
 		folkHero.setFlaws(new ArrayList<>());
 		
 		folkHero.getPersonalityTraits().add("I judge people by their actions, not their words.");
-		folkHero.getPersonalityTraits().add("If someone is in trouble, I’m always ready to lend help.");
+		folkHero.getPersonalityTraits().add("If someone is in trouble, Iï¿½m always ready to lend help.");
 		folkHero.getPersonalityTraits().add("When I set my mind to something, I follow through no\r\n"
 				+ "matter what gets in my way.");
 		folkHero.getPersonalityTraits().add("I have a strong sense of fair play and always try to find\r\n"
 				+ "the most equitable solution to arguments.");
-		folkHero.getPersonalityTraits().add("I’m confident in my own abilities and do what I can to\r\n"
+		folkHero.getPersonalityTraits().add("Iï¿½m confident in my own abilities and do what I can to\r\n"
 				+ "instill confidence in others.");
 		folkHero.getPersonalityTraits().add("Thinking is for other people. I prefer action.");
 		folkHero.getPersonalityTraits().add("I misuse long words in an attempt to sound smarter.");
@@ -335,10 +335,10 @@ public class RepositoryBackground {
 				+ "before the law, and no one is above the law");
 		folkHero.getIdeals().add("Tyrants must not be allowed to oppress the\r\n"
 				+ "people.");
-		folkHero.getIdeals().add("If I become strong, I can take what I want—\r\n"
+		folkHero.getIdeals().add("If I become strong, I can take what I wantï¿½\r\n"
 				+ "what I deserve.");
-		folkHero.getIdeals().add("There’s no good in pretending to be\r\n"
-				+ "something I’m not.");
+		folkHero.getIdeals().add("Thereï¿½s no good in pretending to be\r\n"
+				+ "something Iï¿½m not.");
 		folkHero.getIdeals().add("Nothing and no one can steer me away from\r\n"
 				+ "my higher calling.");
 		
@@ -356,7 +356,7 @@ public class RepositoryBackground {
 		
 		folkHero.getFlaws().add("The tyrant who rules my land will stop at nothing to\r\n"
 				+ "see me killed.");
-		folkHero.getFlaws().add("I’m convinced of the significance of my destiny, and\r\n"
+		folkHero.getFlaws().add("Iï¿½m convinced of the significance of my destiny, and\r\n"
 				+ "blind to my shortcomings and the risk of failure.");
 		folkHero.getFlaws().add("The people who knew me when I was young know my\r\n"
 				+ "shameful secret, so I can never go home again.");
@@ -372,30 +372,30 @@ public class RepositoryBackground {
 		RepositoryBackground guildArtisan = new RepositoryBackground();
 		guildArtisan.setName("Guild Artisan");
 		guildArtisan.setFeature("Guild Membership");
-		guildArtisan.setEquipment("A set of artisan’s tools (one of your choice),\r\n"
+		guildArtisan.setEquipment("A set of artisanï¿½s tools (one of your choice),\r\n"
 				+ "a letter of introduction from your guild, a set of\r\n"
-				+ "traveler’s clothes, and a belt pouch containing 15 gp");
+				+ "travelerï¿½s clothes, and a belt pouch containing 15 gp");
 		guildArtisan.setPersonalityTraits(new ArrayList<>());
 		guildArtisan.setIdeals(new ArrayList<>());
 		guildArtisan.setBonds(new ArrayList<>());
 		guildArtisan.setFlaws(new ArrayList<>());
 		
 		guildArtisan.getPersonalityTraits().add("I believe that anything worth doing is worth doing\r\n"
-				+ "right. I can’t help it— I’m a perfectionist.");
-		guildArtisan.getPersonalityTraits().add("I’m a snob who looks down on those who can’t\r\n"
+				+ "right. I canï¿½t help itï¿½ Iï¿½m a perfectionist.");
+		guildArtisan.getPersonalityTraits().add("Iï¿½m a snob who looks down on those who canï¿½t\r\n"
 				+ "appreciate fine art.");
 		guildArtisan.getPersonalityTraits().add("I always want to know how things work and what\r\n"
 				+ "makes people tick.");
-		guildArtisan.getPersonalityTraits().add("I’m full of witty aphorisms and have a proverb for\r\n"
+		guildArtisan.getPersonalityTraits().add("Iï¿½m full of witty aphorisms and have a proverb for\r\n"
 				+ "every occasion.");
-		guildArtisan.getPersonalityTraits().add("I’m rude to people who lack my commitment to hard\r\n"
+		guildArtisan.getPersonalityTraits().add("Iï¿½m rude to people who lack my commitment to hard\r\n"
 				+ "work and fair play.");
 		guildArtisan.getPersonalityTraits().add("I like to talk at length about my profession.");
-		guildArtisan.getPersonalityTraits().add("I don’t part with my money easily and will haggle\r\n"
+		guildArtisan.getPersonalityTraits().add("I donï¿½t part with my money easily and will haggle\r\n"
 				+ "tirelessly to get the best deal possible.");
-		guildArtisan.getPersonalityTraits().add("I’m well known for my work, and I want to make sure\r\n"
-				+ "everyone appreciates it. I'm always taken aback when\r\n"
-				+ "people haven’t heard of me.");
+		guildArtisan.getPersonalityTraits().add("Iï¿½m well known for my work, and I want to make sure\r\n"
+				+ "everyone appreciates it. I m always taken aback when\r\n"
+				+ "people havenï¿½t heard of me.");
 		
 		guildArtisan.getIdeals().add("It is the duty of all civilized people to\r\n"
 				+ "strengthen the bonds of community and the security\r\n"
@@ -404,8 +404,8 @@ public class RepositoryBackground {
 				+ "use them to benefit the world");
 		guildArtisan.getIdeals().add("Everyone should be free to pursue his or her\r\n"
 				+ "own livelihood.");
-		guildArtisan.getIdeals().add("I’m only in it for the money.");
-		guildArtisan.getIdeals().add("I’m committed to the people I care about, not\r\n"
+		guildArtisan.getIdeals().add("Iï¿½m only in it for the money.");
+		guildArtisan.getIdeals().add("Iï¿½m committed to the people I care about, not\r\n"
 				+ "to ideals.");
 		guildArtisan.getIdeals().add("I work hard to be the best there is at\r\n"
 				+ "my craft.");
@@ -413,27 +413,27 @@ public class RepositoryBackground {
 		guildArtisan.getBonds().add("The workshop where I learned my trade is the most\r\n"
 				+ "important place in the world to me.");
 		guildArtisan.getBonds().add("I created a great work for someone, and then found\r\n"
-				+ "them unworthy to receive it. I’m still looking for\r\n"
+				+ "them unworthy to receive it. Iï¿½m still looking for\r\n"
 				+ "someone worthy.");
 		guildArtisan.getBonds().add("I owe my guild a great debt for forging me into the\r\n"
 				+ "person I am today.");
-		guildArtisan.getBonds().add("I pursue wealth to secure someone’s love.");
+		guildArtisan.getBonds().add("I pursue wealth to secure someoneï¿½s love.");
 		guildArtisan.getBonds().add("One day I will return to my guild and prove that I am\r\n"
 				+ "the greatest artisan of them all.");
 		guildArtisan.getBonds().add("I will get revenge on the evil forces that destroyed my\r\n"
 				+ "place of business and ruined my livelihood.");
 		
-		guildArtisan.getFlaws().add("I’ll do anything to get my hands on something rare or\r\n"
+		guildArtisan.getFlaws().add("Iï¿½ll do anything to get my hands on something rare or\r\n"
 				+ "priceless.");
-		guildArtisan.getFlaws().add("I’m quick to assume that someone is trying to cheat\r\n"
+		guildArtisan.getFlaws().add("Iï¿½m quick to assume that someone is trying to cheat\r\n"
 				+ "me.");
 		guildArtisan.getFlaws().add("No one must ever learn that I once stole money from\r\n"
 				+ "guild coffers.");
-		guildArtisan.getFlaws().add("I’m never satisfied with what I have— I always want\r\n"
+		guildArtisan.getFlaws().add("Iï¿½m never satisfied with what I haveï¿½ I always want\r\n"
 				+ "more.");
 		guildArtisan.getFlaws().add("I would kill to acquire a noble title.");
-		guildArtisan.getFlaws().add("I’m horribly jealous of anyone who can outshine my\r\n"
-				+ "handiwork. Everywhere I go, I’m surrounded by rivals.");
+		guildArtisan.getFlaws().add("Iï¿½m horribly jealous of anyone who can outshine my\r\n"
+				+ "handiwork. Everywhere I go, Iï¿½m surrounded by rivals.");
 		return guildArtisan;
 	}
 	
@@ -449,14 +449,14 @@ public class RepositoryBackground {
 		hermit.setBonds(new ArrayList<>());
 		hermit.setFlaws(new ArrayList<>());
 		
-		hermit.getPersonalityTraits().add("I’ve been isolated for so long that I rarely speak,\r\n"
+		hermit.getPersonalityTraits().add("Iï¿½ve been isolated for so long that I rarely speak,\r\n"
 				+ "preferring gestures and the occasional grunt.");
 		hermit.getPersonalityTraits().add("I am utterly serene, even in the face of disaster.");
 		hermit.getPersonalityTraits().add("The leader of my community had something wise\r\n"
 				+ "to say on every topic, and I am eager to share\r\n"
 				+ "that wisdom.");
 		hermit.getPersonalityTraits().add("I feel tremendous empathy for all who suffer.");
-		hermit.getPersonalityTraits().add("I’m oblivious to etiquette and social expectations.");
+		hermit.getPersonalityTraits().add("Iï¿½m oblivious to etiquette and social expectations.");
 		hermit.getPersonalityTraits().add("I connect everything that happens to me to a grand,\r\n"
 				+ "cosmic plan.");
 		hermit.getPersonalityTraits().add("I often get lost in my own thoughts and contemplation,\r\n"
@@ -474,14 +474,14 @@ public class RepositoryBackground {
 				+ "mystical or magical power.");
 		hermit.getIdeals().add("Meddling in the affairs o f others only\r\n"
 				+ "causes trouble.");
-		hermit.getIdeals().add("If you know yourself, there’s nothing\r\n"
+		hermit.getIdeals().add("If you know yourself, thereï¿½s nothing\r\n"
 				+ "left to know.");
 		
 		hermit.getBonds().add("Nothing is more important than the other members of\r\n"
 				+ "my hermitage, order, or association.");
 		hermit.getBonds().add("I entered seclusion to hide from the ones who might\r\n"
 				+ "still be hunting me. I must someday confront them.");
-		hermit.getBonds().add("I’m still seeking the enlightenment I pursued in my\r\n"
+		hermit.getBonds().add("Iï¿½m still seeking the enlightenment I pursued in my\r\n"
 				+ "seclusion, and it still eludes me.");
 		hermit.getBonds().add("I entered seclusion because I loved someone I could\r\n"
 				+ "not have.");
@@ -490,15 +490,15 @@ public class RepositoryBackground {
 		hermit.getBonds().add("My isolation gave me great insight into a great evil that\r\n"
 				+ "only I can destroy.");
 		
-		hermit.getFlaws().add("Now that I've returned to the world, I enjoy its delights\r\n"
+		hermit.getFlaws().add("Now that I ve returned to the world, I enjoy its delights\r\n"
 				+ "a little too much.");
 		hermit.getFlaws().add("I harbor dark, bloodthirsty thoughts that my isolation\r\n"
 				+ "and meditation failed to quell.");
 		hermit.getFlaws().add("I am dogmatic in my thoughts and philosophy.");
 		hermit.getFlaws().add("I let my need to win arguments overshadow\r\n"
 				+ "friendships and harmony.");
-		hermit.getFlaws().add("I’d risk too much to uncover a lost bit of knowledge.");
-		hermit.getFlaws().add("I like keeping secrets and won’t share them with\r\n"
+		hermit.getFlaws().add("Iï¿½d risk too much to uncover a lost bit of knowledge.");
+		hermit.getFlaws().add("I like keeping secrets and wonï¿½t share them with\r\n"
 				+ "anyone.");
 		return hermit;
 	}
@@ -523,7 +523,7 @@ public class RepositoryBackground {
 				+ "I am a cut above the unwashed masses.");
 		noble.getPersonalityTraits().add("I take great pains to always look my best and follow the\r\n"
 				+ "latest fashions.");
-		noble.getPersonalityTraits().add("I don’t like to get my hands dirty, and I won’t be caught\r\n"
+		noble.getPersonalityTraits().add("I donï¿½t like to get my hands dirty, and I wonï¿½t be caught\r\n"
 				+ "dead in unsuitable accommodations.");
 		noble.getPersonalityTraits().add("Despite my noble birth, I do not place myself above\r\n"
 				+ "other folk. We all have the same blood.");
@@ -547,7 +547,7 @@ public class RepositoryBackground {
 		
 		noble.getBonds().add("I will face any challenge to win the approval of my\r\n"
 				+ "family.");
-		noble.getBonds().add("My house’s alliance with another noble family\r\n"
+		noble.getBonds().add("My houseï¿½s alliance with another noble family\r\n"
 				+ "must be sustained at all costs.");
 		noble.getBonds().add("Nothing is more important than the other members\r\n"
 				+ "o f my family.");
@@ -560,7 +560,7 @@ public class RepositoryBackground {
 		noble.getFlaws().add("I hide a truly scandalous secret that could ruin my\r\n"
 				+ "family forever.");
 		noble.getFlaws().add("I too often hear veiled insults and threats in every word\r\n"
-				+ "addressed to me, and I’m quick to anger.");
+				+ "addressed to me, and Iï¿½m quick to anger.");
 		noble.getFlaws().add("I have an insatiable desire for carnal pleasures.");
 		noble.getFlaws().add("In fact, the world does revolve around me.");
 		noble.getFlaws().add("By my words and actions, I often bring shame to\r\n"
@@ -573,26 +573,26 @@ public class RepositoryBackground {
 		outlander.setName("Outlander");
 		outlander.setFeature("Wanderer");
 		outlander.setEquipment("A staff, a hunting trap, a trophy from an\r\n"
-				+ "animal you killed, a set of traveler’s clothes, and a belt\r\n"
+				+ "animal you killed, a set of travelerï¿½s clothes, and a belt\r\n"
 				+ "pouch containing 10 gp");
 		outlander.setPersonalityTraits(new ArrayList<>());
 		outlander.setIdeals(new ArrayList<>());
 		outlander.setBonds(new ArrayList<>());
 		outlander.setFlaws(new ArrayList<>());
 		
-		outlander.getPersonalityTraits().add("I’m driven by a wanderlust that led me away\r\n"
+		outlander.getPersonalityTraits().add("Iï¿½m driven by a wanderlust that led me away\r\n"
 				+ "from home.");
 		outlander.getPersonalityTraits().add("I watch over my friends as if they were a litter of\r\n"
 				+ "newborn pups.");
 		outlander.getPersonalityTraits().add("I once ran twenty-five miles without stopping to warn\r\n"
-				+ "to my clan of an approaching orc horde. I’d do it again\r\n"
+				+ "to my clan of an approaching orc horde. Iï¿½d do it again\r\n"
 				+ "if I had to.");
 		outlander.getPersonalityTraits().add("I have a lesson for every situation, drawn from\r\n"
 				+ "observing nature.");
 		outlander.getPersonalityTraits().add("I place no stock in wealthy or well-mannered folk.\r\n"
-				+ "Money and manners won’t save you from a hungry\r\n"
+				+ "Money and manners wonï¿½t save you from a hungry\r\n"
 				+ "owlbear.");
-		outlander.getPersonalityTraits().add("I’m always picking things up, absently fiddling with\r\n"
+		outlander.getPersonalityTraits().add("Iï¿½m always picking things up, absently fiddling with\r\n"
 				+ "them, and sometimes accidentally breaking them.");
 		outlander.getPersonalityTraits().add("I feel far more comfortable around animals than\r\n"
 				+ "people.");
@@ -600,7 +600,7 @@ public class RepositoryBackground {
 		
 		outlander.getIdeals().add("Life is like the seasons, in constant change,\r\n"
 				+ "and we must change with it.");
-		outlander.getIdeals().add("It is each person’s responsibility to\r\n"
+		outlander.getIdeals().add("It is each personï¿½s responsibility to\r\n"
 				+ "make the most happiness for the whole tribe.");
 		outlander.getIdeals().add("If I dishonor myself, I dishonor my whole\r\n"
 				+ "clan.");
@@ -623,14 +623,14 @@ public class RepositoryBackground {
 		outlander.getBonds().add("It is my duty to provide children to sustain my tribe.");
 		
 		outlander.getFlaws().add("I am too enamored of ale, wine, and other intoxicants.");
-		outlander.getFlaws().add("There’s no room for caution in a life lived to the fullest.");
-		outlander.getFlaws().add("I remember every insult I’ve received and nurse a silent\r\n"
-				+ "resentment toward anyone who’s ever wronged me.");
+		outlander.getFlaws().add("Thereï¿½s no room for caution in a life lived to the fullest.");
+		outlander.getFlaws().add("I remember every insult Iï¿½ve received and nurse a silent\r\n"
+				+ "resentment toward anyone whoï¿½s ever wronged me.");
 		outlander.getFlaws().add("I am slow to trust members of other races, tribes, and\r\n"
 				+ "societies.");
 		outlander.getFlaws().add("Violence is my answer to almost any challenge.");
-		outlander.getFlaws().add("Don’t expect me to save those who can’t save\r\n"
-				+ "themselves. It is nature’s way that the strong thrive\r\n"
+		outlander.getFlaws().add("Donï¿½t expect me to save those who canï¿½t save\r\n"
+				+ "themselves. It is natureï¿½s way that the strong thrive\r\n"
 				+ "and the weak perish.");
 		return outlander;
 	}
@@ -650,19 +650,19 @@ public class RepositoryBackground {
 		
 		sage.getPersonalityTraits().add("I use polysyllabic words that convey the impression of\r\n"
 				+ "great erudition.");
-		sage.getPersonalityTraits().add("I've read every book in the world’s greatest libraries—\r\n"
+		sage.getPersonalityTraits().add("I ve read every book in the worldï¿½s greatest librariesï¿½\r\n"
 				+ "or I like to boast that I have.");
-		sage.getPersonalityTraits().add("I'm used to helping out those who aren’t as smart as I\r\n"
+		sage.getPersonalityTraits().add("I m used to helping out those who arenï¿½t as smart as I\r\n"
 				+ "am, and I patiently explain anything and everything to\r\n"
 				+ "others.");
-		sage.getPersonalityTraits().add("There’s nothing I like more than a good mystery.");
-		sage.getPersonalityTraits().add("I’m willing to listen to every side of an argument before\r\n"
+		sage.getPersonalityTraits().add("Thereï¿½s nothing I like more than a good mystery.");
+		sage.getPersonalityTraits().add("Iï¿½m willing to listen to every side of an argument before\r\n"
 				+ "I make my own judgment.");
 		sage.getPersonalityTraits().add("I . . . speak . . . slowly . . . when talking . . . to idiots, . . .\r\n"
 				+ "which . . . almost . . . everyone . . . is . . . compared . . .\r\n"
 				+ "to me.");
 		sage.getPersonalityTraits().add("I am horribly, horribly awkward in social situations.");
-		sage.getPersonalityTraits().add("I’m convinced that people are always trying to steal my\r\n"
+		sage.getPersonalityTraits().add("Iï¿½m convinced that people are always trying to steal my\r\n"
 				+ "secrets.");
 		
 		sage.getIdeals().add("The path to power and self-improvement\r\n"
@@ -682,9 +682,9 @@ public class RepositoryBackground {
 				+ "must not fall into the wrong hands.");
 		sage.getBonds().add("I work to preserve a library, university, scriptorium,\r\n"
 				+ "or monastery.");
-		sage.getBonds().add("My life’s work is a series o f tomes related to a specific\r\n"
+		sage.getBonds().add("My lifeï¿½s work is a series o f tomes related to a specific\r\n"
 				+ "field of lore.");
-		sage.getBonds().add("I've been searching my whole life for the answer to a\r\n"
+		sage.getBonds().add("I ve been searching my whole life for the answer to a\r\n"
 				+ "certain question.");
 		sage.getBonds().add("I sold my soul for knowledge. I hope to do great deeds\r\n"
 				+ "and win it back.");
@@ -698,14 +698,14 @@ public class RepositoryBackground {
 				+ "ones.");
 		sage.getFlaws().add("I speak without really thinking through my words,\r\n"
 				+ "invariably insulting others.");
-		sage.getFlaws().add("I can’t keep a secret to save my life, or anyone else’s.");
+		sage.getFlaws().add("I canï¿½t keep a secret to save my life, or anyone elseï¿½s.");
 		return sage;
 	}
 	
 	public RepositoryBackground Sailor() {
 		RepositoryBackground sailor = new RepositoryBackground();
 		sailor.setName("Sailor");
-		sailor.setFeature("Ship's Passage");
+		sailor.setFeature("Ship s Passage");
 		sailor.setEquipment("A belaying pin (club), 50 feet of silk rope,\r\n"
 				+ "a lucky charm such as a rabbit foot or a small stone\r\n"
 				+ "with a hole in the center (or you may roll for a random\r\n"
@@ -733,18 +733,18 @@ public class RepositoryBackground {
 				+ "respect between captain and crew.");
 		sailor.getIdeals().add("We all do the work, so we all share in the\r\n"
 				+ "rewards.");
-		sailor.getIdeals().add("The sea is freedom—the freedom to go\r\n"
+		sailor.getIdeals().add("The sea is freedomï¿½the freedom to go\r\n"
 				+ "anywhere and do anything.");
-		sailor.getIdeals().add("I’m a predator, and the other ships on the sea\r\n"
+		sailor.getIdeals().add("Iï¿½m a predator, and the other ships on the sea\r\n"
 				+ "are my prey.");
-		sailor.getIdeals().add("I’m committed to my crewmates, not to ideals.");
-		sailor.getIdeals().add("Someday I’ll own my own ship and chart\r\n"
+		sailor.getIdeals().add("Iï¿½m committed to my crewmates, not to ideals.");
+		sailor.getIdeals().add("Someday Iï¿½ll own my own ship and chart\r\n"
 				+ "my own destiny.");
 		
-		sailor.getBonds().add("I’m loyal to my captain first, everything else second.");
-		sailor.getBonds().add("The ship is most important—crewmates and captains\r\n"
+		sailor.getBonds().add("Iï¿½m loyal to my captain first, everything else second.");
+		sailor.getBonds().add("The ship is most importantï¿½crewmates and captains\r\n"
 				+ "come and go.");
-		sailor.getBonds().add("I’ll always remember my first ship");
+		sailor.getBonds().add("Iï¿½ll always remember my first ship");
 		sailor.getBonds().add("In a harbor town, I have a paramour whose eyes nearly\r\n"
 				+ "stole me from the sea.");
 		sailor.getBonds().add("I was cheated out of my fair share of the profits, and I\r\n"
@@ -753,12 +753,12 @@ public class RepositoryBackground {
 				+ "plundered our ship, and left me to die. Vengeance will\r\n"
 				+ "be mine.");
 		
-		sailor.getFlaws().add("I follow orders, even if I think they’re wrong.");
-		sailor.getFlaws().add("I’ll say anything to avoid having to do extra work.");
+		sailor.getFlaws().add("I follow orders, even if I think theyï¿½re wrong.");
+		sailor.getFlaws().add("Iï¿½ll say anything to avoid having to do extra work.");
 		sailor.getFlaws().add("Once someone questions my courage, I never back\r\n"
 				+ "down no matter how dangerous the situation.");
-		sailor.getFlaws().add("Once I start drinking, it’s hard for me to stop.");
-		sailor.getFlaws().add("I can’t help but pocket loose coins and other trinkets I\r\n"
+		sailor.getFlaws().add("Once I start drinking, itï¿½s hard for me to stop.");
+		sailor.getFlaws().add("I canï¿½t help but pocket loose coins and other trinkets I\r\n"
 				+ "come across.");
 		sailor.getFlaws().add("My pride will probably lead to my destruction.");
 		return sailor;
@@ -777,12 +777,12 @@ public class RepositoryBackground {
 		soldier.setBonds(new ArrayList<>());
 		soldier.setFlaws(new ArrayList<>());
 		
-		soldier.getPersonalityTraits().add("I'm always polite and respectful.");
-		soldier.getPersonalityTraits().add("I’m haunted by memories of war. I can’t get the images\r\n"
+		soldier.getPersonalityTraits().add("I m always polite and respectful.");
+		soldier.getPersonalityTraits().add("Iï¿½m haunted by memories of war. I canï¿½t get the images\r\n"
 				+ "of violence out of my mind.");
-		soldier.getPersonalityTraits().add("I’ve lost too many friends, and I’m slow to make new\r\n"
+		soldier.getPersonalityTraits().add("Iï¿½ve lost too many friends, and Iï¿½m slow to make new\r\n"
 				+ "ones.");
-		soldier.getPersonalityTraits().add("I’m full of inspiring and cautionary tales from my\r\n"
+		soldier.getPersonalityTraits().add("Iï¿½m full of inspiring and cautionary tales from my\r\n"
 				+ "military experience relevant to almost every combat\r\n"
 				+ "situation.");
 		soldier.getPersonalityTraits().add("I can stare down a hell hound without flinching.");
@@ -798,7 +798,7 @@ public class RepositoryBackground {
 		soldier.getIdeals().add("When people follow orders blindly, they\r\n"
 				+ "embrace a kind of tyranny.");
 		soldier.getIdeals().add("In life as in war, the stronger force wins.");
-		soldier.getIdeals().add("Ideals aren’t worth killing over or\r\n"
+		soldier.getIdeals().add("Ideals arenï¿½t worth killing over or\r\n"
 				+ "going to war for.");
 		soldier.getIdeals().add("My city, nation, or people are all that matter.");
 		
@@ -807,7 +807,7 @@ public class RepositoryBackground {
 		soldier.getBonds().add("Someone saved my life on the battlefield. To this day, I\r\n"
 				+ "will never leave a friend behind.");
 		soldier.getBonds().add("My honor is my life.");
-		soldier.getBonds().add("I’ll never forget the crushing defeat my company\r\n"
+		soldier.getBonds().add("Iï¿½ll never forget the crushing defeat my company\r\n"
 				+ "suffered or the enemies who dealt it.");
 		soldier.getBonds().add("Those who fight beside me are those worth dying for.");
 		soldier.getBonds().add("I fight for those who cannot fight for themselves.");
@@ -816,11 +816,11 @@ public class RepositoryBackground {
 				+ "me quivering with fear.");
 		soldier.getFlaws().add("I have little respect for anyone who is not a\r\n"
 				+ "proven warrior.");
-		soldier.getFlaws().add("I made a terrible mistake in battle cost many lives—\r\n"
+		soldier.getFlaws().add("I made a terrible mistake in battle cost many livesï¿½\r\n"
 				+ "and I would do anything to keep that mistake secret.");
 		soldier.getFlaws().add("My hatred of my enemies is blind and unreasoning.");
 		soldier.getFlaws().add("I obey the law, even if the law causes misery.");
-		soldier.getFlaws().add("I’d rather eat my armor than admit when I’m wrong.");
+		soldier.getFlaws().add("Iï¿½d rather eat my armor than admit when Iï¿½m wrong.");
 		return soldier;
 	}
 	
@@ -844,8 +844,8 @@ public class RepositoryBackground {
 		urchin.getPersonalityTraits().add("I sleep with my back to a wall or tree, with everything I\r\n"
 				+ "own wrapped in a bundle in my arms.");
 		urchin.getPersonalityTraits().add("I eat like a pig and have bad manners.");
-		urchin.getPersonalityTraits().add("I think anyone who’s nice to me is hiding evil intent.");
-		urchin.getPersonalityTraits().add("I don’t like to bathe.");
+		urchin.getPersonalityTraits().add("I think anyone whoï¿½s nice to me is hiding evil intent.");
+		urchin.getPersonalityTraits().add("I donï¿½t like to bathe.");
 		urchin.getPersonalityTraits().add("I bluntly say what other people are hinting at or hiding.");
 		
 		urchin.getIdeals().add("All people, rich or poor, deserve respect.");
@@ -855,12 +855,12 @@ public class RepositoryBackground {
 				+ "are brought down. Change is the nature o f things.");
 		urchin.getIdeals().add("The rich need to be shown what life and\r\n"
 				+ "death are like in the gutters.");
-		urchin.getIdeals().add("I help the people who help me—that’s what\r\n"
+		urchin.getIdeals().add("I help the people who help meï¿½thatï¿½s what\r\n"
 				+ "keeps us alive.");
-		urchin.getIdeals().add("I'm going to prove that I'm worthy of a\r\n"
+		urchin.getIdeals().add("I m going to prove that I m worthy of a\r\n"
 				+ "better life.");
 		
-		urchin.getBonds().add("My town or city is my home, and I’ll fight to defend it.");
+		urchin.getBonds().add("My town or city is my home, and Iï¿½ll fight to defend it.");
 		urchin.getBonds().add("I sponsor an orphanage to keep others from enduring\r\n"
 				+ "what I was forced to endure.");
 		urchin.getBonds().add("I owe my survival to another urchin who taught me to\r\n"
@@ -868,21 +868,21 @@ public class RepositoryBackground {
 		urchin.getBonds().add("I owe a debt I can never repay to the person who took\r\n"
 				+ "pity on me.");
 		urchin.getBonds().add("I escaped my life of poverty by robbing an important\r\n"
-				+ "person, and I’m wanted for it.");
-		urchin.getBonds().add("No one else should have to endure the hardships I’ve\r\n"
+				+ "person, and Iï¿½m wanted for it.");
+		urchin.getBonds().add("No one else should have to endure the hardships Iï¿½ve\r\n"
 				+ "been through.");
 		
-		urchin.getFlaws().add("If I'm outnumbered, I will run away from a fight.");
-		urchin.getFlaws().add("Gold seems like a lot of money to me, and I’ll do just\r\n"
+		urchin.getFlaws().add("If I m outnumbered, I will run away from a fight.");
+		urchin.getFlaws().add("Gold seems like a lot of money to me, and Iï¿½ll do just\r\n"
 				+ "about anything for more of it.");
 		urchin.getFlaws().add("I will never fully trust anyone other than myself.");
-		urchin.getFlaws().add("I’d rather kill someone in their sleep then fight fair.");
-		urchin.getFlaws().add("It’s not stealing if I need it more than someone else.");
-		urchin.getFlaws().add("People who can't take care of themselves get what they\r\n"
+		urchin.getFlaws().add("Iï¿½d rather kill someone in their sleep then fight fair.");
+		urchin.getFlaws().add("Itï¿½s not stealing if I need it more than someone else.");
+		urchin.getFlaws().add("People who can t take care of themselves get what they\r\n"
 				+ "deserve.");
 		return urchin;
 	}
-//Aqui TERMINA a metodologia para construção de cada antecedente de acordo com o Livro do Jogador.	
+//Aqui TERMINA a metodologia para construï¿½ï¿½o de cada antecedente de acordo com o Livro do Jogador.	
 
 	public String getName() {
 		return name;
